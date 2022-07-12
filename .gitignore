@@ -1,0 +1,9 @@
+# Godot-specific ignores
+.import/
+*.exe
+*.pck
+
+# Mono-specific ignores
+.mono/
+data_*/
+*.mmpz.bak
