@@ -16,7 +16,7 @@ func _ready():
 	$Trail.lifetime = (randf() * 10) + 10
 	velocity = (Vector2(randf(), randf()) - Vector2(0.5, 0.7)) * 10
 	
-	$StopTimer.start(randf() * 10)
+	$StopTimer.start(randf() * 8)
 
 func _physics_process(delta):
 	if !stopped:
