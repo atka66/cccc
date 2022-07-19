@@ -16,6 +16,7 @@ shader_param/strength = 1.7
 shader_param/intensity = 1.1
 
 [node name="BackdropForest" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="BgForest" type="TextureRect" parent="."]
 margin_right = 360.0

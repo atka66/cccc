@@ -1,21 +1,20 @@
 extends KinematicBody2D
 
-const SPEED_RUN = 80
-const SPEED_JUMP = 1200
+const SPEED_RUN = 70
+const SPEED_JUMP = 1000
 const SPEED_JUMPBRAKE = 500
-const SPEED_DASH = 1200
+const SPEED_DASH = 800
 const GRAVITY = 50
 const JUMP_FRAMES = 5
 const FRICTION = 0.1
 
+var frozen = false
 var right = true
 var velocity = Vector2.ZERO
 var canJumpFrames = 0
 var canDash = true
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var isBeingKilled = false
+var isWinning = false
 
 func _process(delta):
 	if (is_on_floor()):
@@ -36,37 +35,47 @@ func _process(delta):
 		die()
 
 func _physics_process(delta):
-	if (is_on_floor()):
-		canDash = true
+	if (!frozen):
+		if (is_on_floor()):
+			canDash = true
 
-	if (Input.is_action_just_released("ui_up") && velocity.y < 0):
-		velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / SPEED_JUMP)
+		if (Input.is_action_just_released("ui_up") && velocity.y < 0):
+			velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / SPEED_JUMP)
+			
+		if (Input.is_action_just_pressed("ui_up") && canJumpFrames > 0):
+			velocity.y = -SPEED_JUMP
+			canJumpFrames = 0
+			$JumpParticles.restart()
 		
-	if (Input.is_action_just_pressed("ui_up") && canJumpFrames > 0):
-		velocity.y = -SPEED_JUMP
-		canJumpFrames = 0
-		$JumpParticles.restart()
-	
-	if (Input.is_action_just_pressed("ui_down") && canDash):
-		canDash = false
-		velocity.y = -300
-		if (right):
-			velocity.x += SPEED_DASH
-		else:
-			velocity.x -= SPEED_DASH
-		$JumpParticles.restart()
+		if (Input.is_action_just_pressed("ui_down") && canDash):
+			canDash = false
+			velocity.y = -300
+			if (right):
+				velocity.x += SPEED_DASH
+			else:
+				velocity.x -= SPEED_DASH
+			$JumpParticles.restart()
+			
+		if (Input.is_action_pressed("ui_left")):
+			right = false
+			velocity.x -= SPEED_RUN
+		if (Input.is_action_pressed("ui_right")):
+			right = true
+			velocity.x += SPEED_RUN
 	
 	velocity.y += GRAVITY
-	if (Input.is_action_pressed("ui_left")):
-		right = false
-		velocity.x -= SPEED_RUN
-	if (Input.is_action_pressed("ui_right")):
-		right = true
-		velocity.x += SPEED_RUN
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
-
+	
 	velocity.x = lerp(velocity.x, 0, FRICTION if !is_on_floor() else 2 * FRICTION)
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if (collision.collider.is_in_group('killer')):
+			isBeingKilled = true
+	
+	if (!frozen && isBeingKilled):
+		die()
 	
 	determineSprite()
 
