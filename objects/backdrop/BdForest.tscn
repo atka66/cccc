@@ -1,11 +1,38 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/bg/bg_forest.png" type="Texture" id=1]
+[ext_resource path="res://sprites/bg/bg_forest_leaves_1.png" type="Texture" id=2]
+[ext_resource path="res://res/wind_shader.tres" type="Shader" id=3]
+[ext_resource path="res://sprites/bg/bg_forest_leaves_2.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/strength = 3.0
+shader_param/intensity = 1.2
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/strength = 1.7
+shader_param/intensity = 1.1
 
 [node name="BackdropForest" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BgForest" type="TextureRect" parent="."]
 margin_right = 360.0
 margin_bottom = 200.0
 texture = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="Leaves1" type="TextureRect" parent="."]
+material = SubResource( 1 )
+margin_right = 360.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="Leaves2" type="TextureRect" parent="."]
+material = SubResource( 2 )
+margin_right = 360.0
+margin_bottom = 200.0
+texture = ExtResource( 4 )
 stretch_mode = 2

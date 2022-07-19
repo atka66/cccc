@@ -2,22 +2,13 @@
 
 [ext_resource path="res://sprites/grass.png" type="Texture" id=1]
 [ext_resource path="res://objects/deco/Foliage.gd" type="Script" id=2]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-// Wind settings.
-const float strength = 1.5;
-const float intensity = 1.5;
-
-void vertex() {
-	
-	VERTEX.x += (cos(TIME * intensity) * strength) * max(0.0, (1.0-UV.y));
-}"
+[ext_resource path="res://res/wind_shader.tres" type="Shader" id=3]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 1 )
+shader = ExtResource( 3 )
+shader_param/strength = 1.5
+shader_param/intensity = 1.5
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8, 8 )
