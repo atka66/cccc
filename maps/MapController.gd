@@ -1,4 +1,5 @@
 extends Node2D
 
 func _ready():
-	Global.spawnPlayer(self)
+	Global.mapParent = self
+	Global.spawnPlayer()

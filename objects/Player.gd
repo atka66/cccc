@@ -89,5 +89,5 @@ func determineSprite():
 func die():
 	var corpse = Res.PlayerCorpse.instance()
 	corpse.position = position
-	get_parent().add_child(corpse)
+	Global.mapParent.add_child(corpse)
 	queue_free()

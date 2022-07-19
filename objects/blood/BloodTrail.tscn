@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/blood/BloodTrail.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1, 1 )
+
+[node name="BloodTrail" type="Area2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Poly" type="Polygon2D" parent="."]
+color = Color( 0.752941, 0, 0, 1 )
+polygon = PoolVector2Array( -1, -1, 1, -1, 1, 1, -1, 1 )
+
+[node name="StopTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 200
+lifetime = 10.0
+local_coords = false
+gravity = Vector2( 0, 0 )
+color = Color( 0.972549, 0, 0, 1 )
+
+[node name="DeleteTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_BloodTrail_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_BloodTrail_body_exited"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
+[connection signal="timeout" from="DeleteTimer" to="." method="_on_DeleteTimer_timeout"]

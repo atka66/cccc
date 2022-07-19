@@ -1,6 +1,11 @@
 extends Node
 
-func spawnPlayer(parent):
+var mapParent = null
+
+func _ready():
+	randomize()
+
+func spawnPlayer():
 	var player = Res.Player.instance()
 	player.position = get_tree().get_nodes_in_group("spawn")[0].position
-	parent.add_child(player)
+	mapParent.add_child(player)

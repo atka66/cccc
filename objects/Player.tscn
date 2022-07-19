@@ -4,7 +4,7 @@
 [ext_resource path="res://res/player_owl.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5, 7 )
+extents = Vector2( 5, 6 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -53,6 +53,7 @@ animation = "fall"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="RespawnTimer" type="Timer" parent="."]
