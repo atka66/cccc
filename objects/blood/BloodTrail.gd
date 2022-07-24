@@ -5,6 +5,7 @@ const GRAVITY = 0.2
 var velocity = Vector2.ZERO
 var drip = false
 var stopped = false
+var mute = false
 
 func _ready():
 	var randScale = (randf()) + 0.5
@@ -39,6 +40,9 @@ func _on_BloodTrail_body_entered(body):
 	if !stopped && body.is_in_group('leavetrail'):
 		drip = true
 		$Trail.emitting = true
+		if (!mute):
+			$AudioDrip.stream = Res.AudioDrip[randi() % len(Res.AudioDrip)]
+			$AudioDrip.play()
 
 
 func _on_BloodTrail_body_exited(body):

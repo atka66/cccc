@@ -13,3 +13,25 @@ var MapPaths = [
 	"res://maps/Map03.tscn",
 	"res://maps/Map04.tscn",
 ]
+
+#Sound
+onready var AudioDeathPop = [
+	preload("res://sounds/death_1.ogg"),
+	preload("res://sounds/death_2.ogg"),
+	preload("res://sounds/death_3.ogg")
+]
+onready var AudioDrip = [
+	preload("res://sounds/blood_1.ogg"),
+	preload("res://sounds/blood_2.ogg"),
+	preload("res://sounds/blood_3.ogg"),
+	preload("res://sounds/blood_4.ogg"),
+	preload("res://sounds/blood_5.ogg")
+]
+onready var AudioJump = [
+	preload("res://sounds/jump_1_1.ogg"),
+	preload("res://sounds/jump_1_2.ogg"),
+	preload("res://sounds/jump_1_3.ogg")
+]
+
+#Music 
+onready var AudioMusicSplash = preload("res://music/splash.ogg")

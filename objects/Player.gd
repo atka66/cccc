@@ -15,6 +15,7 @@ var canJumpFrames = 0
 var canDash = true
 var isBeingKilled = false
 var isWinning = false
+var isRunning = false
 
 func _process(delta):
 	if (is_on_floor()):
@@ -46,6 +47,8 @@ func _physics_process(delta):
 			velocity.y = -SPEED_JUMP
 			canJumpFrames = 0
 			$JumpParticles.restart()
+			$AudioJump.stream = Res.AudioJump[randi() % len(Res.AudioJump)]
+			$AudioJump.play()
 		
 		if (Input.is_action_just_pressed("ui_down") && canDash):
 			canDash = false
@@ -55,6 +58,8 @@ func _physics_process(delta):
 			else:
 				velocity.x -= SPEED_DASH
 			$JumpParticles.restart()
+			$AudioJump.stream = Res.AudioJump[randi() % len(Res.AudioJump)]
+			$AudioJump.play()
 			
 		if (Input.is_action_pressed("ui_left")):
 			right = false
@@ -78,8 +83,15 @@ func _physics_process(delta):
 		die()
 	
 	determineSprite()
+	
+	if (isRunning):
+		if (!$AudioRun.playing):
+			$AudioRun.play()
+	else:
+		$AudioRun.stop()
 
 func determineSprite():
+	isRunning = false
 	$AnimatedSprite.flip_h = false
 	if (!is_on_floor()):
 		if (velocity.y < 0):
@@ -89,6 +101,7 @@ func determineSprite():
 		if (!right):
 			$AnimatedSprite.flip_h = true
 	elif (abs(velocity.x) > 30):
+		isRunning = true
 		$AnimatedSprite.animation = "run"
 		if (!right):
 			$AnimatedSprite.flip_h = true

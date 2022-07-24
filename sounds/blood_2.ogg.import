@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/blood_2.ogg-b142c327845b90c4192d36e508d64aab.oggstr"
+
+[deps]
+
+source_file="res://sounds/blood_2.ogg"
+dest_files=[ "res://.import/blood_2.ogg-b142c327845b90c4192d36e508d64aab.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
