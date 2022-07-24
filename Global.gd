@@ -16,6 +16,7 @@ func spawnPlayer():
 	mapParent.add_child(player)
 
 func win():
+	closeMenu()
 	var dim = Res.FinishDim.instance()
 	getMap().add_child(dim)
 
@@ -58,3 +59,16 @@ func deleteSave():
 func _input(event):
 	if Input.is_action_just_pressed("mute"):
 		get_node('/root/Music').mute()
+
+func isMenu():
+	return len(get_tree().get_nodes_in_group("menu")) > 0
+
+func toggleMenu():
+	if (isMenu()):
+		closeMenu()
+	else:
+		add_child(Res.Menu.instance())
+
+func closeMenu():
+	if (isMenu()):
+		get_tree().get_nodes_in_group("menu")[0].close()
