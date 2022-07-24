@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	spawnBloodParticles(50)
-	spawnBloodTrails(25)
+	spawnBloodTrails(10)
 	$BloodPar.restart()
 	$PopAudio.stream = Res.AudioDeathPop[randi() % len(Res.AudioDeathPop)]
 	$PopAudio.play()

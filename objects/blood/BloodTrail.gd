@@ -14,10 +14,10 @@ func _ready():
 	$Poly.scale = Vector2(randScale, randScale)
 	$Trail.color = $Poly.color
 	$Trail.scale_amount = randScale * 6
-	$Trail.lifetime = (randf() * 10) + 10
+	$Trail.lifetime = (randf() * 5) + 5
 	velocity = (Vector2(randf(), randf()) - Vector2(0.5, 0.7)) * 10
 	
-	$StopTimer.start(randf() * 8)
+	$StopTimer.start(randf() * 5)
 
 func _physics_process(delta):
 	if !stopped:
