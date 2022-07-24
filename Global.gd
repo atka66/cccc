@@ -53,7 +53,6 @@ func loadGame():
 	if file.file_exists(SAVE_PATH):
 		file.open(SAVE_PATH, File.READ)
 		var gameState = parse_json(file.get_line())
-		print(gameState)
 		if (gameState.has('currentMap')):
 			currentMap = gameState['currentMap']
 
