@@ -7,8 +7,7 @@ var currentMap = 0
 
 func _ready():
 	randomize()
-	deleteSave()
-	#loadGame()
+	loadGame()
 
 func spawnPlayer():
 	var player = Res.Player.instance()
@@ -23,9 +22,6 @@ func win():
 func getMap():
 	return get_tree().get_nodes_in_group('map')[0]
 
-func gotoCurrentMap():
-	gotoMap(currentMap)
-
 func gotoNextMap():
 	currentMap += 1
 	saveGame()
@@ -33,6 +29,15 @@ func gotoNextMap():
 
 func gotoMap(i):
 	get_tree().change_scene(Res.MapPaths[i])
+
+func resetGame():
+	closeMenu()
+	deleteSave()
+	currentMap = 0
+	gotoCurrentMap()
+
+func gotoCurrentMap():
+	gotoMap(currentMap)
 
 func saveGame():
 	var gameState = {
@@ -62,12 +67,6 @@ func _input(event):
 
 func isMenu():
 	return len(get_tree().get_nodes_in_group("menu")) > 0
-
-func toggleMenu():
-	if (isMenu()):
-		closeMenu()
-	else:
-		add_child(Res.Menu.instance())
 
 func closeMenu():
 	if (isMenu()):
