@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://res/player_owl.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://sounds/run_1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sprites/sleep_par.png" type="Texture" id=4]
+
+[sub_resource type="Curve" id=2]
+min_value = 1.0
+max_value = 2.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 2 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 5 )
@@ -49,6 +55,18 @@ angular_velocity_random = 1.0
 scale_amount = 15.0
 scale_amount_random = 0.8
 
+[node name="SleepParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 3
+lifetime = 2.0
+local_coords = false
+texture = ExtResource( 4 )
+direction = Vector2( 1, -5 )
+spread = 15.0
+gravity = Vector2( 0, -10 )
+initial_velocity = 10.0
+scale_amount_curve = SubResource( 2 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "idle"
@@ -59,6 +77,9 @@ position = Vector2( 0, 2 )
 shape = SubResource( 1 )
 
 [node name="RespawnTimer" type="Timer" parent="."]
+
+[node name="SleepTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AudioRun" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )

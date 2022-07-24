@@ -7,6 +7,7 @@ const SPEED_DASH = 800
 const GRAVITY = 50
 const JUMP_FRAMES = 5
 const FRICTION = 0.1
+const SLEEP_TIME = 10
 
 var frozen = false
 var right = true
@@ -16,6 +17,9 @@ var canDash = true
 var isBeingKilled = false
 var isWinning = false
 var isRunning = false
+
+func _ready():
+	$SleepTimer.start(SLEEP_TIME)
 
 func _process(delta):
 	if (is_on_floor()):
@@ -62,6 +66,11 @@ func _physics_process(delta):
 	else:
 		$AudioRun.stop()
 
+	if ($SleepTimer.time_left > 0 && $SleepParticles.emitting):
+		$SleepParticles.emitting = false
+	if ($SleepTimer.time_left == 0 && !$SleepParticles.emitting):
+		$SleepParticles.emitting = true
+
 func determineSprite():
 	isRunning = false
 	$AnimatedSprite.flip_h = false
@@ -77,8 +86,10 @@ func determineSprite():
 		$AnimatedSprite.animation = "run"
 		if (!right):
 			$AnimatedSprite.flip_h = true
-	else:
+	elif ($SleepTimer.time_left > 0):
 		$AnimatedSprite.animation = "idle"
+	else:
+		$AnimatedSprite.animation = "sleep"
 
 func _handlePlayerInput():
 	if (Input.is_action_just_pressed("reset")):
@@ -86,13 +97,14 @@ func _handlePlayerInput():
 
 	if (Input.is_action_just_released("ui_up") && velocity.y < 0):
 		velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / SPEED_JUMP)
-		
+
 	if (Input.is_action_just_pressed("ui_up") && canJumpFrames > 0):
 		velocity.y = -SPEED_JUMP
 		canJumpFrames = 0
 		$JumpParticles.restart()
 		$AudioJump.stream = Res.AudioJump[randi() % len(Res.AudioJump)]
 		$AudioJump.play()
+		$SleepTimer.start(SLEEP_TIME)
 	
 	if (Input.is_action_just_pressed("ui_down") && canDash):
 		canDash = false
@@ -104,13 +116,16 @@ func _handlePlayerInput():
 		$JumpParticles.restart()
 		$AudioJump.stream = Res.AudioJump[randi() % len(Res.AudioJump)]
 		$AudioJump.play()
+		$SleepTimer.start(SLEEP_TIME)
 		
 	if (Input.is_action_pressed("ui_left")):
 		right = false
 		velocity.x -= SPEED_RUN
+		$SleepTimer.start(SLEEP_TIME)
 	if (Input.is_action_pressed("ui_right")):
 		right = true
 		velocity.x += SPEED_RUN
+		$SleepTimer.start(SLEEP_TIME)
 
 func die():
 	var corpse = Res.PlayerCorpse.instance()
