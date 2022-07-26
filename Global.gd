@@ -60,10 +60,6 @@ func deleteSave():
 	var file = Directory.new()
 	file.remove(SAVE_PATH)
 
-func _input(event):
-	if Input.is_action_just_pressed("mute"):
-		get_node('/root/Music').mute()
-
 func isMenu():
 	return len(get_tree().get_nodes_in_group("menu")) > 0
 
