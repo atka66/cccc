@@ -9,9 +9,10 @@ const JUMP_FRAMES = 5
 const FRICTION = 0.1
 const SLEEP_TIME = 10
 
-export var playerSkin : int = 0
+export var playerId : int = 0
+var playerSkin : int = 0
 
-var frozen = false
+var inputMaps = {}
 var right = true
 var velocity = Vector2.ZERO
 var canJumpFrames = 0
@@ -21,8 +22,38 @@ var isWinning = false
 var isRunning = false
 
 func _ready():
+	playerSkin = Global.playersSkins[playerId]
+	setupInputMaps()
+	
 	$SleepTimer.start(SLEEP_TIME)
 	$Sprite.frames = Res.PlayerSkins[playerSkin]
+
+func setupInputMaps():
+	match playerId:
+		0:
+			inputMaps = {
+				"left" : "left_1",
+				"right" : "right_1",
+				"jump" : "jump_1",
+				"dash" : "dash_1",
+				"death" : "death_1"
+			}
+		1:
+			inputMaps = {
+				"left" : "left_2",
+				"right" : "right_2",
+				"jump" : "jump_2",
+				"dash" : "dash_2",
+				"death" : "death_2"
+			}
+		_:
+			inputMaps = {
+				"left" : "left_gamepad",
+				"right" : "right_gamepad",
+				"jump" : "jump_gamepad",
+				"dash" : "dash_gamepad",
+				"death" : "death_gamepad"
+			}
 
 func _process(delta):
 	if (is_on_floor()):
@@ -40,7 +71,7 @@ func _process(delta):
 		$RunParticles.emitting = false
 
 func _physics_process(delta):
-	if (!frozen):
+	if (!Global.playersFrozen):
 		if (is_on_floor()):
 			canDash = true
 		
@@ -58,7 +89,7 @@ func _physics_process(delta):
 		if (collision.collider.is_in_group('killer')):
 			isBeingKilled = true
 	
-	if (!frozen && isBeingKilled):
+	if (!Global.playersFrozen && isBeingKilled):
 		die()
 	
 	determineSprite()
@@ -113,13 +144,13 @@ func determineSprite():
 				$Sprite.rotation = 0
 
 func _handlePlayerInput():
-	if (Input.is_action_just_pressed("reset")):
+	if (Input.is_action_just_pressed(inputMaps["death"])):
 		die()
 
-	if (Input.is_action_just_released("ui_up") && velocity.y < 0):
+	if (Input.is_action_just_released(inputMaps["jump"]) && velocity.y < 0):
 		velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / SPEED_JUMP)
 
-	if (Input.is_action_just_pressed("ui_up") && canJumpFrames > 0):
+	if (Input.is_action_just_pressed(inputMaps["jump"]) && canJumpFrames > 0):
 		velocity.y = -SPEED_JUMP
 		canJumpFrames = 0
 		$JumpParticles.restart()
@@ -127,7 +158,7 @@ func _handlePlayerInput():
 		$AudioJump.play()
 		$SleepTimer.start(SLEEP_TIME)
 	
-	if (Input.is_action_just_pressed("ui_down") && canDash):
+	if (Input.is_action_just_pressed(inputMaps["dash"]) && canDash):
 		canDash = false
 		velocity.y = -300
 		if (right):
@@ -139,17 +170,18 @@ func _handlePlayerInput():
 		$AudioJump.play()
 		$SleepTimer.start(SLEEP_TIME)
 		
-	if (Input.is_action_pressed("ui_left")):
+	if (Input.is_action_pressed(inputMaps["left"])):
 		right = false
 		velocity.x -= SPEED_RUN
 		$SleepTimer.start(SLEEP_TIME)
-	if (Input.is_action_pressed("ui_right")):
+	if (Input.is_action_pressed(inputMaps["right"])):
 		right = true
 		velocity.x += SPEED_RUN
 		$SleepTimer.start(SLEEP_TIME)
 
 func die():
 	var corpse = Res.PlayerCorpse.instance()
+	corpse.playerId = playerId
 	corpse.position = position
 	Global.mapParent.add_child(corpse)
 	queue_free()

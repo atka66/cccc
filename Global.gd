@@ -5,13 +5,24 @@ const SAVE_PATH = "user://cccc.sav"
 var mapParent = null
 var currentMap = 0
 
+var playersJoined = [true, false, false, false]
+var playersSkins = [0, 1 ,0, 1]
+
+# 0 : WASD
+# 1 : arrow keys
+# 2-5 : controllers
+var playersControlScheme = [0, 1, 2, 3]
+var playersFrozen = false
+
 func _ready():
 	randomize()
 	loadGame()
 
-func spawnPlayer():
+func spawnPlayer(playerId):
 	var player = Res.Player.instance()
 	player.position = get_tree().get_nodes_in_group("spawn")[0].position
+	player.position.x += (playerId - 1) * 8
+	player.playerId = playerId
 	mapParent.add_child(player)
 
 func win():

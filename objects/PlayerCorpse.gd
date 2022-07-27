@@ -1,5 +1,7 @@
 extends Node2D
 
+export var playerId : int = 0
+
 func _ready():
 	spawnBloodParticles(50)
 	spawnBloodTrails(10)
@@ -25,4 +27,4 @@ func spawnBloodTrails(n : int):
 		Global.mapParent.add_child(bloodTrail)
 
 func _on_RespawnTimer_timeout():
-	Global.spawnPlayer()
+	Global.spawnPlayer(playerId)
