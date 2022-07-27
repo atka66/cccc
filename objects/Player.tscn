@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Player.gd" type="Script" id=1]
-[ext_resource path="res://res/player_owl.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://res/player_0.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://sounds/run_1.ogg" type="AudioStream" id=3]
 [ext_resource path="res://sprites/sleep_par.png" type="Texture" id=4]
 
@@ -67,7 +67,7 @@ gravity = Vector2( 0, -10 )
 initial_velocity = 10.0
 scale_amount_curve = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "idle"
 frame = 1

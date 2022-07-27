@@ -9,6 +9,8 @@ const JUMP_FRAMES = 5
 const FRICTION = 0.1
 const SLEEP_TIME = 10
 
+export var playerSkin : int = 0
+
 var frozen = false
 var right = true
 var velocity = Vector2.ZERO
@@ -20,6 +22,7 @@ var isRunning = false
 
 func _ready():
 	$SleepTimer.start(SLEEP_TIME)
+	$Sprite.frames = Res.PlayerSkins[playerSkin]
 
 func _process(delta):
 	if (is_on_floor()):
@@ -73,23 +76,41 @@ func _physics_process(delta):
 
 func determineSprite():
 	isRunning = false
-	$AnimatedSprite.flip_h = false
-	if (!is_on_floor()):
-		if (velocity.y < 0):
-			$AnimatedSprite.animation = "jump"
-		else:
-			$AnimatedSprite.animation = "fall"
-		if (!right):
-			$AnimatedSprite.flip_h = true
-	elif (abs(velocity.x) > 30):
-		isRunning = true
-		$AnimatedSprite.animation = "run"
-		if (!right):
-			$AnimatedSprite.flip_h = true
-	elif ($SleepTimer.time_left > 0):
-		$AnimatedSprite.animation = "idle"
-	else:
-		$AnimatedSprite.animation = "sleep"
+	
+	match playerSkin:
+		0:
+			$Sprite.flip_h = false
+			if (!is_on_floor()):
+				if (velocity.y < 0):
+					$Sprite.animation = "jump"
+				else:
+					$Sprite.animation = "fall"
+				if (!right):
+					$Sprite.flip_h = true
+			elif (abs(velocity.x) > 30):
+				isRunning = true
+				$Sprite.animation = "run"
+				if (!right):
+					$Sprite.flip_h = true
+			elif ($SleepTimer.time_left > 0):
+				$Sprite.animation = "idle"
+			else:
+				$Sprite.animation = "sleep"
+		1:
+			if (!is_on_floor()):
+				$Sprite.animation = "roll"
+			elif (abs(velocity.x) > 30):
+				isRunning = true
+				$Sprite.animation = "roll"
+			elif ($SleepTimer.time_left > 0):
+				$Sprite.animation = "idle"
+			else:
+				$Sprite.animation = "sleep"
+
+			if ($Sprite.animation == "roll"):
+				$Sprite.rotate(velocity.x / 500)
+			else:
+				$Sprite.rotation = 0
 
 func _handlePlayerInput():
 	if (Input.is_action_just_pressed("reset")):

@@ -15,6 +15,11 @@ var MapPaths = [
 	"res://maps/Map04.tscn",
 ]
 
+onready var PlayerSkins = [
+	preload("res://res/player_0.tres"),
+	preload("res://res/player_1.tres")
+]
+
 #Sound
 onready var AudioDeathPop = [
 	preload("res://sounds/death_1.ogg"),
