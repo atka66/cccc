@@ -19,11 +19,26 @@ func _ready():
 	loadGame()
 
 func spawnPlayer(playerId):
+	if !Global.playersJoined[playerId]:
+		return
+	for player in get_tree().get_nodes_in_group("player"):
+		if player.playerId == playerId:
+			return
 	var player = Res.Player.instance()
 	player.position = get_tree().get_nodes_in_group("spawn")[0].position
 	player.position.x += (playerId - 1) * 8
 	player.playerId = playerId
 	mapParent.add_child(player)
+
+func togglePlayer(playerId):
+	Global.playersJoined[playerId] = !Global.playersJoined[playerId]
+	
+	if (Global.playersJoined[playerId]):
+		spawnPlayer(playerId)
+	else:
+		for player in get_tree().get_nodes_in_group("player"):
+			if player.playerId == playerId:
+				player.die()
 
 func win():
 	closeMenu()

@@ -6,13 +6,13 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("toggle_player_1"):
-		Global.playersJoined[0] = !Global.playersJoined[0]
+		Global.togglePlayer(0)
 	if event.is_action_pressed("toggle_player_2"):
-		Global.playersJoined[1] = !Global.playersJoined[1]
+		Global.togglePlayer(1)
 	if event.is_action_pressed("toggle_player_3"):
-		Global.playersJoined[2] = !Global.playersJoined[2]
+		Global.togglePlayer(2)
 	if event.is_action_pressed("toggle_player_4"):
-		Global.playersJoined[3] = !Global.playersJoined[3]
+		Global.togglePlayer(3)
 	
 	if event.is_action_pressed("quit"):
 		Global.saveGame()
