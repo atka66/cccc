@@ -7,7 +7,7 @@ const SPEED_DASH = 800
 const GRAVITY = 50
 const JUMP_FRAMES = 5
 const FRICTION = 0.1
-const SLEEP_TIME = 1
+const SLEEP_TIME = 10
 
 export var playerId : int = 0
 var playerSkin : int = 0
