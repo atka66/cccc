@@ -1,7 +1,7 @@
 extends Node
 
-onready var Player = preload("res://objects/Player.tscn")
-onready var PlayerCorpse = preload("res://objects/PlayerCorpse.tscn")
+onready var Player = preload("res://objects/player/Player.tscn")
+onready var PlayerCorpse = preload("res://objects/player/PlayerCorpse.tscn")
 onready var BloodPar = preload("res://objects/blood/BloodPar.tscn")
 onready var BloodTrail = preload("res://objects/blood/BloodTrail.tscn")
 
@@ -16,8 +16,9 @@ var MapPaths = [
 ]
 
 onready var PlayerSkins = [
-	preload("res://res/player_0.tres"),
-	preload("res://res/player_1.tres")
+	preload("res://res/player_owl.tres"),
+	preload("res://res/player_hedgehog.tres"),
+	preload("res://res/player_fox.tres")
 ]
 
 #Sound

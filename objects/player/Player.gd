@@ -7,7 +7,7 @@ const SPEED_DASH = 800
 const GRAVITY = 50
 const JUMP_FRAMES = 5
 const FRICTION = 0.1
-const SLEEP_TIME = 10
+const SLEEP_TIME = 1
 
 export var playerId : int = 0
 var playerSkin : int = 0
@@ -23,6 +23,8 @@ var isRunning = false
 
 func _ready():
 	playerSkin = Global.playersSkins[playerId]
+	if (playerSkin != 2):
+		$FoxTail.hide()
 	setupInputMaps()
 	
 	$SleepTimer.start(SLEEP_TIME)
@@ -109,7 +111,7 @@ func determineSprite():
 	isRunning = false
 	
 	match playerSkin:
-		0:
+		0, 2:
 			$Sprite.flip_h = false
 			if (!is_on_floor()):
 				if (velocity.y < 0):

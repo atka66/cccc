@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 1, 5 )
+
+[node name="FoxTail" type="Node2D"]
+
+[node name="Root" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Root"]
+shape = SubResource( 6 )
+
+[node name="Joint1" type="PinJoint2D" parent="."]
+node_a = NodePath("../Root")
+node_b = NodePath("../Rigid1")
+bias = 0.5
+
+[node name="Rigid1" type="RigidBody2D" parent="."]
+position = Vector2( 0, -3 )
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -0.5
+linear_damp = 10.0
+angular_damp = 10000.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Rigid1"]
+scale = Vector2( 2, 2 )
+color = Color( 1, 0.501961, 0, 1 )
+polygon = PoolVector2Array( -2, -4, 2, -4, 0, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rigid1"]
+shape = SubResource( 7 )
+
+[node name="Joint2" type="PinJoint2D" parent="."]
+position = Vector2( 0, -6 )
+node_a = NodePath("../Rigid1")
+node_b = NodePath("../Rigid2")
+bias = 0.5
+
+[node name="Rigid2" type="RigidBody2D" parent="."]
+position = Vector2( 0, -9 )
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -0.5
+linear_damp = 10.0
+angular_damp = 10000.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Rigid2"]
+scale = Vector2( 2, 2 )
+color = Color( 1, 0.501961, 0, 1 )
+polygon = PoolVector2Array( -3, -4, 3, -4, 2, 4, -2, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rigid2"]
+shape = SubResource( 8 )
+
+[node name="Joint3" type="PinJoint2D" parent="."]
+position = Vector2( 0, -12 )
+node_a = NodePath("../Rigid2")
+node_b = NodePath("../Rigid3")
+bias = 0.5
+
+[node name="Rigid3" type="RigidBody2D" parent="."]
+position = Vector2( 0, -15 )
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -0.5
+linear_damp = 10.0
+angular_damp = 10000.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Rigid3"]
+scale = Vector2( 2, 2 )
+color = Color( 1, 0.501961, 0, 1 )
+polygon = PoolVector2Array( -3, -4, 3, -4, 3, 4, -3, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rigid3"]
+shape = SubResource( 9 )
+
+[node name="Joint4" type="PinJoint2D" parent="."]
+position = Vector2( 0, -18 )
+node_a = NodePath("../Rigid3")
+node_b = NodePath("../Tip")
+bias = 0.5
+
+[node name="Tip" type="RigidBody2D" parent="."]
+position = Vector2( 0, -21 )
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -0.5
+linear_damp = 10.0
+angular_damp = 10000.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Tip"]
+scale = Vector2( 2, 2 )
+polygon = PoolVector2Array( 0, -4, 3, 4, -3, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
+shape = SubResource( 10 )
+
+[node name="Connector" type="RigidBody2D" parent="."]
+position = Vector2( 0, -10.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Connector"]
+shape = SubResource( 11 )
+
+[node name="JointC1" type="PinJoint2D" parent="."]
+position = Vector2( 0, -1 )
+node_a = NodePath("../Root")
+node_b = NodePath("../Connector")
+bias = 0.7
+
+[node name="JointC2" type="PinJoint2D" parent="."]
+position = Vector2( 0, -19 )
+node_a = NodePath("../Tip")
+node_b = NodePath("../Connector")
+bias = 0.7
