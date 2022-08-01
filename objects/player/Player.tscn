@@ -19,7 +19,7 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="FoxTail" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 4 )
 
 [node name="RunParticles" type="CPUParticles2D" parent="."]
 position = Vector2( 0, 8 )
