@@ -6,7 +6,7 @@ var mapParent = null
 var currentMap = 0
 
 var playersJoined = [true, false, false, false]
-var playersSkins = [2, 1 , 2, 1]
+var playersSkins = [0, 1 , 2, 1]
 
 # 0 : WASD
 # 1 : arrow keys
