@@ -10,7 +10,6 @@ const FRICTION = 0.1
 const SLEEP_TIME = 10
 
 export var playerId : int = 0
-var playerSkin : int = 0
 
 var inputMaps = {}
 var right = true
@@ -22,16 +21,15 @@ var isWinning = false
 var isRunning = false
 
 func _ready():
-	playerSkin = Global.playersSkins[playerId]
-	if (playerSkin != 2):
+	if (playerId != 2):
 		$SquirrelTail.hide()
-	if (playerSkin != 3):
+	if (playerId != 3):
 		$BunnyEars.hide()
 	
 	setupInputMaps()
 	
 	$SleepTimer.start(SLEEP_TIME)
-	$Sprite.frames = Res.PlayerSkins[playerSkin]
+	$Sprite.frames = Res.PlayerSkins[playerId]
 
 func setupInputMaps():
 	match Global.playersControlScheme[playerId]:
@@ -113,7 +111,7 @@ func _physics_process(delta):
 func determineSprite():
 	isRunning = false
 	
-	match playerSkin:
+	match playerId:
 		0, 2, 3:
 			$Sprite.flip_h = false
 			if (!is_on_floor()):

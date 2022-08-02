@@ -6,7 +6,6 @@ var mapParent = null
 var currentMap = 0
 
 var playersJoined = [true, false, false, false]
-var playersSkins = [0, 1 , 2, 3]
 
 # 0 : WASD
 # 1 : arrow keys
@@ -83,7 +82,9 @@ func gotoCurrentMap():
 
 func saveGame():
 	var gameState = {
-		'currentMap' : currentMap
+		'currentMap' : currentMap,
+		'joined' : playersJoined,
+		'control' : playersControlScheme
 	}
 	var file = File.new()
 	file.open(SAVE_PATH, File.WRITE)
@@ -97,6 +98,10 @@ func loadGame():
 		var gameState = parse_json(file.get_line())
 		if (gameState.has('currentMap')):
 			currentMap = gameState['currentMap']
+		if (gameState.has('joined')):
+			playersJoined = PoolIntArray(gameState['joined'])
+		if (gameState.has('control')):
+			playersControlScheme = PoolIntArray(gameState['control'])
 
 func deleteSave():
 	var file = Directory.new()

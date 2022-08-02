@@ -1,16 +1,14 @@
 extends Node2D
 
 export var playerId : int = 0
-var playerSkin : int = 0
 
 func _ready():
-	playerSkin = Global.playersSkins[playerId]
-	if (playerSkin != 2):
+	if (playerId != 2):
 		$SquirrelTail.hide()
-	if (playerSkin != 3):
+	if (playerId != 3):
 		$BunnyEars.hide()
 	
-	$Sprite.frames = Res.PlayerSkins[playerSkin]
+	$Sprite.frames = Res.PlayerSkins[playerId]
 
 func wakeup():
 	modulate.a = 1.0
