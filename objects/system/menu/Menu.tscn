@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/system/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/system/menu/PlayerSelector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/menu.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -86,3 +87,7 @@ playerId = 2
 [node name="PlayerSelector3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 352, 224 )
 playerId = 3
+
+[node name="AppearAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0

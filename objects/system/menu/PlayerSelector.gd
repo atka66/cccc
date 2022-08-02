@@ -9,6 +9,12 @@ func _ready():
 	add_child(dummy)
 	$ToggleSprite.frame = playerId
 
+func _input(event):
+	if event.is_action_pressed("toggle_player_" + str(playerId + 1)):
+		$Anim.play("toggle")
+		$ToggleAudio.play()
+		Global.togglePlayer(playerId)
+
 func _process(delta):
 	if (Global.playersJoined[playerId]):
 		dummy.wakeup()
