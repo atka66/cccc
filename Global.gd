@@ -11,7 +11,7 @@ var playersSkins = [0, 1 , 2, 3]
 # 0 : WASD
 # 1 : arrow keys
 # 2-5 : controllers
-var playersControlScheme = [0, 1, 2, 3]
+var playersControlScheme = [0, -1, -1, -1]
 var playersFrozen = false
 
 func _ready():
@@ -33,14 +33,15 @@ func spawnPlayer(playerId):
 func togglePlayer(playerId):
 	if !Global.playersJoined[playerId]:
 		Global.playersJoined[playerId] = true
-		Global.playersControlScheme[playerId] = 0
+		rollNextControlScheme(playerId)
 	else:
-		Global.playersControlScheme[playerId] = Global.playersControlScheme[playerId] + 1
+		rollNextControlScheme(playerId)
 		for player in get_tree().get_nodes_in_group("player"):
 			if player.playerId == playerId:
 				player.setupInputMaps()
 		if Global.playersControlScheme[playerId] > 5:
 			Global.playersJoined[playerId] = false
+			Global.playersControlScheme[playerId] = -1
 	
 	if (Global.playersJoined[playerId]):
 		spawnPlayer(playerId)
@@ -48,6 +49,12 @@ func togglePlayer(playerId):
 		for player in get_tree().get_nodes_in_group("player"):
 			if player.playerId == playerId:
 				player.die()
+
+func rollNextControlScheme(playerId):
+	var tmpScheme = Global.playersControlScheme[playerId]
+	while Global.playersControlScheme.has(tmpScheme):
+		tmpScheme += 1
+	Global.playersControlScheme[playerId] = tmpScheme
 
 func win():
 	closeMenu()
