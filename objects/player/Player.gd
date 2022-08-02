@@ -25,6 +25,9 @@ func _ready():
 	playerSkin = Global.playersSkins[playerId]
 	if (playerSkin != 2):
 		$SquirrelTail.hide()
+	if (playerSkin != 3):
+		$BunnyEars.hide()
+	
 	setupInputMaps()
 	
 	$SleepTimer.start(SLEEP_TIME)
@@ -111,7 +114,7 @@ func determineSprite():
 	isRunning = false
 	
 	match playerSkin:
-		0, 2:
+		0, 2, 3:
 			$Sprite.flip_h = false
 			if (!is_on_floor()):
 				if (velocity.y < 0):
