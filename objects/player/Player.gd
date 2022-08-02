@@ -24,7 +24,7 @@ var isRunning = false
 func _ready():
 	playerSkin = Global.playersSkins[playerId]
 	if (playerSkin != 2):
-		$FoxTail.hide()
+		$SquirrelTail.hide()
 	setupInputMaps()
 	
 	$SleepTimer.start(SLEEP_TIME)

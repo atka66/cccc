@@ -18,7 +18,7 @@ var MapPaths = [
 onready var PlayerSkins = [
 	preload("res://res/player_owl.tres"),
 	preload("res://res/player_hedgehog.tres"),
-	preload("res://res/player_fox.tres")
+	preload("res://res/player_squirrel.tres")
 ]
 
 #Sound

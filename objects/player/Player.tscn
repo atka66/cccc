@@ -4,7 +4,7 @@
 [ext_resource path="res://objects/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://sounds/run_1.ogg" type="AudioStream" id=3]
 [ext_resource path="res://sprites/sleep_par.png" type="Texture" id=4]
-[ext_resource path="res://objects/player/FoxTail.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/player/SquirrelTail.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve" id=2]
 min_value = 1.0
@@ -18,7 +18,7 @@ extents = Vector2( 5, 5 )
 collision_layer = 2
 script = ExtResource( 2 )
 
-[node name="FoxTail" parent="." instance=ExtResource( 5 )]
+[node name="SquirrelTail" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, 4 )
 
 [node name="RunParticles" type="CPUParticles2D" parent="."]
@@ -74,7 +74,6 @@ scale_amount_curve = SubResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

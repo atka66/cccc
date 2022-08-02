@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox_tail.png-85563eb27f04de3e34de8198d5db5885.stex"
+path="res://.import/squirrel_tail.png-cdba7754115e93ab83efdc7c8abe0937.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/fox_tail.png"
-dest_files=[ "res://.import/fox_tail.png-85563eb27f04de3e34de8198d5db5885.stex" ]
+source_file="res://sprites/squirrel_tail.png"
+dest_files=[ "res://.import/squirrel_tail.png-cdba7754115e93ab83efdc7c8abe0937.stex" ]
 
 [params]
 

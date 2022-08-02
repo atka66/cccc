@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_fox.png-edd2a6f0fcb58f5233c95c7390aa6e96.stex"
+path="res://.import/player_squirrel.png-86218e8b18e84dc7f64e3da4ad85d5cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player_fox.png"
-dest_files=[ "res://.import/player_fox.png-edd2a6f0fcb58f5233c95c7390aa6e96.stex" ]
+source_file="res://sprites/player_squirrel.png"
+dest_files=[ "res://.import/player_squirrel.png-86218e8b18e84dc7f64e3da4ad85d5cb.stex" ]
 
 [params]
 
