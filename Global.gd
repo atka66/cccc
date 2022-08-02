@@ -31,7 +31,16 @@ func spawnPlayer(playerId):
 	mapParent.add_child(player)
 
 func togglePlayer(playerId):
-	Global.playersJoined[playerId] = !Global.playersJoined[playerId]
+	if !Global.playersJoined[playerId]:
+		Global.playersJoined[playerId] = true
+		Global.playersControlScheme[playerId] = 0
+	else:
+		Global.playersControlScheme[playerId] = Global.playersControlScheme[playerId] + 1
+		for player in get_tree().get_nodes_in_group("player"):
+			if player.playerId == playerId:
+				player.setupInputMaps()
+		if Global.playersControlScheme[playerId] > 5:
+			Global.playersJoined[playerId] = false
 	
 	if (Global.playersJoined[playerId]):
 		spawnPlayer(playerId)

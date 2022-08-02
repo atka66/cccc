@@ -34,7 +34,7 @@ func _ready():
 	$Sprite.frames = Res.PlayerSkins[playerSkin]
 
 func setupInputMaps():
-	match playerId:
+	match Global.playersControlScheme[playerId]:
 		0:
 			inputMaps = {
 				"left" : "left_1",

@@ -7,6 +7,7 @@ onready var BloodTrail = preload("res://objects/blood/BloodTrail.tscn")
 
 onready var FinishDim = preload("res://objects/hud/FinishDim.tscn")
 onready var Menu = preload("res://objects/system/menu/Menu.tscn")
+onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
 var MapPaths = [
 	"res://maps/Map01.tscn",

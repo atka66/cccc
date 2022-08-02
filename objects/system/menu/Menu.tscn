@@ -73,12 +73,16 @@ outline = true
 color = Color( 0.752941, 0.752941, 0.752941, 1 )
 
 [node name="PlayerSelector0" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, 224 )
 
 [node name="PlayerSelector1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 224, 224 )
 playerId = 1
 
 [node name="PlayerSelector2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, 224 )
 playerId = 2
 
 [node name="PlayerSelector3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 352, 224 )
 playerId = 3

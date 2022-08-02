@@ -1,16 +1,19 @@
 extends Node2D
 
 export var playerId : int = 0
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var dummy : Node
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	dummy = Res.PlayerDummy.instance()
+	dummy.playerId = playerId
+	add_child(dummy)
+	$ToggleSprite.frame = playerId
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if (Global.playersJoined[playerId]):
+		dummy.wakeup()
+		$ControlSprite.show()
+		$ControlSprite.frame = Global.playersControlScheme[playerId]
+	else:
+		dummy.sleep()
+		$ControlSprite.hide()
