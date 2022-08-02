@@ -99,9 +99,9 @@ func loadGame():
 		if (gameState.has('currentMap')):
 			currentMap = gameState['currentMap']
 		if (gameState.has('joined')):
-			playersJoined = PoolIntArray(gameState['joined'])
+			playersJoined = gameState['joined']
 		if (gameState.has('control')):
-			playersControlScheme = PoolIntArray(gameState['control'])
+			playersControlScheme = gameState['control']
 
 func deleteSave():
 	var file = Directory.new()

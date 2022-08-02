@@ -32,8 +32,8 @@ func _ready():
 	$Sprite.frames = Res.PlayerSkins[playerId]
 
 func setupInputMaps():
-	match Global.playersControlScheme[playerId]:
-		0:
+	match str(Global.playersControlScheme[playerId]):
+		'0':
 			inputMaps = {
 				"left" : "left_1",
 				"right" : "right_1",
@@ -41,7 +41,7 @@ func setupInputMaps():
 				"dash" : "dash_1",
 				"death" : "death_1"
 			}
-		1:
+		'1':
 			inputMaps = {
 				"left" : "left_2",
 				"right" : "right_2",
