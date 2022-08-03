@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/system/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/system/menu/PlayerSelector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sounds/menu.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sprites/control_hint.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -37,41 +38,68 @@ margin_right = 512.0
 margin_bottom = 300.0
 color = Color( 0, 0, 0, 0.501961 )
 
-[node name="BackLabel" parent="." instance=ExtResource( 2 )]
+[node name="BackHintSprite" type="Sprite" parent="."]
 position = Vector2( 64, 64 )
-text = "esc - hide this menu"
+texture = ExtResource( 5 )
+centered = false
+hframes = 7
+frame = 4
+
+[node name="BackLabel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 64 )
+text = "hide this menu"
 fontSize = 2
 outline = true
+animate = false
 
 [node name="BackLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96, 80 )
 text = "resumes the game"
 outline = true
 color = Color( 0.752941, 0.752941, 0.752941, 1 )
+animate = false
+
+[node name="ResetHintSprite" type="Sprite" parent="."]
+position = Vector2( 64, 112 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 7
+frame = 5
 
 [node name="ResetLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 112 )
-text = "r - retell the whole story"
+position = Vector2( 96, 112 )
+text = "retell the whole story"
 fontSize = 2
 outline = true
+animate = false
 
 [node name="ResetLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96, 128 )
-text = "go to first level + erase save"
+text = "restart at the first level + erase save"
 outline = true
 color = Color( 0.752941, 0.752941, 0.752941, 1 )
+animate = false
+
+[node name="QuitHintSprite" type="Sprite" parent="."]
+position = Vector2( 64, 160 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 7
+frame = 6
 
 [node name="QuitLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 160 )
-text = "q - quit game"
+position = Vector2( 96, 160 )
+text = "quit game"
 fontSize = 2
 outline = true
+animate = false
 
 [node name="QuitLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96, 176 )
-text = "do not worry, your game will be saved!"
+text = "do not worry, your game will be saved"
 outline = true
 color = Color( 0.752941, 0.752941, 0.752941, 1 )
+animate = false
 
 [node name="PlayerSelector0" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160, 224 )

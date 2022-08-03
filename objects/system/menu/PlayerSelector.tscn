@@ -2,7 +2,7 @@
 
 [ext_resource path="res://objects/system/menu/PlayerSelector.gd" type="Script" id=1]
 [ext_resource path="res://sprites/controls.png" type="Texture" id=2]
-[ext_resource path="res://sprites/playerselect.png" type="Texture" id=3]
+[ext_resource path="res://sprites/control_hint.png" type="Texture" id=3]
 [ext_resource path="res://sounds/toggle.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -43,7 +43,7 @@ anims/toggle = SubResource( 1 )
 [node name="ToggleSprite" type="Sprite" parent="."]
 position = Vector2( 0, 24 )
 texture = ExtResource( 3 )
-hframes = 4
+hframes = 7
 
 [node name="ControlSprite" type="Sprite" parent="."]
 position = Vector2( 0, 52 )

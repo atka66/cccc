@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerselect.png-96649be56a1db2650d91c2d65ede3860.stex"
+path="res://.import/control_hint.png-a29b176c100675141ce9869e2a18395a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/playerselect.png"
-dest_files=[ "res://.import/playerselect.png-96649be56a1db2650d91c2d65ede3860.stex" ]
+source_file="res://sprites/control_hint.png"
+dest_files=[ "res://.import/control_hint.png-a29b176c100675141ce9869e2a18395a.stex" ]
 
 [params]
 
