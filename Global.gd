@@ -32,15 +32,14 @@ func spawnPlayer(playerId):
 func togglePlayer(playerId):
 	if !Global.playersJoined[playerId]:
 		Global.playersJoined[playerId] = true
-		rollNextControlScheme(playerId)
+		rollNextControlScheme(playerId, 0)
 	else:
-		rollNextControlScheme(playerId)
+		rollNextControlScheme(playerId, Global.playersControlScheme[playerId])
 		for player in get_tree().get_nodes_in_group("player"):
 			if player.playerId == playerId:
 				player.setupInputMaps()
 		if Global.playersControlScheme[playerId] > 5:
 			Global.playersJoined[playerId] = false
-			Global.playersControlScheme[playerId] = -1
 	
 	if (Global.playersJoined[playerId]):
 		spawnPlayer(playerId)
@@ -49,8 +48,8 @@ func togglePlayer(playerId):
 			if player.playerId == playerId:
 				player.die()
 
-func rollNextControlScheme(playerId):
-	var tmpScheme = Global.playersControlScheme[playerId]
+func rollNextControlScheme(playerId, from):
+	var tmpScheme = from
 	while Global.playersControlScheme.has(tmpScheme):
 		tmpScheme += 1
 	Global.playersControlScheme[playerId] = tmpScheme
@@ -69,7 +68,7 @@ func gotoNextMap():
 	gotoMap(currentMap)
 
 func gotoMap(i):
-	get_tree().change_scene(Res.MapPaths[i])
+	get_tree().change_scene(Res.Maps[i].path)
 
 func resetGame():
 	closeMenu()
