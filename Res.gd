@@ -7,6 +7,7 @@ onready var BloodTrail = preload("res://objects/blood/BloodTrail.tscn")
 
 onready var CustomLabel = preload("res://objects/system/label/CustomLabel.tscn")
 
+onready var StartDim = preload("res://objects/hud/MapStartDim.tscn")
 onready var FinishDim = preload("res://objects/hud/FinishDim.tscn")
 onready var Menu = preload("res://objects/system/menu/Menu.tscn")
 onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
@@ -14,8 +15,9 @@ onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 var Maps = [
 	{"name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"name":"pits", "path":"res://maps/Map02.tscn"},
-	{"name":"narrow passage", "path":"res://maps/Map03.tscn"},
-	{"name":"duodenum", "path":"res://maps/Map04.tscn"},
+	{"name":"going up", "path":"res://maps/Map03.tscn"},
+	{"name":"rollercoaster of emotions", "path":"res://maps/Map04.tscn"},
+	{"name":"duodenum", "path":"res://maps/Map05.tscn"},
 ]
 
 onready var PlayerSkins = [

@@ -40,6 +40,7 @@ func togglePlayer(playerId):
 				player.setupInputMaps()
 		if Global.playersControlScheme[playerId] > 5:
 			Global.playersJoined[playerId] = false
+			Global.playersControlScheme[playerId] = -1
 	
 	if (Global.playersJoined[playerId]):
 		spawnPlayer(playerId)
@@ -100,7 +101,10 @@ func loadGame():
 		if (gameState.has('joined')):
 			playersJoined = gameState['joined']
 		if (gameState.has('control')):
-			playersControlScheme = gameState['control']
+			var scheme = []
+			for i in gameState['control']:
+				scheme.append(int(i))
+			playersControlScheme = scheme
 
 func deleteSave():
 	var file = Directory.new()
