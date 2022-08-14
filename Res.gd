@@ -14,10 +14,12 @@ onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
 var Maps = [
 	{"name":"the journey begins", "path":"res://maps/Map01.tscn"},
-	{"name":"pits", "path":"res://maps/Map02.tscn"},
 	{"name":"going up", "path":"res://maps/Map03.tscn"},
+	{"name":"the pits", "path":"res://maps/Map02.tscn"},
+	{"name":"a spiky situation", "path":"res://maps/Map07.tscn"},
 	{"name":"rollercoaster of emotions", "path":"res://maps/Map04.tscn"},
 	{"name":"duodenum", "path":"res://maps/Map05.tscn"},
+	{"name":"cliff hanger", "path":"res://maps/Map06.tscn"},
 ]
 
 onready var PlayerSkins = [
