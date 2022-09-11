@@ -211,14 +211,15 @@ scale = Vector2( 16, 16 )
 texture = ExtResource( 5 )
 
 [node name="Closed" type="Node2D" parent="Book"]
+visible = false
+position = Vector2( 11, 0 )
+scale = Vector2( 1, 1 )
 
 [node name="BookSprite" type="Sprite" parent="Book/Closed"]
 texture = ExtResource( 1 )
 hframes = 2
 
 [node name="Opened" type="Node2D" parent="Book"]
-visible = false
-scale = Vector2( 1, 1.1 )
 
 [node name="BookLeftSprite" type="Sprite" parent="Book/Opened"]
 position = Vector2( -11, 0 )
