@@ -13,19 +13,25 @@ onready var Menu = preload("res://objects/system/menu/Menu.tscn")
 onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
 const Maps = [
-	{"name":"the journey begins", "path":"res://maps/Map01.tscn"},
-	{"name":"going up", "path":"res://maps/Map03.tscn"},
-	{"name":"the pits", "path":"res://maps/Map02.tscn"},
-	{"name":"a spiky situation", "path":"res://maps/Map07.tscn"},
-	{"name":"rollercoaster of emotions", "path":"res://maps/Map04.tscn"},
-	{"name":"duodenum", "path":"res://maps/Map05.tscn"},
-	{"name":"cliff hanger", "path":"res://maps/Map06.tscn"},
+	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
+	{"chapter": 0, "name":"going up", "path":"res://maps/Map03.tscn"},
+	{"chapter": 0, "name":"the pits", "path":"res://maps/Map02.tscn"},
+	{"chapter": 0, "name":"a spiky situation", "path":"res://maps/Map07.tscn"},
+	{"chapter": 0, "name":"rollercoaster of emotions", "path":"res://maps/Map04.tscn"},
+	{"chapter": 0, "name":"duodenum", "path":"res://maps/Map05.tscn"},
+	{"chapter": 0, "name":"cliff hanger", "path":"res://maps/Map06.tscn"},
 ]
 
 const Chapters = [
-	{"text": "forest"},
-	{"text": "plains"},
-	{"text": "desert"},
+	{
+		"title": "forest",
+		"leftImage": preload("res://sprites/story/forest_1.png"),"rightImage": preload("res://sprites/story/forest_1.png")
+	},
+	{
+		"title": "plains",
+		"leftImage": preload("res://sprites/story/plains_1.png"),"rightImage": preload("res://sprites/story/plains_1.png")
+	},
+	{"leftImage": preload("res://sprites/story/forest_1.png"),"rightImage": preload("res://sprites/story/forest_1.png")}
 ]
 
 onready var PlayerSkins = [

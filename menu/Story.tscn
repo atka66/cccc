@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/book.png" type="Texture" id=1]
 [ext_resource path="res://sounds/book_slide.ogg" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://sprites/book_flare.png" type="Texture" id=5]
 [ext_resource path="res://sprites/players_silhouette.png" type="Texture" id=6]
 [ext_resource path="res://sprites/book_title.png" type="Texture" id=7]
+[ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -122,7 +123,7 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "startStoryMusic"
+"method": "startStory"
 } ]
 }
 
@@ -160,11 +161,11 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ false ],
-"method": "flipPage"
+"args": [  ],
+"method": "updateImages"
 } ]
 }
 
@@ -202,25 +203,93 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ true ],
-"method": "flipPage"
+"args": [  ],
+"method": "updateImages"
 } ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "startgame"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dim:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "startGame"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StartLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("StartLabel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64, 512 ), Vector2( 96, 512 ) ]
 }
 
 [node name="Story" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Anim" type="AnimationPlayer" parent="."]
+[node name="FlipTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StoryAnim" type="AnimationPlayer" parent="."]
 autoplay = "appear"
 anims/appear = SubResource( 1 )
 anims/flipback = SubResource( 3 )
 anims/flipnext = SubResource( 2 )
 
+[node name="StartAnim" type="AnimationPlayer" parent="."]
+anims/startgame = SubResource( 4 )
+
+[node name="StartLabel" parent="." instance=ExtResource( 8 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 64, 512 )
+fontSize = 3
+outline = true
+animate = false
+
 [node name="Book" type="Node2D" parent="."]
-position = Vector2( 512, 693.293 )
+position = Vector2( 512, 1500 )
 scale = Vector2( 16, 16 )
 
 [node name="Sprite" type="Sprite" parent="Book"]
@@ -286,8 +355,23 @@ flip_h = true
 hframes = 2
 frame = 1
 
+[node name="StoryLeft" type="Sprite" parent="Book/Opened"]
+scale = Vector2( 0.1, 0.1 )
+offset = Vector2( -104, 0 )
+
+[node name="StoryRight" type="Sprite" parent="Book/Opened"]
+scale = Vector2( 0.1, 0.1 )
+offset = Vector2( 104, 0 )
+
+[node name="Dim" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0 )
+
 [node name="SlideAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
 [node name="PageflipAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[connection signal="timeout" from="FlipTimer" to="." method="_on_FlipTimer_timeout"]

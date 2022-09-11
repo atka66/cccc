@@ -63,10 +63,10 @@ script = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 512.0
 margin_bottom = 300.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="MapNameLabel" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16, 256 )
+position = Vector2( 20.8, 280 )
 fontSize = 2
 outline = true
 animate = false
