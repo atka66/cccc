@@ -30,6 +30,12 @@ onready var PlayerSkins = [
 ]
 
 #Sound
+onready var AudioPageflip = [
+	preload("res://sounds/book_pageflip_1.ogg"),
+	preload("res://sounds/book_pageflip_2.ogg"),
+	preload("res://sounds/book_pageflip_3.ogg")
+]
+
 onready var AudioDeathPop = [
 	preload("res://sounds/death_1.ogg"),
 	preload("res://sounds/death_2.ogg"),
