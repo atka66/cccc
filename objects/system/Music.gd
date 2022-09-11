@@ -7,6 +7,10 @@ func play(stage):
 	match stage:
 		'splash':
 			audioStream = Res.AudioMusicSplash
+		'story_pre':
+			audioStream = Res.AudioMusicStoryPre
+		'story':
+			audioStream = Res.AudioMusicStory
 	if $Audio.stream != audioStream:
 		$Audio.stream = audioStream
 		if !muted:

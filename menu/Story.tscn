@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sprites/book.png" type="Texture" id=1]
 [ext_resource path="res://sounds/book_slide.ogg" type="AudioStream" id=2]
 [ext_resource path="res://sounds/book_pageflip_1.ogg" type="AudioStream" id=3]
 [ext_resource path="res://menu/Story.gd" type="Script" id=4]
 [ext_resource path="res://sprites/book_flare.png" type="Texture" id=5]
+[ext_resource path="res://sprites/players_silhouette.png" type="Texture" id=6]
+[ext_resource path="res://sprites/book_title.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -109,6 +111,20 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 11, 0 ) ]
 }
+tracks/8/type = "method"
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "startStoryMusic"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "flipback"
@@ -204,22 +220,58 @@ anims/flipback = SubResource( 3 )
 anims/flipnext = SubResource( 2 )
 
 [node name="Book" type="Node2D" parent="."]
-position = Vector2( 512, 300 )
+position = Vector2( 512, 693.293 )
 scale = Vector2( 16, 16 )
 
 [node name="Sprite" type="Sprite" parent="Book"]
 texture = ExtResource( 5 )
 
 [node name="Closed" type="Node2D" parent="Book"]
-visible = false
-position = Vector2( 11, 0 )
 scale = Vector2( 1, 1 )
 
 [node name="BookSprite" type="Sprite" parent="Book/Closed"]
 texture = ExtResource( 1 )
 hframes = 2
 
+[node name="Title" type="Sprite" parent="Book/Closed"]
+modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( 0, -7 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="Owl" type="Sprite" parent="Book/Closed"]
+modulate = Color( 1, 1, 1, 0.501961 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+offset = Vector2( -22, 8 )
+hframes = 4
+
+[node name="Hedgehog" type="Sprite" parent="Book/Closed"]
+modulate = Color( 1, 1, 1, 0.501961 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+offset = Vector2( -8, 16 )
+hframes = 4
+frame = 1
+
+[node name="Bunny" type="Sprite" parent="Book/Closed"]
+modulate = Color( 1, 1, 1, 0.501961 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+offset = Vector2( 22, 8 )
+hframes = 4
+frame = 3
+
+[node name="Squirrel" type="Sprite" parent="Book/Closed"]
+modulate = Color( 1, 1, 1, 0.501961 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+offset = Vector2( 8, 16 )
+hframes = 4
+frame = 2
+
 [node name="Opened" type="Node2D" parent="Book"]
+visible = false
 
 [node name="BookLeftSprite" type="Sprite" parent="Book/Opened"]
 position = Vector2( -11, 0 )

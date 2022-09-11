@@ -5,4 +5,4 @@ func _ready():
 	$Anim.play("splash")
 
 func toGame():
-	Global.gotoCurrentMap()
+	get_tree().change_scene("res://menu/Story.tscn")

@@ -12,7 +12,7 @@ onready var FinishDim = preload("res://objects/hud/FinishDim.tscn")
 onready var Menu = preload("res://objects/system/menu/Menu.tscn")
 onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
-var Maps = [
+const Maps = [
 	{"name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"name":"going up", "path":"res://maps/Map03.tscn"},
 	{"name":"the pits", "path":"res://maps/Map02.tscn"},
@@ -20,6 +20,12 @@ var Maps = [
 	{"name":"rollercoaster of emotions", "path":"res://maps/Map04.tscn"},
 	{"name":"duodenum", "path":"res://maps/Map05.tscn"},
 	{"name":"cliff hanger", "path":"res://maps/Map06.tscn"},
+]
+
+const Chapters = [
+	{"text": "forest"},
+	{"text": "plains"},
+	{"text": "desert"},
 ]
 
 onready var PlayerSkins = [
@@ -56,3 +62,5 @@ onready var AudioJump = [
 
 #Music 
 onready var AudioMusicSplash = preload("res://music/splash.ogg")
+onready var AudioMusicStoryPre = preload("res://music/story_pre.ogg")
+onready var AudioMusicStory = preload("res://music/story.ogg")
