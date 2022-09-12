@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://objects/system/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://sprites/book.png" type="Texture" id=6]
 [ext_resource path="res://res/watery_eyes.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://sprites/player_owl.png" type="Texture" id=8]
-[ext_resource path="res://sounds/run_single.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sounds/jump_1_3.ogg" type="AudioStream" id=9]
+[ext_resource path="res://sounds/jump_1_1.ogg" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -39,7 +40,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 0.2, 1 ),
 "update": 0,
-"values": [ Vector2( 128, 400 ), Vector2( 128, 264 ) ]
+"values": [ Vector2( 48, 400 ), Vector2( 72, 264 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("SadHedgehog:position")
@@ -51,7 +52,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2, 0.7 ),
 "transitions": PoolRealArray( 1, 0.2, 1 ),
 "update": 0,
-"values": [ Vector2( 600, 128 ), Vector2( 600, 128 ), Vector2( 466, 128 ) ]
+"values": [ Vector2( 480, 400 ), Vector2( 480, 400 ), Vector2( 440, 264 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath("SadOwl/AppearAudio")
@@ -128,51 +129,51 @@ frame = 4
 
 [node name="BackLabel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 96 )
-text = "hide this menu"
+text = "resume the adventure"
 color = Color( 0, 0, 0, 1 )
 animate = false
 
 [node name="BackLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 112 )
-text = "resumes the adventure"
+text = "hides this menu"
 color = Color( 0, 0, 0, 1 )
 animate = false
 
 [node name="ResetHintSprite" type="Sprite" parent="."]
-position = Vector2( 108, 144 )
+position = Vector2( 108, 156 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 5
 
 [node name="ResetLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 144 )
+position = Vector2( 132, 156 )
 text = "retell the story"
 color = Color( 0, 0, 0, 1 )
 animate = false
 
 [node name="ResetLabelExp" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 160 )
-text = "restart at the first level"
+position = Vector2( 132, 172 )
+text = "erases save file"
 color = Color( 0, 0, 0, 1 )
 animate = false
 
 [node name="QuitHintSprite" type="Sprite" parent="."]
-position = Vector2( 108, 192 )
+position = Vector2( 108, 216 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 6
 
 [node name="QuitLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 192 )
+position = Vector2( 132, 216 )
 text = "quit game"
 color = Color( 0, 0, 0, 1 )
 animate = false
 
 [node name="QuitLabelExp" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 208 )
-text = "also saves your game"
+position = Vector2( 132, 232 )
+text = "saves your progress"
 color = Color( 0, 0, 0, 1 )
 animate = false
 
@@ -214,7 +215,7 @@ margin_bottom = 300.0
 color = Color( 0, 0, 0, 0.878431 )
 
 [node name="PromptLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
-position = Vector2( 196, 96 )
+position = Vector2( 256, 96 )
 z_index = 201
 text = "are you sure though?"
 fontSize = 3
@@ -222,14 +223,14 @@ alignment = 1
 outline = true
 
 [node name="QuitHintSprite" type="Sprite" parent="QuitPrompt"]
-position = Vector2( 96, 132 )
+position = Vector2( 156, 132 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 6
 
 [node name="QuitLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
-position = Vector2( 128, 134 )
+position = Vector2( 188, 134 )
 z_index = 201
 text = "quit"
 fontSize = 2
@@ -237,14 +238,14 @@ outline = true
 animate = false
 
 [node name="BackHintSprite" type="Sprite" parent="QuitPrompt"]
-position = Vector2( 204, 132 )
+position = Vector2( 264, 132 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 4
 
 [node name="BackLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
-position = Vector2( 236, 134 )
+position = Vector2( 296, 134 )
 z_index = 201
 text = "back"
 fontSize = 2
@@ -252,7 +253,8 @@ outline = true
 animate = false
 
 [node name="SadOwl" type="Node2D" parent="QuitPrompt"]
-position = Vector2( 128, 264 )
+position = Vector2( 72, 264 )
+rotation = 0.174533
 scale = Vector2( 6, 6 )
 
 [node name="Body" type="Sprite" parent="QuitPrompt/SadOwl"]
@@ -263,19 +265,21 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadOwl"]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 
 [node name="SadHedgehog" type="Node2D" parent="QuitPrompt"]
-position = Vector2( 466.021, 128 )
-rotation = 4.71239
+position = Vector2( 440, 264 )
+rotation = -0.174533
 scale = Vector2( 6, 6 )
 
 [node name="Body" type="Sprite" parent="QuitPrompt/SadHedgehog"]
@@ -286,13 +290,13 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadHedgehog"]

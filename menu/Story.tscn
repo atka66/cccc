@@ -11,7 +11,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
-length = 2.5
+length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Book:position")
 tracks/0/interp = 2
@@ -31,7 +31,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2, 2.1, 2.5 ),
+"times": PoolRealArray( 3, 3.1, 3.5 ),
 "transitions": PoolRealArray( 1, 1e-05, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
@@ -43,7 +43,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.1 ),
+"times": PoolRealArray( 0, 3.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -55,7 +55,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.1 ),
+"times": PoolRealArray( 0, 3.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -67,7 +67,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 2.1, 2.2 ),
+"times": PoolRealArray( 3.1, 3.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
@@ -93,7 +93,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -107,10 +107,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 1.8, 2 ),
+"times": PoolRealArray( 0, 2.8, 3 ),
 "transitions": PoolRealArray( 1e-05, 1.89465, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 11, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 176, 0 ) ]
 }
 tracks/8/type = "method"
 tracks/8/path = NodePath(".")
@@ -119,7 +119,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -140,7 +140,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1e-05, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 16, 16 ), Vector2( 16, 18 ), Vector2( 16, 16 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Book/Opened/BookRightSprite:scale")
@@ -152,7 +152,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1e+06, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 16, 16 ), Vector2( 16, 18 ), Vector2( 16, 16 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -182,7 +182,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1e+06, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 16, 16 ), Vector2( 16, 18 ), Vector2( 16, 16 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Book/Opened/BookRightSprite:scale")
@@ -194,7 +194,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1e-05, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 16, 16 ), Vector2( 16, 18 ), Vector2( 16, 16 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -213,7 +213,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "startgame"
-length = 3.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Dim:color")
 tracks/0/interp = 1
@@ -221,7 +221,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 2.5, 3 ),
+"times": PoolRealArray( 4, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
@@ -233,7 +233,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 3 ),
+"times": PoolRealArray( 5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -247,7 +247,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.5, 0.7 ),
+"times": PoolRealArray( 2, 2.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -259,17 +259,17 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 64, 512 ), Vector2( 96, 512 ) ]
+"values": [ Vector2( 32, 512 ), Vector2( 128, 512 ) ]
 }
 
 [node name="Story" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="FlipTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="StoryAnim" type="AnimationPlayer" parent="."]
@@ -283,85 +283,93 @@ anims/startgame = SubResource( 4 )
 
 [node name="StartLabel" parent="." instance=ExtResource( 8 )]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 64, 512 )
+position = Vector2( 32, 512 )
 fontSize = 3
 outline = true
 animate = false
 
 [node name="Book" type="Node2D" parent="."]
 position = Vector2( 512, 1500 )
-scale = Vector2( 16, 16 )
 
 [node name="Sprite" type="Sprite" parent="Book"]
+scale = Vector2( 16, 16 )
 texture = ExtResource( 5 )
 
 [node name="Closed" type="Node2D" parent="Book"]
-scale = Vector2( 1, 1 )
 
 [node name="BookSprite" type="Sprite" parent="Book/Closed"]
+scale = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 hframes = 2
 
 [node name="Title" type="Sprite" parent="Book/Closed"]
 modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( 0, -7 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 0, -80 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
 [node name="Owl" type="Sprite" parent="Book/Closed"]
 modulate = Color( 1, 1, 1, 0.501961 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
-offset = Vector2( -22, 8 )
+offset = Vector2( -24, 12 )
 hframes = 4
 
 [node name="Hedgehog" type="Sprite" parent="Book/Closed"]
 modulate = Color( 1, 1, 1, 0.501961 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
-offset = Vector2( -8, 16 )
+offset = Vector2( -9, 24 )
 hframes = 4
 frame = 1
 
 [node name="Bunny" type="Sprite" parent="Book/Closed"]
 modulate = Color( 1, 1, 1, 0.501961 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
-offset = Vector2( 22, 8 )
+offset = Vector2( 24, 12 )
 hframes = 4
 frame = 3
 
 [node name="Squirrel" type="Sprite" parent="Book/Closed"]
 modulate = Color( 1, 1, 1, 0.501961 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
-offset = Vector2( 8, 16 )
+offset = Vector2( 9, 24 )
 hframes = 4
 frame = 2
 
 [node name="Opened" type="Node2D" parent="Book"]
-visible = false
 
 [node name="BookLeftSprite" type="Sprite" parent="Book/Opened"]
-position = Vector2( -11, 0 )
+position = Vector2( -176, 0 )
+scale = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 hframes = 2
 frame = 1
 
+[node name="ChapterLabel" parent="Book/Opened/BookLeftSprite" instance=ExtResource( 8 )]
+position = Vector2( -7, -11 )
+scale = Vector2( 0.0625, 0.0625 )
+fontSize = 4
+color = Color( 0, 0, 0, 1 )
+animate = false
+
+[node name="StoryLeft" type="Sprite" parent="Book/Opened/BookLeftSprite"]
+position = Vector2( 0.25, 0 )
+scale = Vector2( 0.125, 0.125 )
+
 [node name="BookRightSprite" type="Sprite" parent="Book/Opened"]
-position = Vector2( 11, 0 )
+position = Vector2( 176, 0 )
+scale = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 flip_h = true
 hframes = 2
 frame = 1
 
-[node name="StoryLeft" type="Sprite" parent="Book/Opened"]
-scale = Vector2( 0.1, 0.1 )
-offset = Vector2( -104, 0 )
-
-[node name="StoryRight" type="Sprite" parent="Book/Opened"]
-scale = Vector2( 0.1, 0.1 )
-offset = Vector2( 104, 0 )
+[node name="StoryRight" type="Sprite" parent="Book/Opened/BookRightSprite"]
+position = Vector2( -0.25, 0 )
+scale = Vector2( 0.125, 0.125 )
 
 [node name="Dim" type="ColorRect" parent="."]
 margin_right = 1024.0

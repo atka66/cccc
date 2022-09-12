@@ -75,7 +75,7 @@ func resetGame():
 	closeMenu()
 	deleteSave()
 	currentMap = 0
-	gotoCurrentMap()
+	get_tree().change_scene("res://menu/Story.tscn")
 
 func gotoCurrentMap():
 	gotoMap(currentMap)

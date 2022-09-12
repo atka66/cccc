@@ -31,7 +31,14 @@ const Chapters = [
 		"title": "plains",
 		"leftImage": preload("res://sprites/story/plains_1.png"),"rightImage": preload("res://sprites/story/plains_1.png")
 	},
-	{"leftImage": preload("res://sprites/story/forest_1.png"),"rightImage": preload("res://sprites/story/forest_1.png")}
+	{
+		"title": "forest",
+		"leftImage": preload("res://sprites/story/forest_1.png"),"rightImage": preload("res://sprites/story/forest_1.png")
+	},
+	{
+		"title": "plains",
+		"leftImage": preload("res://sprites/story/plains_1.png"),"rightImage": preload("res://sprites/story/plains_1.png")
+	}
 ]
 
 onready var PlayerSkins = [
