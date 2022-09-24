@@ -2,6 +2,7 @@ extends Node
 
 onready var Player = preload("res://objects/player/Player.tscn")
 onready var PlayerCorpse = preload("res://objects/player/PlayerCorpse.tscn")
+onready var Spawning = preload("res://objects/player/Spawning.tscn")
 onready var BloodPar = preload("res://objects/blood/BloodPar.tscn")
 onready var BloodTrail = preload("res://objects/blood/BloodTrail.tscn")
 

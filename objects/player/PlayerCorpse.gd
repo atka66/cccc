@@ -27,4 +27,4 @@ func spawnBloodTrails(n : int):
 		Global.mapParent.add_child(bloodTrail)
 
 func _on_RespawnTimer_timeout():
-	Global.spawnPlayer(playerId)
+	Global.spawnPlayer(playerId, false)

@@ -93,7 +93,7 @@ func _physics_process(delta):
 			isBeingKilled = true
 	
 	if (!Global.playersFrozen && isBeingKilled):
-		die()
+		die(true)
 	
 	determineSprite()
 	
@@ -148,7 +148,7 @@ func determineSprite():
 
 func _handlePlayerInput():
 	if (Input.is_action_just_pressed(inputMaps["death"])):
-		die()
+		die(true)
 
 	if (Input.is_action_just_released(inputMaps["jump"]) && velocity.y < 0):
 		velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / SPEED_JUMP)
@@ -182,7 +182,9 @@ func _handlePlayerInput():
 		velocity.x += SPEED_RUN
 		$SleepTimer.start(SLEEP_TIME)
 
-func die():
+func die(count : bool):
+	if count: 
+		Global.deathCnt[playerId] += 1
 	var corpse = Res.PlayerCorpse.instance()
 	corpse.playerId = playerId
 	corpse.position = position

@@ -78,13 +78,12 @@ scale_amount_curve = SubResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
 shape = SubResource( 1 )
-
-[node name="RespawnTimer" type="Timer" parent="."]
 
 [node name="SleepTimer" type="Timer" parent="."]
 one_shot = true

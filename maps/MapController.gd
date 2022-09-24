@@ -15,4 +15,4 @@ func _input(event):
 func spawnPlayers():
 	for i in range(4):
 		if (Global.playersJoined[i]):
-			Global.spawnPlayer(i)
+			Global.spawnPlayer(i, true)

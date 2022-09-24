@@ -7,6 +7,8 @@ var currentMap = 0
 
 var playersJoined = [true, false, false, false]
 
+var deathCnt = [0, 0, 0, 0]
+
 # 0 : WASD
 # 1 : arrow keys
 # 2-5 : controllers
@@ -17,7 +19,7 @@ func _ready():
 	randomize()
 	loadGame()
 
-func spawnPlayer(playerId):
+func spawnPlayer(playerId, silent : bool):
 	if !Global.playersJoined[playerId]:
 		return
 	for player in get_tree().get_nodes_in_group("player"):
@@ -28,6 +30,12 @@ func spawnPlayer(playerId):
 	player.position.x += (playerId - 1) * 8
 	player.playerId = playerId
 	mapParent.add_child(player)
+	
+	if !silent:
+		var spawning = Res.Spawning.instance()
+		spawning.position = player.position
+		spawning.deathCnt = Global.deathCnt[playerId]
+		mapParent.add_child(spawning)
 
 func togglePlayer(playerId):
 	if !Global.playersJoined[playerId]:
@@ -43,11 +51,11 @@ func togglePlayer(playerId):
 			Global.playersControlScheme[playerId] = -1
 	
 	if (Global.playersJoined[playerId]):
-		spawnPlayer(playerId)
+		spawnPlayer(playerId, false)
 	else:
 		for player in get_tree().get_nodes_in_group("player"):
 			if player.playerId == playerId:
-				player.die()
+				player.die(false)
 
 func rollNextControlScheme(playerId, from):
 	var tmpScheme = from
@@ -84,7 +92,8 @@ func saveGame():
 	var gameState = {
 		'currentMap' : currentMap,
 		'joined' : playersJoined,
-		'control' : playersControlScheme
+		'control' : playersControlScheme,
+		'deathCnt' : deathCnt
 	}
 	var file = File.new()
 	file.open(SAVE_PATH, File.WRITE)
@@ -105,6 +114,8 @@ func loadGame():
 			for i in gameState['control']:
 				scheme.append(int(i))
 			playersControlScheme = scheme
+		if (gameState.has('deathCnt')):
+			deathCnt = gameState['deathCnt']
 
 func deleteSave():
 	var file = Directory.new()
