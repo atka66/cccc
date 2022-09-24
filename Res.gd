@@ -19,6 +19,7 @@ const Maps = [
 	{"chapter": 0, "name":"the pits", "path":"res://maps/Map03.tscn"},
 	{"chapter": 0, "name":"todo", "path":"res://maps/Map04.tscn"},
 	{"chapter": 0, "name":"todo", "path":"res://maps/Map05.tscn"},
+	{"chapter": 0, "name":"todo", "path":"res://maps/Map06.tscn"},
 	
 	{"chapter": 1, "name":"a spiky situation", "path":"res://maps/Map11.tscn"},
 	{"chapter": 1, "name":"rollercoaster of emotions", "path":"res://maps/Map12.tscn"},
