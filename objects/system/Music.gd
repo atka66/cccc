@@ -2,17 +2,9 @@ extends Node
 
 var muted = false
 
-func play(stage):
-	var audioStream = Res.AudioMusicSplash
-	match stage:
-		'splash':
-			audioStream = Res.AudioMusicSplash
-		'story_pre':
-			audioStream = Res.AudioMusicStoryPre
-		'story':
-			audioStream = Res.AudioMusicStory
-	if $Audio.stream != audioStream:
-		$Audio.stream = audioStream
+func play(stream):
+	if $Audio.stream != stream:
+		$Audio.stream = stream
 		if !muted:
 			$Audio.play()
 

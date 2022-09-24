@@ -21,6 +21,7 @@ const Maps = [
 	{"chapter": 0, "name":"todo", "path":"res://maps/Map05.tscn"},
 	{"chapter": 0, "name":"todo", "path":"res://maps/Map06.tscn"},
 	
+	{"chapter": 1, "name":"todo", "path":"res://maps/Map15.tscn"},
 	{"chapter": 1, "name":"a spiky situation", "path":"res://maps/Map11.tscn"},
 	{"chapter": 1, "name":"rollercoaster of emotions", "path":"res://maps/Map12.tscn"},
 	{"chapter": 1, "name":"duodenum", "path":"res://maps/Map13.tscn"},
@@ -82,3 +83,5 @@ onready var AudioJump = [
 onready var AudioMusicSplash = preload("res://music/splash.ogg")
 onready var AudioMusicStoryPre = preload("res://music/story_pre.ogg")
 onready var AudioMusicStory = preload("res://music/story.ogg")
+
+onready var AudioMusicChapterRainy = preload("res://music/rainy.ogg")

@@ -3,11 +3,11 @@ extends Node2D
 var page : int = 0
 
 func _ready():
-	get_node('/root/Music').play('story_pre')
+	get_node('/root/Music').play(Res.AudioMusicStoryPre)
 	updateImages()
 
 func startStory():
-	get_node('/root/Music').play('story')
+	get_node('/root/Music').play(Res.AudioMusicStory)
 	progressTimer()
 	
 
