@@ -5,14 +5,14 @@
 [ext_resource path="res://objects/Exit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/deco/Foliage.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/backdrop/BdForest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/backdrop/BdPlainsRain.tscn" type="PackedScene" id=6]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=7]
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 
-[node name="BackdropForest" parent="." instance=ExtResource( 6 )]
+[node name="BackdropPlainsRain" parent="." instance=ExtResource( 6 )]
 
 [node name="Bg" type="TileMap" parent="."]
 modulate = Color( 0.466667, 0.533333, 0.6, 1 )
