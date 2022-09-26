@@ -24,13 +24,13 @@ texture = ExtResource( 1 )
 stretch_mode = 2
 
 [node name="Rain" type="CPUParticles2D" parent="."]
-position = Vector2( 256, -50 )
-amount = 500
+position = Vector2( 200, -50 )
+amount = 400
 lifetime = 0.7
 preprocess = 1.0
 texture = SubResource( 2 )
 emission_shape = 2
-emission_rect_extents = Vector2( 300, 1 )
+emission_rect_extents = Vector2( 200, 1 )
 direction = Vector2( -0.2, 1 )
 spread = 3.0
 gravity = Vector2( 0, 0 )
