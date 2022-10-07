@@ -78,7 +78,7 @@ anims/spawn = SubResource( 1 )
 [node name="SpawnParticles" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 30
-lifetime = 0.5
+lifetime = 0.7
 one_shot = true
 explosiveness = 1.0
 lifetime_randomness = 0.5

@@ -83,6 +83,7 @@ func resetGame():
 	closeMenu()
 	deleteSave()
 	currentMap = 0
+	deathCnt = [0, 0, 0, 0]
 	get_tree().change_scene("res://menu/Story.tscn")
 
 func gotoCurrentMap():
