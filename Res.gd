@@ -84,4 +84,5 @@ onready var AudioMusicSplash = preload("res://music/splash.ogg")
 onready var AudioMusicStoryPre = preload("res://music/story_pre.ogg")
 onready var AudioMusicStory = preload("res://music/story.ogg")
 
+onready var AudioMusicChapterForest = preload("res://music/forest.ogg")
 onready var AudioMusicChapterRainy = preload("res://music/rainy.ogg")
