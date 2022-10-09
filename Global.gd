@@ -2,6 +2,7 @@ extends Node
 
 const SAVE_PATH = "user://cccc.sav"
 
+var showWholeStory = true
 var mapParent = null
 var currentMap = 0
 
@@ -72,9 +73,13 @@ func getMap():
 	return get_tree().get_nodes_in_group('map')[0]
 
 func gotoNextMap():
+	var finishedChapter = Res.Maps[currentMap].chapter
 	currentMap += 1
 	saveGame()
-	gotoMap(currentMap)
+	if Res.Maps[currentMap].chapter > finishedChapter:
+		get_tree().change_scene("res://menu/Story.tscn")
+	else:
+		gotoMap(currentMap)
 
 func gotoMap(i):
 	get_tree().change_scene(Res.Maps[i].path)
@@ -82,6 +87,7 @@ func gotoMap(i):
 func resetGame():
 	closeMenu()
 	deleteSave()
+	showWholeStory = true
 	currentMap = 0
 	deathCnt = [0, 0, 0, 0]
 	get_tree().change_scene("res://menu/Story.tscn")

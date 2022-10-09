@@ -1,9 +1,11 @@
 extends Node2D
 
-var page : int = 0
+var page : int = -2
 
 func _ready():
 	get_node('/root/Music').play(Res.AudioMusicStoryPre)
+	if !Global.showWholeStory:
+		page = Res.Maps[Global.currentMap].chapter - 1
 	updateImages()
 
 func startStory():
@@ -33,14 +35,19 @@ func flipPage(forward: bool):
 		$PageflipAudio.play()
 
 func updateImages():
-	$Book/Opened/BookLeftSprite/ChapterLabel.set_text(Res.Chapters[page].title)
-	$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.Chapters[page].leftImage
-	if (page < Res.Maps[Global.currentMap].chapter):
-		$Book/Opened/BookRightSprite/StoryRight.texture = Res.Chapters[page].rightImage
+	if page < 0:
+		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.PreChapters[page + len(Res.PreChapters)].leftImage
+		$Book/Opened/BookRightSprite/StoryRight.texture = Res.PreChapters[page + len(Res.PreChapters)].rightImage
 	else:
-		$Book/Opened/BookRightSprite/StoryRight.texture = null
+		$Book/Opened/BookLeftSprite/ChapterLabel.set_text(Res.Chapters[page].title)
+		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.Chapters[page].leftImage
+		if (page < Res.Maps[Global.currentMap].chapter):
+			$Book/Opened/BookRightSprite/StoryRight.texture = Res.Chapters[page].rightImage
+		else:
+			$Book/Opened/BookRightSprite/StoryRight.texture = null
 
 func startGame():
+	Global.showWholeStory = false
 	Global.gotoCurrentMap()
 
 func _on_FlipTimer_timeout():
