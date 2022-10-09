@@ -340,6 +340,7 @@ hframes = 4
 frame = 2
 
 [node name="Opened" type="Node2D" parent="Book"]
+visible = false
 
 [node name="BookLeftSprite" type="Sprite" parent="Book/Opened"]
 position = Vector2( -176, 0 )

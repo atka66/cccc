@@ -23,7 +23,7 @@ func progressTimer():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		startGame()
 
 func flipPage(forward: bool):
 	page = page + (1 if forward else -1)
