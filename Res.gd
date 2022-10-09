@@ -29,7 +29,7 @@ const Maps = [
 ]
 
 const PreChapters = [
-	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png") },
+	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png") },
 	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png") }
 ]
 const Chapters = [
