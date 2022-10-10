@@ -28,9 +28,9 @@ const Maps = [
 	{"chapter": 1, "name":"cliff hanger", "path":"res://maps/Map14.tscn"},
 ]
 
-const PreChapters = [
+const PreSlides = [
 	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png") },
-	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png") }
+	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_1.png") }
 ]
 const Chapters = [
 	{

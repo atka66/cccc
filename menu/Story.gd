@@ -36,8 +36,8 @@ func flipPage(forward: bool):
 
 func updateImages():
 	if page < 0:
-		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.PreChapters[page + len(Res.PreChapters)].leftImage
-		$Book/Opened/BookRightSprite/StoryRight.texture = Res.PreChapters[page + len(Res.PreChapters)].rightImage
+		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.PreSlides[page + len(Res.PreSlides)].leftImage
+		$Book/Opened/BookRightSprite/StoryRight.texture = Res.PreSlides[page + len(Res.PreSlides)].rightImage
 	else:
 		$Book/Opened/BookLeftSprite/ChapterLabel.set_text(Res.Chapters[page].title)
 		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.Chapters[page].leftImage
