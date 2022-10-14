@@ -8,6 +8,18 @@ func _ready():
 	dummy.playerId = playerId
 	add_child(dummy)
 	$ToggleSprite.frame = playerId
+	
+	var name = 'unnamed'
+	match playerId:
+		0:
+			name = 'pocky'
+		1:
+			name = 'raz'
+		2:
+			name = 'sing'
+		3:
+			name = 'harmony'
+	$Name.set_text(name)
 
 func _input(event):
 	if event.is_action_pressed("toggle_player_" + str(playerId + 1)):

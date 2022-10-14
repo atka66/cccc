@@ -73,9 +73,6 @@ modulate = Color( 1, 1, 1, 0 )
 margin_top = -20.0
 margin_bottom = -15.0
 custom_fonts/font = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite1" type="AnimatedSprite" parent="."]
 offset = Vector2( -14, 5 )

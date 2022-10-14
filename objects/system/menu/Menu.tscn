@@ -215,15 +215,14 @@ margin_bottom = 300.0
 color = Color( 0, 0, 0, 0.878431 )
 
 [node name="PromptLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
-position = Vector2( 256, 96 )
+position = Vector2( 96, 96 )
 z_index = 201
 text = "are you sure though?"
 fontSize = 3
-alignment = 1
 outline = true
 
 [node name="QuitHintSprite" type="Sprite" parent="QuitPrompt"]
-position = Vector2( 156, 132 )
+position = Vector2( 164, 136 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
@@ -238,7 +237,7 @@ outline = true
 animate = false
 
 [node name="BackHintSprite" type="Sprite" parent="QuitPrompt"]
-position = Vector2( 264, 132 )
+position = Vector2( 272, 136 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7

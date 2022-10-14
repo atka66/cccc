@@ -11,11 +11,12 @@ export(AudioStreamOGGVorbis) var audio = null
 export(bool) var animate = true
 
 func set_text(_text):
-	$Label.text = _text
+	var actualText = _text.to_upper()
+	$Label.text = actualText
 	if alignment == 1:
-		position.x -= round($Label.get("custom_fonts/font").get_string_size(_text).x / 2) * fontSize
+		position.x -= round($Label.get("custom_fonts/font").get_string_size(actualText).x / 2) * fontSize
 	elif alignment == 2:
-		position.x -= round($Label.get("custom_fonts/font").get_string_size(_text).x) * fontSize
+		position.x -= round($Label.get("custom_fonts/font").get_string_size(actualText).x) * fontSize
 
 func set_color(_color):
 	$Label.add_color_override("font_color", _color)
