@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://objects/system/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://sprites/player_owl.png" type="Texture" id=8]
 [ext_resource path="res://sounds/jump_1_3.ogg" type="AudioStream" id=9]
 [ext_resource path="res://sounds/jump_1_1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sprites/book_divider_1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/book_divider_2.png" type="Texture" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -113,10 +115,35 @@ flip_h = true
 hframes = 2
 frame = 1
 
+[node name="DividerLeft" type="Sprite" parent="."]
+position = Vector2( 180, 72 )
+texture = ExtResource( 11 )
+
+[node name="DividerLeftSub1" type="Sprite" parent="."]
+position = Vector2( 180, 138 )
+texture = ExtResource( 12 )
+
+[node name="DividerLeftSub2" type="Sprite" parent="."]
+position = Vector2( 180, 198 )
+texture = ExtResource( 12 )
+
+[node name="DividerRight" type="Sprite" parent="."]
+position = Vector2( 340, 72 )
+texture = ExtResource( 11 )
+
+[node name="DividerRightH" type="Sprite" parent="."]
+position = Vector2( 340, 160 )
+texture = ExtResource( 12 )
+
+[node name="DividerRightV" type="Sprite" parent="."]
+position = Vector2( 340, 160 )
+rotation = 1.5708
+texture = ExtResource( 12 )
+
 [node name="ControlsLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 60 )
+position = Vector2( 180, 52 )
 text = "controls"
-fontSize = 2
+alignment = 1
 color = Color( 0, 0, 0, 1 )
 animate = false
 
@@ -178,9 +205,9 @@ color = Color( 0, 0, 0, 1 )
 animate = false
 
 [node name="HeroesLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 284, 60 )
+position = Vector2( 340, 52 )
 text = "our heroes"
-fontSize = 2
+alignment = 1
 color = Color( 0, 0, 0, 1 )
 animate = false
 
@@ -188,7 +215,7 @@ animate = false
 position = Vector2( 300, 96 )
 
 [node name="PlayerSelector1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 372, 96 )
+position = Vector2( 380, 96 )
 playerId = 1
 
 [node name="PlayerSelector2" parent="." instance=ExtResource( 3 )]
@@ -196,7 +223,7 @@ position = Vector2( 300, 192 )
 playerId = 2
 
 [node name="PlayerSelector3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 372, 192 )
+position = Vector2( 380, 192 )
 playerId = 3
 
 [node name="AppearAudio" type="AudioStreamPlayer" parent="."]
