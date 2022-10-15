@@ -241,6 +241,15 @@ margin_right = 512.0
 margin_bottom = 300.0
 color = Color( 0, 0, 0, 0.878431 )
 
+[node name="TitleLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
+position = Vector2( 256, 8 )
+z_index = 201
+text = "quitting"
+fontSize = 2
+alignment = 1
+outline = true
+animate = false
+
 [node name="PromptLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
 position = Vector2( 96, 96 )
 z_index = 201
@@ -249,37 +258,37 @@ fontSize = 3
 outline = true
 
 [node name="QuitHintSprite" type="Sprite" parent="QuitPrompt"]
-position = Vector2( 164, 136 )
+position = Vector2( 156, 146 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 6
 
 [node name="QuitLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
-position = Vector2( 188, 134 )
+position = Vector2( 180, 144 )
 z_index = 201
-text = "quit"
+text = "yup"
 fontSize = 2
 outline = true
 animate = false
 
 [node name="BackHintSprite" type="Sprite" parent="QuitPrompt"]
-position = Vector2( 272, 136 )
+position = Vector2( 264, 146 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 4
 
 [node name="BackLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
-position = Vector2( 296, 134 )
+position = Vector2( 288, 144 )
 z_index = 201
-text = "back"
+text = "nah"
 fontSize = 2
 outline = true
 animate = false
 
 [node name="SadOwl" type="Node2D" parent="QuitPrompt"]
-position = Vector2( 72, 264 )
+position = Vector2( 48, 400 )
 rotation = 0.174533
 scale = Vector2( 6, 6 )
 
@@ -304,7 +313,7 @@ playing = true
 stream = ExtResource( 9 )
 
 [node name="SadHedgehog" type="Node2D" parent="QuitPrompt"]
-position = Vector2( 440, 264 )
+position = Vector2( 480, 400 )
 rotation = -0.174533
 scale = Vector2( 6, 6 )
 
@@ -325,3 +334,57 @@ playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadHedgehog"]
 stream = ExtResource( 10 )
+
+[node name="ResetPrompt" type="Node2D" parent="."]
+z_index = 200
+
+[node name="ColorRect" type="ColorRect" parent="ResetPrompt"]
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0, 0, 0, 0.878431 )
+
+[node name="TitleLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
+position = Vector2( 256, 8 )
+z_index = 201
+text = "retell the story"
+fontSize = 2
+alignment = 1
+outline = true
+animate = false
+
+[node name="PromptLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
+position = Vector2( 32, 96 )
+z_index = 201
+text = "you will lose all your progress"
+fontSize = 3
+outline = true
+
+[node name="HintSprite" type="Sprite" parent="ResetPrompt"]
+position = Vector2( 144, 146 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 7
+frame = 5
+
+[node name="ResetLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
+position = Vector2( 168, 144 )
+z_index = 201
+text = "do it"
+fontSize = 2
+outline = true
+animate = false
+
+[node name="BackHintSprite" type="Sprite" parent="ResetPrompt"]
+position = Vector2( 252, 146 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 7
+frame = 4
+
+[node name="BackLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
+position = Vector2( 276, 144 )
+z_index = 201
+text = "nevermind"
+fontSize = 2
+outline = true
+animate = false

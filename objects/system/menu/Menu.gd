@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	$QuitPrompt.hide()
+	$ResetPrompt.hide()
 	$AppearAudio.stream = Res.AudioPageflip[randi() % len(Res.AudioPageflip)]
 	$AppearAudio.play()
 
@@ -12,12 +13,17 @@ func _input(event):
 			get_tree().quit()
 		if event.is_action_pressed("ui_cancel"):
 			$QuitPrompt.hide()
+	elif $ResetPrompt.visible:
+		if event.is_action_pressed("reset"):
+			Global.resetGame()
+		if event.is_action_pressed("ui_cancel"):
+			$ResetPrompt.hide()
 	else:
 		if event.is_action_pressed("quit"):
 			$QuitPrompt.show()
 			$QuitPrompt/Anim.play("appear")
 		if event.is_action_pressed("reset"):
-			Global.resetGame()
+			$ResetPrompt.show()
 		if event.is_action_pressed("ui_cancel"):
 			close()
 
