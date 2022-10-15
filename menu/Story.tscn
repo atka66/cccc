@@ -401,7 +401,7 @@ texture = ExtResource( 10 )
 position = Vector2( -2, -12.5 )
 scale = Vector2( 0.0625, 0.0625 )
 fontSize = 2
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="StoryLeft" type="Sprite" parent="Book/Opened/BookLeftSprite"]

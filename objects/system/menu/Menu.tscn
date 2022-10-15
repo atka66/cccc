@@ -144,7 +144,7 @@ texture = ExtResource( 12 )
 position = Vector2( 180, 52 )
 text = "controls"
 alignment = 1
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="BackHintSprite" type="Sprite" parent="."]
@@ -157,13 +157,13 @@ frame = 4
 [node name="BackLabel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 96 )
 text = "resume the adventure"
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="BackLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 112 )
 text = "hides this menu"
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="ResetHintSprite" type="Sprite" parent="."]
@@ -176,13 +176,13 @@ frame = 5
 [node name="ResetLabel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 156 )
 text = "retell the story"
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="ResetLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 172 )
 text = "erases save file"
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="QuitHintSprite" type="Sprite" parent="."]
@@ -195,20 +195,20 @@ frame = 6
 [node name="QuitLabel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 216 )
 text = "quit game"
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="QuitLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 232 )
 text = "saves your progress"
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="HeroesLabel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 340, 52 )
 text = "our heroes"
 alignment = 1
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="PlayerSelector0" parent="." instance=ExtResource( 3 )]
@@ -291,13 +291,13 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadOwl"]
@@ -316,13 +316,11 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadHedgehog"]
