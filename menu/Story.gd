@@ -1,6 +1,7 @@
 extends Node2D
 
 var page : int = -2
+var started : bool = false
 
 func _ready():
 	get_node('/root/Music').play(Res.AudioMusicStoryPre)
@@ -9,6 +10,7 @@ func _ready():
 	updateImages()
 
 func startStory():
+	started = true
 	get_node('/root/Music').play(Res.AudioMusicStory)
 	progressTimer()
 	
@@ -24,8 +26,11 @@ func progressTimer():
 		$StartAnim.play("startgame")
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		startGame()
+	if event is InputEventKey:
+		if event.is_action_pressed("ui_cancel"):
+			startGame()
+		elif started:
+			$HintAnim.play("appear")
 
 func flipPage(forward: bool):
 	page = page + (1 if forward else -1)
