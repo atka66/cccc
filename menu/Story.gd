@@ -14,7 +14,6 @@ func startStory():
 	get_node('/root/Music').play(Res.AudioMusicStory)
 	progressTimer()
 	
-
 func progressTimer():
 	if (page < Res.Maps[Global.currentMap].chapter):
 		$FlipTimer.start()

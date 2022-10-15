@@ -300,13 +300,11 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadOwl"]
@@ -325,17 +323,20 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadHedgehog"]
 stream = ExtResource( 10 )
 
 [node name="ResetPrompt" type="Node2D" parent="."]
+visible = false
 z_index = 200
 
 [node name="ColorRect" type="ColorRect" parent="ResetPrompt"]
