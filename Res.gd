@@ -15,9 +15,9 @@ onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
-	{"chapter": 1, "name":"going up", "path":"res://maps/Map02.tscn"},
-	{"chapter": 2, "name":"the pits", "path":"res://maps/Map03.tscn"},
-	{"chapter": 3, "name":"todo", "path":"res://maps/Map04.tscn"},
+	{"chapter": 0, "name":"going up", "path":"res://maps/Map02.tscn"},
+	{"chapter": 0, "name":"the pits", "path":"res://maps/Map03.tscn"},
+	{"chapter": 0, "name":"todo", "path":"res://maps/Map04.tscn"},
 	{"chapter": 0, "name":"todo", "path":"res://maps/Map05.tscn"},
 	{"chapter": 0, "name":"todo", "path":"res://maps/Map06.tscn"},
 	

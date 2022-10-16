@@ -189,10 +189,6 @@ position = Vector2( 568, 328 )
 [node name="Spike59" parent="." instance=ExtResource( 5 )]
 position = Vector2( 584, 328 )
 
-[node name="Spike60" parent="." instance=ExtResource( 5 )]
-position = Vector2( 312, 152 )
-rotation = 3.14159
-
 [node name="Spike61" parent="." instance=ExtResource( 5 )]
 position = Vector2( 328, 152 )
 rotation = 3.14159
@@ -203,18 +199,6 @@ rotation = 3.14159
 
 [node name="Spike63" parent="." instance=ExtResource( 5 )]
 position = Vector2( 360, 152 )
-rotation = 3.14159
-
-[node name="Spike64" parent="." instance=ExtResource( 5 )]
-position = Vector2( 376, 152 )
-rotation = 3.14159
-
-[node name="Spike65" parent="." instance=ExtResource( 5 )]
-position = Vector2( 232, 168 )
-rotation = 3.14159
-
-[node name="Spike66" parent="." instance=ExtResource( 5 )]
-position = Vector2( 248, 168 )
 rotation = 3.14159
 
 [node name="Spike67" parent="." instance=ExtResource( 5 )]
@@ -237,20 +221,12 @@ rotation = 3.14159
 position = Vector2( 200, 168 )
 rotation = 3.14159
 
-[node name="Spike72" parent="." instance=ExtResource( 5 )]
-position = Vector2( 216, 168 )
-rotation = 3.14159
-
 [node name="Spike73" parent="." instance=ExtResource( 5 )]
 position = Vector2( 104, 184 )
 rotation = 3.14159
 
 [node name="Spike74" parent="." instance=ExtResource( 5 )]
 position = Vector2( 120, 184 )
-rotation = 3.14159
-
-[node name="Spike75" parent="." instance=ExtResource( 5 )]
-position = Vector2( 136, 184 )
 rotation = 3.14159
 
 [node name="Spike76" parent="." instance=ExtResource( 5 )]
@@ -261,44 +237,12 @@ rotation = 3.14159
 position = Vector2( 168, 184 )
 rotation = 3.14159
 
-[node name="Spike78" parent="." instance=ExtResource( 5 )]
-position = Vector2( 56, 184 )
-rotation = 3.14159
-
-[node name="Spike79" parent="." instance=ExtResource( 5 )]
-position = Vector2( 72, 184 )
-rotation = 3.14159
-
-[node name="Spike80" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88, 184 )
-rotation = 3.14159
-
 [node name="Spike81" parent="." instance=ExtResource( 5 )]
 position = Vector2( 440, 136 )
 rotation = 3.14159
 
-[node name="Spike82" parent="." instance=ExtResource( 5 )]
-position = Vector2( -8, 184 )
-rotation = 3.14159
-
-[node name="Spike83" parent="." instance=ExtResource( 5 )]
-position = Vector2( 8, 184 )
-rotation = 3.14159
-
-[node name="Spike84" parent="." instance=ExtResource( 5 )]
-position = Vector2( 24, 184 )
-rotation = 3.14159
-
-[node name="Spike85" parent="." instance=ExtResource( 5 )]
-position = Vector2( 40, 184 )
-rotation = 3.14159
-
 [node name="Spike86" parent="." instance=ExtResource( 5 )]
 position = Vector2( 392, 136 )
-rotation = 3.14159
-
-[node name="Spike87" parent="." instance=ExtResource( 5 )]
-position = Vector2( 408, 136 )
 rotation = 3.14159
 
 [node name="Spike88" parent="." instance=ExtResource( 5 )]
