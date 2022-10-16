@@ -231,6 +231,8 @@ volume_db = -5.0
 
 [node name="QuitPrompt" type="Node2D" parent="."]
 visible = false
+z_index = 150
+z_as_relative = false
 
 [node name="Anim" type="AnimationPlayer" parent="QuitPrompt"]
 anims/appear = SubResource( 2 )
@@ -242,7 +244,7 @@ color = Color( 0, 0, 0, 0.878431 )
 
 [node name="TitleLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
 position = Vector2( 256, 8 )
-z_index = 201
+z_index = 151
 text = "quitting"
 fontSize = 2
 alignment = 1
@@ -251,7 +253,7 @@ animate = false
 
 [node name="PromptLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
 position = Vector2( 96, 96 )
-z_index = 201
+z_index = 151
 text = "are you sure though?"
 fontSize = 3
 outline = true
@@ -265,7 +267,7 @@ frame = 6
 
 [node name="QuitLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
 position = Vector2( 180, 144 )
-z_index = 201
+z_index = 151
 text = "yup"
 fontSize = 2
 outline = true
@@ -280,7 +282,7 @@ frame = 4
 
 [node name="BackLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
 position = Vector2( 288, 144 )
-z_index = 201
+z_index = 151
 text = "nah"
 fontSize = 2
 outline = true
@@ -336,6 +338,8 @@ stream = ExtResource( 10 )
 
 [node name="ResetPrompt" type="Node2D" parent="."]
 visible = false
+z_index = 150
+z_as_relative = false
 
 [node name="ColorRect" type="ColorRect" parent="ResetPrompt"]
 margin_right = 512.0
@@ -344,7 +348,7 @@ color = Color( 0, 0, 0, 0.878431 )
 
 [node name="TitleLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
 position = Vector2( 256, 8 )
-z_index = 201
+z_index = 151
 text = "retell the story"
 fontSize = 2
 alignment = 1
@@ -353,7 +357,7 @@ animate = false
 
 [node name="PromptLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
 position = Vector2( 32, 96 )
-z_index = 201
+z_index = 151
 text = "you will lose all your progress"
 fontSize = 3
 outline = true
@@ -367,7 +371,7 @@ frame = 5
 
 [node name="ResetLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
 position = Vector2( 168, 144 )
-z_index = 201
+z_index = 151
 text = "do it"
 fontSize = 2
 outline = true
@@ -382,7 +386,7 @@ frame = 4
 
 [node name="BackLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
 position = Vector2( 276, 144 )
-z_index = 201
+z_index = 151
 text = "nevermind"
 fontSize = 2
 outline = true

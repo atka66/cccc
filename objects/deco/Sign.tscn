@@ -95,6 +95,7 @@ anims/hide = SubResource( 3 )
 anims/reveal = SubResource( 2 )
 
 [node name="SignSprite" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

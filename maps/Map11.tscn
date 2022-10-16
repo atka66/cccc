@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://res/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/Exit.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=5]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=6]
+[ext_resource path="res://objects/deco/Sign.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/signhelps/sign_spikes.png" type="Texture" id=8]
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
@@ -84,9 +86,6 @@ position = Vector2( 280, 344 )
 [node name="Spike83" parent="." instance=ExtResource( 5 )]
 position = Vector2( 152, 184 )
 
-[node name="Spike84" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88, 216 )
-
 [node name="Spike85" parent="." instance=ExtResource( 5 )]
 position = Vector2( 136, 184 )
 
@@ -99,3 +98,7 @@ position = Vector2( 328, 168 )
 
 [node name="Spike88" parent="." instance=ExtResource( 5 )]
 position = Vector2( 152, 72 )
+
+[node name="Sign" parent="." instance=ExtResource( 7 )]
+position = Vector2( 88, 216 )
+signHintSprite = ExtResource( 8 )
