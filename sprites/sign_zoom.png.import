@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_bg.png-93eaa1e1ebd8e5d9dbeb249ddf92d93d.stex"
+path="res://.import/sign_zoom.png-c300ed0abb98846e85b4149b82f9e5fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu_bg.png"
-dest_files=[ "res://.import/menu_bg.png-93eaa1e1ebd8e5d9dbeb249ddf92d93d.stex" ]
+source_file="res://sprites/sign_zoom.png"
+dest_files=[ "res://.import/sign_zoom.png-c300ed0abb98846e85b4149b82f9e5fe.stex" ]
 
 [params]
 

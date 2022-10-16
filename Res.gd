@@ -29,7 +29,7 @@ const Maps = [
 	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map21.tscn"},
 	{"chapter": 2, "name":"todo", "path":"res://maps/Map22.tscn"},
 	{"chapter": 2, "name":"todo", "path":"res://maps/Map23.tscn"},
-	{"chapter": 2, "name":"todo", "path":"res://maps/Map24.tscn"},
+	{"chapter": 2, "name":"leap of faith", "path":"res://maps/Map24.tscn"},
 	{"chapter": 2, "name":"todo", "path":"res://maps/Map25.tscn"},
 ]
 
