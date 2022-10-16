@@ -87,7 +87,7 @@ tracks/3/keys = {
 
 [node name="Menu" type="Node2D" groups=["menu"]]
 scale = Vector2( 2, 2 )
-z_index = 1
+z_index = 100
 z_as_relative = false
 script = ExtResource( 1 )
 
@@ -231,7 +231,6 @@ volume_db = -5.0
 
 [node name="QuitPrompt" type="Node2D" parent="."]
 visible = false
-z_index = 200
 
 [node name="Anim" type="AnimationPlayer" parent="QuitPrompt"]
 anims/appear = SubResource( 2 )
@@ -337,7 +336,6 @@ stream = ExtResource( 10 )
 
 [node name="ResetPrompt" type="Node2D" parent="."]
 visible = false
-z_index = 200
 
 [node name="ColorRect" type="ColorRect" parent="ResetPrompt"]
 margin_right = 512.0

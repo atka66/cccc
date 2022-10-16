@@ -320,6 +320,8 @@ animate = false
 
 [node name="Book" type="Node2D" parent="."]
 position = Vector2( 512, 1500 )
+z_index = 100
+z_as_relative = false
 
 [node name="Sprite" type="Sprite" parent="Book"]
 scale = Vector2( 16, 16 )

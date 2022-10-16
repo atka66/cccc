@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://maps/MapController.gd" type="Script" id=1]
 [ext_resource path="res://objects/backdrop/BdForest.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/deco/Sign.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/signhelps/sign_dash.png" type="Texture" id=8]
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
@@ -107,3 +109,7 @@ position = Vector2( 424, 344 )
 
 [node name="Spike21" parent="." instance=ExtResource( 5 )]
 position = Vector2( 120, 344 )
+
+[node name="Sign" parent="." instance=ExtResource( 7 )]
+position = Vector2( 120, 136 )
+signHintSprite = ExtResource( 8 )

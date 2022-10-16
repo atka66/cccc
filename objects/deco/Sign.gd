@@ -1,8 +1,11 @@
 extends Area2D
 
+export var signHintSprite : Texture
+
 var enteredCnt : int = 0
 
 func _ready():
+	$SignZoomSprite/SignHintSPrite.texture = signHintSprite
 	$SignZoomSprite.hide()
 
 func _on_Sign_body_entered(body):
