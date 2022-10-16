@@ -15,17 +15,22 @@ onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
-	{"chapter": 0, "name":"going up", "path":"res://maps/Map02.tscn"},
-	{"chapter": 0, "name":"the pits", "path":"res://maps/Map03.tscn"},
-	{"chapter": 0, "name":"todo", "path":"res://maps/Map04.tscn"},
-	{"chapter": 0, "name":"todo", "path":"res://maps/Map05.tscn"},
-	{"chapter": 0, "name":"todo", "path":"res://maps/Map06.tscn"},
+	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
+	{"chapter": 0, "name":"going up", "path":"res://maps/Map03.tscn"},
+	{"chapter": 0, "name":"reaching the top", "path":"res://maps/Map04.tscn"},
+	{"chapter": 0, "name":"inside the great tree", "path":"res://maps/Map05.tscn"},
 	
-	{"chapter": 1, "name":"todo", "path":"res://maps/Map15.tscn"},
-	{"chapter": 1, "name":"a spiky situation", "path":"res://maps/Map11.tscn"},
-	{"chapter": 1, "name":"rollercoaster of emotions", "path":"res://maps/Map12.tscn"},
-	{"chapter": 1, "name":"duodenum", "path":"res://maps/Map13.tscn"},
-	{"chapter": 1, "name":"cliff hanger", "path":"res://maps/Map14.tscn"},
+	{"chapter": 1, "name":"at the root of the great tree", "path":"res://maps/Map11.tscn"},
+	{"chapter": 1, "name":"cliffhanger", "path":"res://maps/Map12.tscn"},
+	{"chapter": 1, "name":"a spiky situation", "path":"res://maps/Map13.tscn"},
+	{"chapter": 1, "name":"rollercoaster", "path":"res://maps/Map14.tscn"},
+	{"chapter": 1, "name":"u turn", "path":"res://maps/Map15.tscn"},
+	
+	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map21.tscn"},
+	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map22.tscn"},
+	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map23.tscn"},
+	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map24.tscn"},
+	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map25.tscn"},
 ]
 
 const PreSlides = [

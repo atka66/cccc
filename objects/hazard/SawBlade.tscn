@@ -38,10 +38,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 1 ),
+"times": PoolRealArray( 0.1, 1, 1.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true, false ]
+"values": [ true, false, false ]
 }
 
 [sub_resource type="CircleShape2D" id=1]
@@ -50,8 +50,10 @@ radius = 16.0
 [node name="SawBlade" type="StaticBody2D" groups=["killer"]]
 script = ExtResource( 2 )
 
+[node name="Delay" type="Timer" parent="."]
+one_shot = true
+
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "anim"
 anims/anim = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -66,3 +68,5 @@ visible = false
 texture = ExtResource( 1 )
 hframes = 2
 frame = 1
+
+[connection signal="timeout" from="Delay" to="." method="_on_Delay_timeout"]
