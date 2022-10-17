@@ -48,9 +48,10 @@ func updateImages():
 		$Book/Opened/BookLeftSprite/ChapterLabel.set_text(Res.Chapters[page].title)
 		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.Chapters[page].leftImage
 		if (page < Res.Maps[Global.currentMap].chapter):
+			$Book/Opened/BookRightSprite/Frame.show()
 			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.Chapters[page].rightImage
 		else:
-			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = null
+			$Book/Opened/BookRightSprite/Frame.hide()
 
 func startGame():
 	Global.showWholeStory = false

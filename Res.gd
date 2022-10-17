@@ -43,24 +43,24 @@ const Maps = [
 
 const PreSlides = [
 	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png") },
-	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_1.png") }
+	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png") }
 ]
 const Chapters = [
 	{
 		"title": "forest",
-		"leftImage": preload("res://sprites/story/forest_1.png"),"rightImage": preload("res://sprites/story/forest_1.png")
+		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
 	{
 		"title": "plains",
-		"leftImage": preload("res://sprites/story/plains_1.png"),"rightImage": preload("res://sprites/story/plains_1.png")
+		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
 	{
 		"title": "forest",
-		"leftImage": preload("res://sprites/story/forest_1.png"),"rightImage": preload("res://sprites/story/forest_1.png")
+		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
 	{
 		"title": "plains",
-		"leftImage": preload("res://sprites/story/plains_1.png"),"rightImage": preload("res://sprites/story/plains_1.png")
+		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	}
 ]
 
