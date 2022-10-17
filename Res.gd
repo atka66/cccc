@@ -31,6 +31,12 @@ const Maps = [
 	{"chapter": 2, "name":"todo", "path":"res://maps/Map23.tscn"},
 	{"chapter": 2, "name":"leap of faith", "path":"res://maps/Map24.tscn"},
 	{"chapter": 2, "name":"thorn bush", "path":"res://maps/Map25.tscn"},
+	
+	{"chapter": 3, "name":"todo", "path":"res://maps/Map31.tscn"},
+	{"chapter": 3, "name":"todo", "path":"res://maps/Map32.tscn"},
+	{"chapter": 3, "name":"todo", "path":"res://maps/Map33.tscn"},
+	{"chapter": 3, "name":"todo", "path":"res://maps/Map34.tscn"},
+	{"chapter": 3, "name":"todo", "path":"res://maps/Map35.tscn"},
 ]
 
 const PreSlides = [
