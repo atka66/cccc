@@ -39,16 +39,18 @@ func flipPage(forward: bool):
 		$PageflipAudio.play()
 
 func updateImages():
+	$Book/Opened/BookLeftSprite/Frame.rotation_degrees = (randi() % 5) - 2
+	$Book/Opened/BookRightSprite/Frame.rotation_degrees = (randi() % 5) - 2
 	if page < 0:
-		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.PreSlides[page + len(Res.PreSlides)].leftImage
-		$Book/Opened/BookRightSprite/StoryRight.texture = Res.PreSlides[page + len(Res.PreSlides)].rightImage
+		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.PreSlides[page + len(Res.PreSlides)].leftImage
+		$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.PreSlides[page + len(Res.PreSlides)].rightImage
 	else:
 		$Book/Opened/BookLeftSprite/ChapterLabel.set_text(Res.Chapters[page].title)
-		$Book/Opened/BookLeftSprite/StoryLeft.texture = Res.Chapters[page].leftImage
+		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.Chapters[page].leftImage
 		if (page < Res.Maps[Global.currentMap].chapter):
-			$Book/Opened/BookRightSprite/StoryRight.texture = Res.Chapters[page].rightImage
+			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.Chapters[page].rightImage
 		else:
-			$Book/Opened/BookRightSprite/StoryRight.texture = null
+			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = null
 
 func startGame():
 	Global.showWholeStory = false
