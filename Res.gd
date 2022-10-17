@@ -43,25 +43,26 @@ const Maps = [
 
 const PreSlides = [
 	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png") },
-	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png") }
+	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png") },
+	{ "leftImage": preload("res://sprites/story/pre_5.png"),"rightImage": preload("res://sprites/story/pre_6.png") }
 ]
 const Chapters = [
-	{
-		"title": "forest",
-		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+	{ 
+		"title": "searching in the woods",
+		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
-	{
-		"title": "plains",
-		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+	{ 
+		"title": "hit by a huge storm",
+		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
-	{
-		"title": "forest",
-		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+	{ 
+		"title": "reaching the plains",
+		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
-	{
-		"title": "plains",
-		"leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_1.png")
-	}
+	{ 
+		"title": "wandering the desert",
+		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+	},
 ]
 
 onready var PlayerSkins = [

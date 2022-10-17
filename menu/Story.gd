@@ -1,12 +1,14 @@
 extends Node2D
 
-var page : int = -2
+var page : int
 var started : bool = false
 
 func _ready():
 	get_node('/root/Music').play(Res.AudioMusicStoryPre)
 	if !Global.showWholeStory:
 		page = Res.Maps[Global.currentMap].chapter - 1
+	else:
+		page = -len(Res.PreSlides)
 	updateImages()
 
 func startStory():
@@ -18,10 +20,11 @@ func progressTimer():
 	if (page < Res.Maps[Global.currentMap].chapter):
 		$FlipTimer.start()
 	else:
-		if page > 0:
-			$StartLabel.set_text("...and so our adventure continues...")
-		else:
-			$StartLabel.set_text("...and so our adventure begins...")
+		# todo think about whether text is needed here
+		#if page > 0:
+		#	$StartLabel.set_text("...and so our adventure continues...")
+		#else:
+		#	$StartLabel.set_text("...and so our adventure begins...")
 		$StartAnim.play("startgame")
 
 func _input(event):
