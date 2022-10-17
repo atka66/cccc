@@ -5,6 +5,8 @@
 
 [node name="BackdropDesert" type="Node2D"]
 scale = Vector2( 1.5, 1.5 )
+z_index = -20
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="BgDesert" type="TextureRect" parent="."]

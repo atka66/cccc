@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 export(Array, Vector2) var path
 export(int) var speed = 0
@@ -7,17 +7,25 @@ var velocity = Vector2.ZERO
 var targetPosIndex = 1
 
 func _ready():
-	$Delay.start(randf())
+	$SawBlade/Delay.start(randf())
+
+	if path:
+		path.push_front(Vector2(0, 0))
+		for i in range(len(path) - 1):
+			var sawLine = Res.SawLine.instance()
+			sawLine.position = path[i]
+			sawLine.destination = path[i + 1]
+			add_child(sawLine)
 
 func _process(delta):
-	$SpinningSprite.position = Vector2((randi() % 2) - 1, (randi() % 2) - 1)
+	$SawBlade/SpinningSprite.position = Vector2((randi() % 2) - 1, (randi() % 2) - 1)
 	
 func _physics_process(delta):
 	if path:
-		velocity = position.direction_to(path[targetPosIndex]) * speed
-		if position.distance_to(path[targetPosIndex]) < speed:
+		velocity = $SawBlade.position.direction_to(path[targetPosIndex]) * speed
+		if $SawBlade.position.distance_to(path[targetPosIndex]) < speed:
 			targetPosIndex = (targetPosIndex + 1) % len(path) 
-		position += velocity
+		$SawBlade.position += velocity
 
 func _on_Delay_timeout():
-	$Anim.play("anim")
+	$SawBlade/Anim.play("anim")

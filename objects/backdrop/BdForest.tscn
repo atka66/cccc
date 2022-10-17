@@ -18,6 +18,8 @@ shader_param/intensity = 1.1
 
 [node name="BackdropForest" type="Node2D"]
 scale = Vector2( 1.5, 1.5 )
+z_index = -20
+z_as_relative = false
 script = ExtResource( 5 )
 
 [node name="BgForest" type="TextureRect" parent="."]

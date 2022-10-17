@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/hazard/SawLine.gd" type="Script" id=1]
+[ext_resource path="res://sprites/saw_joint.png" type="Texture" id=2]
+
+[node name="SawLine" type="Node2D"]
+z_index = -5
+z_as_relative = false
+script = ExtResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 2.0
+default_color = Color( 0.0627451, 0.0627451, 0.12549, 1 )
+
+[node name="SpriteStart" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="SpriteEnd" type="Sprite" parent="."]
+texture = ExtResource( 2 )

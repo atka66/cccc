@@ -13,6 +13,8 @@ onready var FinishDim = preload("res://objects/hud/FinishDim.tscn")
 onready var Menu = preload("res://objects/system/menu/Menu.tscn")
 onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
+onready var SawLine = preload("res://objects/hazard/SawLine.tscn")
+
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},

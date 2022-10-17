@@ -4,6 +4,9 @@
 # {_Scenes but not by Z setting_}
 # [Nodes]
 #
+# -20   : {Backdrops}
+# -10   : [Bg]
+# -5    : {SawLine}
 # 0    : {Player}
 # 50   : [SignHintSprite]
 # 100  : {Menu}, [Book]
