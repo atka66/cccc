@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/book.png" type="Texture" id=1]
 [ext_resource path="res://sounds/book_slide.ogg" type="AudioStream" id=2]
@@ -159,6 +159,82 @@ tracks/8/keys = {
 "args": [  ],
 "method": "startStory"
 } ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Book/ClosedEnd:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Book/Opened:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Book/ClosedEnd:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Book/Opened:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Book/ClosedEnd:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Book/ClosedEnd:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1.89, 1 ),
+"update": 0,
+"values": [ Vector2( -176, 0 ), Vector2( -176, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -323,6 +399,7 @@ animate = false
 autoplay = "appear"
 anims/RESET = SubResource( 6 )
 anims/appear = SubResource( 1 )
+anims/close = SubResource( 7 )
 anims/flipback = SubResource( 3 )
 anims/flipnext = SubResource( 2 )
 
@@ -404,7 +481,6 @@ hframes = 4
 frame = 2
 
 [node name="Opened" type="Node2D" parent="Book"]
-visible = false
 
 [node name="BookLeftSprite" type="Sprite" parent="Book/Opened"]
 position = Vector2( -176, 0 )
@@ -458,6 +534,30 @@ texture = ExtResource( 11 )
 
 [node name="StoryRight" type="Sprite" parent="Book/Opened/BookRightSprite/Frame"]
 position = Vector2( 0, -8 )
+
+[node name="ClosedEnd" type="Node2D" parent="Book"]
+visible = false
+position = Vector2( -176, 0 )
+
+[node name="BookSprite" type="Sprite" parent="Book/ClosedEnd"]
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 2
+
+[node name="CuteLabel" parent="Book/ClosedEnd" instance=ExtResource( 8 )]
+position = Vector2( -8, -84 )
+text = "the"
+fontSize = 4
+alignment = 1
+color = Color( 0, 0, 0, 0.627451 )
+
+[node name="CritterLabel" parent="Book/ClosedEnd" instance=ExtResource( 8 )]
+position = Vector2( 16, -36 )
+text = "end"
+fontSize = 4
+alignment = 1
+color = Color( 0, 0, 0, 0.627451 )
 
 [node name="SlideAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
