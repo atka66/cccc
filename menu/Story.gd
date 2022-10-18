@@ -42,6 +42,7 @@ func flipPage(forward: bool):
 		$PageflipAudio.play()
 
 func updateImages():
+	$Book/Opened/BookRightSprite/Finished.hide()
 	$Book/Opened/BookLeftSprite/Frame.rotation_degrees = (randi() % 5) - 2
 	$Book/Opened/BookRightSprite/Frame.rotation_degrees = (randi() % 5) - 2
 	if page < 0:
@@ -51,6 +52,7 @@ func updateImages():
 		$Book/Opened/BookLeftSprite/ChapterLabel.set_text(Res.Chapters[page].title)
 		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.Chapters[page].leftImage
 		if (page < Res.Maps[Global.currentMap].chapter):
+			$Book/Opened/BookRightSprite/Finished.show()
 			$Book/Opened/BookRightSprite/Frame.show()
 			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.Chapters[page].rightImage
 		else:
