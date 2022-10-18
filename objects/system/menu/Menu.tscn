@@ -102,14 +102,14 @@ color = Color( 0, 0, 0, 0.501961 )
 
 [node name="BookLeftSprite" type="Sprite" parent="."]
 position = Vector2( 172, 152 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
 hframes = 2
 frame = 1
 
 [node name="BookRightSprite" type="Sprite" parent="."]
 position = Vector2( 348, 152 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
 flip_h = true
 hframes = 2
