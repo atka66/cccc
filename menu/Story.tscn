@@ -353,16 +353,16 @@ texture = ExtResource( 1 )
 hframes = 2
 
 [node name="CuteLabel" parent="Book/Closed" instance=ExtResource( 8 )]
-position = Vector2( 0, -160 )
+position = Vector2( 0, -168 )
 text = "cute"
-fontSize = 3
+fontSize = 4
 alignment = 1
 color = Color( 0, 0, 0, 0.627451 )
 
 [node name="CritterLabel" parent="Book/Closed" instance=ExtResource( 8 )]
-position = Vector2( 0, -128 )
+position = Vector2( 4, -130 )
 text = "critter"
-fontSize = 3
+fontSize = 4
 alignment = 1
 color = Color( 0, 0, 0, 0.627451 )
 
@@ -404,6 +404,7 @@ hframes = 4
 frame = 2
 
 [node name="Opened" type="Node2D" parent="Book"]
+visible = false
 
 [node name="BookLeftSprite" type="Sprite" parent="Book/Opened"]
 position = Vector2( -176, 0 )
