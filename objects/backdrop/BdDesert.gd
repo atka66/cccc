@@ -9,7 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BgDesert.margin_left = -(randi() % 400)
-	# TODO plains music
+	# TODO desert music
 	#get_node('/root/Music').play(Res.AudioMusicChapterRainy)
 
 

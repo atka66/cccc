@@ -12,10 +12,15 @@ func _ready():
 	if path:
 		path.push_front(Vector2(0, 0))
 		for i in range(len(path) - 1):
-			var sawLine = Res.SawLine.instance()
-			sawLine.position = path[i]
-			sawLine.destination = path[i + 1]
-			add_child(sawLine)
+			drawSawLine(path[i], path[i + 1])
+		if len(path) > 1:
+			drawSawLine(path[len(path) - 1], path[0])
+
+func drawSawLine(start: Vector2, end: Vector2):
+	var sawLine = Res.SawLine.instance()
+	sawLine.position = start
+	sawLine.destination = end - start
+	add_child(sawLine)
 
 func _process(delta):
 	$SawBlade/SpinningSprite.position = Vector2((randi() % 2) - 1, (randi() % 2) - 1)
