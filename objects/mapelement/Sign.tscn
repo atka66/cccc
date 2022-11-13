@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/sign.png" type="Texture" id=1]
-[ext_resource path="res://objects/deco/Sign.gd" type="Script" id=2]
+[ext_resource path="res://objects/mapelement/Sign.gd" type="Script" id=2]
 [ext_resource path="res://sprites/sign_zoom.png" type="Texture" id=3]
+
 
 [sub_resource type="Animation" id=3]
 resource_name = "hide"

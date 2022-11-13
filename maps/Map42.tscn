@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/Exit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://res/walls.tres" type="TileSet" id=3]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=4]
+
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )

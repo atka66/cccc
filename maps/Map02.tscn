@@ -5,9 +5,10 @@
 [ext_resource path="res://res/walls.tres" type="TileSet" id=3]
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/Exit.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/deco/Sign.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/mapelement/Sign.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/signhelps/sign_dash.png" type="Texture" id=8]
+
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
