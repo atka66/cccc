@@ -39,6 +39,18 @@ const Maps = [
 	{"chapter": 3, "name":"todo", "path":"res://maps/Map33.tscn"},
 	{"chapter": 3, "name":"todo", "path":"res://maps/Map34.tscn"},
 	{"chapter": 3, "name":"todo", "path":"res://maps/Map35.tscn"},
+	
+	{"chapter": 4, "name":"the two towers", "path":"res://maps/Map41.tscn"},
+	{"chapter": 4, "name":"at the gate", "path":"res://maps/Map42.tscn"},
+	{"chapter": 4, "name":"the bailey", "path":"res://maps/Map43.tscn"},
+	{"chapter": 4, "name":"entering the castle", "path":"res://maps/Map44.tscn"},
+	{"chapter": 4, "name":"the hallway", "path":"res://maps/Map45.tscn"},
+	
+	{"chapter": 5, "name":"todo", "path":"res://maps/Map51.tscn"},
+	{"chapter": 5, "name":"todo", "path":"res://maps/Map52.tscn"},
+	{"chapter": 5, "name":"todo", "path":"res://maps/Map53.tscn"},
+	{"chapter": 5, "name":"todo", "path":"res://maps/Map54.tscn"},
+	{"chapter": 5, "name":"todo", "path":"res://maps/Map55.tscn"},
 ]
 
 const PreSlides = [
@@ -61,6 +73,14 @@ const Chapters = [
 	},
 	{ 
 		"title": "wandering the desert",
+		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+	},
+	{ 
+		"title": "the abandoned castle",
+		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+	},
+	{ 
+		"title": "a grim dungeon",
 		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
 	},
 ]
