@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.25098, 0.25098, 0.501961, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 0.376471, 0.376471, 0.376471, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:toggled")
@@ -70,7 +70,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.25098, 0.25098, 0.501961, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.376471, 0.376471, 0.376471, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:toggled")
@@ -110,10 +110,11 @@ tracks/3/keys = {
 }
 
 [node name="TogglingTile" type="TileMap"]
+modulate = Color( 0.376471, 0.376471, 0.376471, 1 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
+collision_mask = 0
 format = 1
 script = ExtResource( 2 )
 
