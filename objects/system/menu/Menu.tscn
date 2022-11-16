@@ -100,6 +100,12 @@ margin_right = 512.0
 margin_bottom = 300.0
 color = Color( 0, 0, 0, 0.501961 )
 
+[node name="VersionLabel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4, 4 )
+text = "alpha"
+outline = true
+animate = false
+
 [node name="BookLeftSprite" type="Sprite" parent="."]
 position = Vector2( 172, 152 )
 scale = Vector2( 4, 4 )

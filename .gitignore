@@ -7,3 +7,5 @@
 .mono/
 data_*/
 *.mmpz.bak
+
+export/

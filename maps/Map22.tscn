@@ -9,7 +9,6 @@
 [ext_resource path="res://objects/hazard/SawBlade.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/mapelement/Foliage.tscn" type="PackedScene" id=8]
 
-
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 6 )

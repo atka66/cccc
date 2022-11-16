@@ -10,7 +10,6 @@
 [ext_resource path="res://objects/mapelement/Sign.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sprites/signhelps/sign_saw.png" type="Texture" id=9]
 
-
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )

@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$VersionLabel.set_text('v' + Global.VERSION)
 	$QuitPrompt.hide()
 	$ResetPrompt.hide()
 	$AppearAudio.stream = Res.AudioPageflip[randi() % len(Res.AudioPageflip)]

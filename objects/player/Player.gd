@@ -185,6 +185,7 @@ func _handlePlayerInput():
 func die(count : bool):
 	if count: 
 		Global.deathCnt[playerId] += 1
+	Global.saveGame()
 	var corpse = Res.PlayerCorpse.instance()
 	corpse.playerId = playerId
 	corpse.position = position

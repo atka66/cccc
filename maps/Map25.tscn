@@ -53,7 +53,7 @@ position = Vector2( 136, 232 )
 position = Vector2( 96, 192 )
 
 [node name="SawBlade6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 176, 192 )
+position = Vector2( 176, 184 )
 
 [node name="SawBlade7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 280, 208 )
@@ -75,16 +75,16 @@ position = Vector2( 248, 248 )
 position = Vector2( 264, 248 )
 
 [node name="SawBlade9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 352, 240 )
+position = Vector2( 360, 240 )
 
 [node name="Spike60" parent="." instance=ExtResource( 7 )]
 position = Vector2( 312, 248 )
 
 [node name="SawBlade10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 384, 240 )
+position = Vector2( 392, 240 )
 
 [node name="SawBlade11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 416, 240 )
+position = Vector2( 424, 240 )
 
 [node name="SawBlade12" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128, 112 )
