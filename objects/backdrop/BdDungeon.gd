@@ -4,4 +4,3 @@ extends Node2D
 func _ready():
 	# todo dungeon music
 	get_node('/root/Music').play(Res.AudioMusicChapterDungeon)
-	pass

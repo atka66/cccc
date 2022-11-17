@@ -10,7 +10,7 @@ extends Node2D
 func _ready():
 	$BgDesert.margin_left = -(randi() % 400)
 	# TODO desert music
-	#get_node('/root/Music').play(Res.AudioMusicChapterRainy)
+	get_node('/root/Music').mute()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

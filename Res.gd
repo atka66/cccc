@@ -29,16 +29,16 @@ const Maps = [
 	{"chapter": 1, "name":"u turn", "path":"res://maps/Map15.tscn"},
 	
 	{"chapter": 2, "name":"resurfaced", "path":"res://maps/Map21.tscn"},
-	{"chapter": 2, "name":"todo", "path":"res://maps/Map22.tscn"},
-	{"chapter": 2, "name":"todo", "path":"res://maps/Map23.tscn"},
+	{"chapter": 2, "name":"climb again", "path":"res://maps/Map22.tscn"},
+	{"chapter": 2, "name":"branching out", "path":"res://maps/Map23.tscn"},
 	{"chapter": 2, "name":"leap of faith", "path":"res://maps/Map24.tscn"},
 	{"chapter": 2, "name":"thorn bush", "path":"res://maps/Map25.tscn"},
 	
-	{"chapter": 3, "name":"todo", "path":"res://maps/Map31.tscn"},
-	{"chapter": 3, "name":"todo", "path":"res://maps/Map32.tscn"},
-	{"chapter": 3, "name":"todo", "path":"res://maps/Map33.tscn"},
-	{"chapter": 3, "name":"todo", "path":"res://maps/Map34.tscn"},
-	{"chapter": 3, "name":"todo", "path":"res://maps/Map35.tscn"},
+	{"chapter": 3, "name":"sand in your eyes", "path":"res://maps/Map31.tscn"},
+	{"chapter": 3, "name":"ancient monument", "path":"res://maps/Map32.tscn"},
+	{"chapter": 3, "name":"the ruins", "path":"res://maps/Map33.tscn"},
+	{"chapter": 3, "name":"the trial", "path":"res://maps/Map34.tscn"},
+	{"chapter": 3, "name":"hall of the ancient", "path":"res://maps/Map35.tscn"},
 	
 	{"chapter": 4, "name":"the two towers", "path":"res://maps/Map41.tscn"},
 	{"chapter": 4, "name":"at the gate", "path":"res://maps/Map42.tscn"},
@@ -46,9 +46,9 @@ const Maps = [
 	{"chapter": 4, "name":"entering the castle", "path":"res://maps/Map44.tscn"},
 	{"chapter": 4, "name":"the hallway", "path":"res://maps/Map45.tscn"},
 	
-	{"chapter": 5, "name":"todo", "path":"res://maps/Map51.tscn"},
-	{"chapter": 5, "name":"todo", "path":"res://maps/Map52.tscn"},
-	{"chapter": 5, "name":"todo", "path":"res://maps/Map53.tscn"},
+	{"chapter": 5, "name":"the bottom of the well", "path":"res://maps/Map51.tscn"},
+	{"chapter": 5, "name":"in small steps", "path":"res://maps/Map52.tscn"},
+	{"chapter": 5, "name":"the great pit", "path":"res://maps/Map53.tscn"},
 	{"chapter": 5, "name":"todo", "path":"res://maps/Map54.tscn"},
 	{"chapter": 5, "name":"todo", "path":"res://maps/Map55.tscn"},
 ]
@@ -58,30 +58,31 @@ const PreSlides = [
 	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png") },
 	{ "leftImage": preload("res://sprites/story/pre_5.png"),"rightImage": preload("res://sprites/story/pre_6.png") }
 ]
+# todo make proper chapter images!
 const Chapters = [
 	{ 
 		"title": "searching in the woods",
-		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
 		"title": "hit by a huge storm",
-		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
 		"title": "reaching the plains",
-		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
 		"title": "wandering the desert",
-		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
 		"title": "the abandoned castle",
-		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
 		"title": "a grim dungeon",
-		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/pre_1.png")
+		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 ]
 
