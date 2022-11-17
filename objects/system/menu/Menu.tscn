@@ -33,7 +33,7 @@ tracks/0/keys = {
 resource_name = "appear"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("SadOwl:position")
+tracks/0/path = NodePath("../ResetPrompt/SadOwl:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -45,7 +45,7 @@ tracks/0/keys = {
 "values": [ Vector2( 48, 400 ), Vector2( 72, 264 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SadHedgehog:position")
+tracks/1/path = NodePath("../ResetPrompt/SadHedgehog:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "values": [ Vector2( 480, 400 ), Vector2( 480, 400 ), Vector2( 440, 264 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("SadOwl/AppearAudio")
+tracks/2/path = NodePath("../ResetPrompt/SadOwl/AppearAudio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -71,7 +71,7 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "method"
-tracks/3/path = NodePath("SadHedgehog/AppearAudio")
+tracks/3/path = NodePath("../ResetPrompt/SadHedgehog/AppearAudio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -172,41 +172,41 @@ text = "hides this menu"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
-[node name="ResetHintSprite" type="Sprite" parent="."]
+[node name="MapHintSprite" type="Sprite" parent="."]
 position = Vector2( 108, 156 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 7
+frame = 6
+
+[node name="MapLabel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 132, 156 )
+text = "choose chapter"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="MapLabelExp" parent="." instance=ExtResource( 2 )]
+position = Vector2( 132, 172 )
+text = "revisit finished scenes"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="ResetHintSprite" type="Sprite" parent="."]
+position = Vector2( 108, 216 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 5
 
 [node name="ResetLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 156 )
+position = Vector2( 132, 216 )
 text = "retell the story"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="ResetLabelExp" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 172 )
-text = "erases save file"
-color = Color( 0.12549, 0.12549, 0.12549, 1 )
-animate = false
-
-[node name="QuitHintSprite" type="Sprite" parent="."]
-position = Vector2( 108, 216 )
-texture = ExtResource( 5 )
-centered = false
-hframes = 7
-frame = 6
-
-[node name="QuitLabel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132, 216 )
-text = "quit game"
-color = Color( 0.12549, 0.12549, 0.12549, 1 )
-animate = false
-
-[node name="QuitLabelExp" parent="." instance=ExtResource( 2 )]
 position = Vector2( 132, 232 )
-text = "saves your progress"
+text = "erases progress"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
@@ -235,43 +235,40 @@ playerId = 3
 [node name="AppearAudio" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0
 
-[node name="QuitPrompt" type="Node2D" parent="."]
+[node name="MapPrompt" type="Node2D" parent="."]
 visible = false
 z_index = 150
 z_as_relative = false
 
-[node name="Anim" type="AnimationPlayer" parent="QuitPrompt"]
-anims/appear = SubResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="QuitPrompt"]
+[node name="ColorRect" type="ColorRect" parent="MapPrompt"]
 margin_right = 512.0
 margin_bottom = 300.0
 color = Color( 0, 0, 0, 0.878431 )
 
-[node name="TitleLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
+[node name="TitleLabel" parent="MapPrompt" instance=ExtResource( 2 )]
 position = Vector2( 256, 8 )
 z_index = 151
-text = "quitting"
+text = "choose chapter"
 fontSize = 2
 alignment = 1
 outline = true
 animate = false
 
-[node name="PromptLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
+[node name="PromptLabel" parent="MapPrompt" instance=ExtResource( 2 )]
 position = Vector2( 96, 96 )
 z_index = 151
-text = "are you sure though?"
+text = "work in progress!"
 fontSize = 3
 outline = true
 
-[node name="QuitHintSprite" type="Sprite" parent="QuitPrompt"]
+[node name="QuitHintSprite" type="Sprite" parent="MapPrompt"]
 position = Vector2( 156, 146 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 6
 
-[node name="QuitLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
+[node name="QuitLabel" parent="MapPrompt" instance=ExtResource( 2 )]
 position = Vector2( 180, 144 )
 z_index = 151
 text = "yup"
@@ -279,14 +276,14 @@ fontSize = 2
 outline = true
 animate = false
 
-[node name="BackHintSprite" type="Sprite" parent="QuitPrompt"]
+[node name="BackHintSprite" type="Sprite" parent="MapPrompt"]
 position = Vector2( 264, 146 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 7
 frame = 4
 
-[node name="BackLabel" parent="QuitPrompt" instance=ExtResource( 2 )]
+[node name="BackLabel" parent="MapPrompt" instance=ExtResource( 2 )]
 position = Vector2( 288, 144 )
 z_index = 151
 text = "nah"
@@ -294,58 +291,14 @@ fontSize = 2
 outline = true
 animate = false
 
-[node name="SadOwl" type="Node2D" parent="QuitPrompt"]
-position = Vector2( 48, 400 )
-rotation = 0.174533
-scale = Vector2( 6, 6 )
-
-[node name="Body" type="Sprite" parent="QuitPrompt/SadOwl"]
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 8 )
-hframes = 9
-
-[node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
-position = Vector2( -6, -2 )
-frames = ExtResource( 7 )
-playing = true
-
-[node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadOwl"]
-position = Vector2( 6, -2 )
-frames = ExtResource( 7 )
-playing = true
-
-[node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadOwl"]
-stream = ExtResource( 9 )
-
-[node name="SadHedgehog" type="Node2D" parent="QuitPrompt"]
-position = Vector2( 480, 400 )
-rotation = -0.174533
-scale = Vector2( 6, 6 )
-
-[node name="Body" type="Sprite" parent="QuitPrompt/SadHedgehog"]
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 4 )
-hframes = 5
-
-[node name="LeftEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
-position = Vector2( -6, -1 )
-frames = ExtResource( 7 )
-frame = 1
-playing = true
-
-[node name="RightEye" type="AnimatedSprite" parent="QuitPrompt/SadHedgehog"]
-position = Vector2( 6, -1 )
-frames = ExtResource( 7 )
-frame = 1
-playing = true
-
-[node name="AppearAudio" type="AudioStreamPlayer2D" parent="QuitPrompt/SadHedgehog"]
-stream = ExtResource( 10 )
-
 [node name="ResetPrompt" type="Node2D" parent="."]
 visible = false
 z_index = 150
 z_as_relative = false
+
+[node name="Anim" type="AnimationPlayer" parent="ResetPrompt"]
+root_node = NodePath("../../MapPrompt")
+anims/appear = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="ResetPrompt"]
 margin_right = 512.0
@@ -397,3 +350,51 @@ text = "nevermind"
 fontSize = 2
 outline = true
 animate = false
+
+[node name="SadOwl" type="Node2D" parent="ResetPrompt"]
+position = Vector2( 48, 400 )
+rotation = 0.174533
+scale = Vector2( 6, 6 )
+
+[node name="Body" type="Sprite" parent="ResetPrompt/SadOwl"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 8 )
+hframes = 9
+
+[node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
+position = Vector2( -6, -2 )
+frames = ExtResource( 7 )
+playing = true
+
+[node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
+position = Vector2( 6, -2 )
+frames = ExtResource( 7 )
+playing = true
+
+[node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadOwl"]
+stream = ExtResource( 9 )
+
+[node name="SadHedgehog" type="Node2D" parent="ResetPrompt"]
+position = Vector2( 480, 400 )
+rotation = -0.174533
+scale = Vector2( 6, 6 )
+
+[node name="Body" type="Sprite" parent="ResetPrompt/SadHedgehog"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+hframes = 5
+
+[node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
+position = Vector2( -6, -1 )
+frames = ExtResource( 7 )
+frame = 1
+playing = true
+
+[node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
+position = Vector2( 6, -1 )
+frames = ExtResource( 7 )
+frame = 1
+playing = true
+
+[node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadHedgehog"]
+stream = ExtResource( 10 )

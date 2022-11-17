@@ -2,29 +2,26 @@ extends Node2D
 
 func _ready():
 	$VersionLabel.set_text('v' + Global.VERSION)
-	$QuitPrompt.hide()
+	$MapPrompt.hide()
 	$ResetPrompt.hide()
 	$AppearAudio.stream = Res.AudioPageflip[randi() % len(Res.AudioPageflip)]
 	$AppearAudio.play()
 
 func _input(event):
-	if $QuitPrompt.visible:
-		if event.is_action_pressed("quit"):
-			Global.saveGame()
-			get_tree().quit()
+	if $MapPrompt.visible:
 		if event.is_action_pressed("ui_cancel"):
-			$QuitPrompt.hide()
+			$MapPrompt.hide()
 	elif $ResetPrompt.visible:
 		if event.is_action_pressed("reset"):
 			Global.resetGame()
 		if event.is_action_pressed("ui_cancel"):
 			$ResetPrompt.hide()
 	else:
-		if event.is_action_pressed("quit"):
-			$QuitPrompt.show()
-			$QuitPrompt/Anim.play("appear")
+		if event.is_action_pressed("map"):
+			$MapPrompt.show()
 		if event.is_action_pressed("reset"):
 			$ResetPrompt.show()
+			$ResetPrompt/Anim.play("appear")
 		if event.is_action_pressed("ui_cancel"):
 			close()
 

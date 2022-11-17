@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH = "user://cccc.sav"
-const VERSION = '0.1 alpha'
+const VERSION = '0.2 alpha'
 
 var showWholeStory = true
 var mapParent = null
