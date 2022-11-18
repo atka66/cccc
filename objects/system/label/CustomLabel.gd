@@ -29,6 +29,12 @@ func time_disappear():
 	yield($Audio, "finished")
 	queue_free()
 
+func set_outline(_outline):
+	if !outline:
+		$Label.set_theme(preload("res://fonts/NonOutlinedTheme.tres"))
+	else:
+		$Label.set_theme(null)
+
 func _ready():
 	if audio:
 		$Audio.stream = audio
@@ -36,8 +42,7 @@ func _ready():
 	set_text(text)
 	set_color(color)
 	$Label.rect_scale = Vector2(fontSize, fontSize)
-	if !outline:
-		$Label.set_theme(preload("res://fonts/NonOutlinedTheme.tres"))
+	set_outline(outline)
 	if frames.size() > 0:
 		$AnimatedSprite1.set_sprite_frames(frames[0])
 		$AnimatedSprite1.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://objects/system/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://sounds/book_pageflip_1.ogg" type="AudioStream" id=13]
 [ext_resource path="res://sounds/toggle.ogg" type="AudioStream" id=14]
 [ext_resource path="res://sprites/story/frame.png" type="Texture" id=15]
-[ext_resource path="res://sprites/finished.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -36,6 +35,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "flipback"
 length = 0.2
+step = 0.02
 tracks/0/type = "value"
 tracks/0/path = NodePath("LeftSide:scale")
 tracks/0/interp = 1
@@ -73,11 +73,24 @@ tracks/2/keys = {
 "args": [  ],
 "method": "updateImages"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PrevHint:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.02, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 4 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "flipnext"
 length = 0.2
+step = 0.02
 tracks/0/type = "value"
 tracks/0/path = NodePath("LeftSide:scale")
 tracks/0/interp = 1
@@ -115,6 +128,18 @@ tracks/2/keys = {
 "args": [  ],
 "method": "updateImages"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NextHint:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.02, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 4 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -337,6 +362,15 @@ playerId = 3
 anims/flipback = SubResource( 4 )
 anims/flipnext = SubResource( 3 )
 
+[node name="TitleLabel" parent="MapSelection" instance=ExtResource( 2 )]
+position = Vector2( 256, 8 )
+z_index = 151
+text = "select a chapter"
+fontSize = 2
+alignment = 1
+outline = true
+animate = false
+
 [node name="LeftSide" type="Node2D" parent="MapSelection"]
 position = Vector2( 172, 152 )
 
@@ -365,6 +399,13 @@ position = Vector2( 0, -8 )
 [node name="RightSide" type="Node2D" parent="MapSelection"]
 position = Vector2( 348, 152 )
 
+[node name="SceneLabel" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -8, -100 )
+text = "scenes"
+alignment = 1
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
 [node name="BookRightSprite" type="Sprite" parent="MapSelection/RightSide"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
@@ -372,20 +413,79 @@ flip_h = true
 hframes = 2
 frame = 1
 
-[node name="Finished" type="Sprite" parent="MapSelection/RightSide"]
-position = Vector2( -8, -98 )
-texture = ExtResource( 16 )
-
 [node name="DividerRight" type="Sprite" parent="MapSelection/RightSide"]
 position = Vector2( -8, -80 )
 texture = ExtResource( 11 )
 
-[node name="Frame" type="Sprite" parent="MapSelection/RightSide"]
-position = Vector2( -8, 8 )
-texture = ExtResource( 15 )
+[node name="Scene1Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -68, -44 )
+text = "horse horse horse"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
 
-[node name="Story" type="Sprite" parent="MapSelection/RightSide/Frame"]
-position = Vector2( 0, -8 )
+[node name="Scene2Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -68, -20 )
+text = "horse horse horse"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="Scene3Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -68, 4 )
+text = "horse horse horse"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="Scene4Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -68, 28 )
+text = "horse horse horse"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="Scene5Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -68, 52 )
+text = "horse horse horse"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="PrevHint" type="Sprite" parent="MapSelection"]
+position = Vector2( 54, 156 )
+texture = ExtResource( 5 )
+hframes = 11
+frame = 7
+
+[node name="NextHint" type="Sprite" parent="MapSelection"]
+position = Vector2( 468, 156 )
+texture = ExtResource( 5 )
+hframes = 11
+frame = 8
+
+[node name="BackHintSprite" type="Sprite" parent="MapSelection"]
+position = Vector2( 444, 12 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 11
+frame = 4
+
+[node name="BackLabel" parent="MapSelection" instance=ExtResource( 2 )]
+position = Vector2( 468, 16 )
+z_index = 151
+text = "back"
+outline = true
+animate = false
+
+[node name="SelectHintSprite" type="Sprite" parent="MapSelection"]
+position = Vector2( 444, 36 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 11
+frame = 6
+
+[node name="SelectLabel" parent="MapSelection" instance=ExtResource( 2 )]
+position = Vector2( 468, 40 )
+z_index = 151
+text = "select"
+outline = true
+animate = false
 
 [node name="MapPrompt" type="Node2D" parent="."]
 visible = false
@@ -516,11 +616,13 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadOwl"]
@@ -539,13 +641,13 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadHedgehog"]
