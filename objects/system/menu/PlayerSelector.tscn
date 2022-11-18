@@ -50,7 +50,7 @@ anims/toggle = SubResource( 1 )
 [node name="ToggleSprite" type="Sprite" parent="."]
 position = Vector2( -16, 40 )
 texture = ExtResource( 3 )
-hframes = 7
+hframes = 11
 
 [node name="ControlSprite" type="Sprite" parent="."]
 position = Vector2( 16, 40 )

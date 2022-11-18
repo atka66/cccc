@@ -157,7 +157,7 @@ animate = false
 position = Vector2( 108, 96 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 4
 
 [node name="BackLabel" parent="." instance=ExtResource( 2 )]
@@ -176,7 +176,7 @@ animate = false
 position = Vector2( 108, 156 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 6
 
 [node name="MapLabel" parent="." instance=ExtResource( 2 )]
@@ -195,7 +195,7 @@ animate = false
 position = Vector2( 108, 216 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 5
 
 [node name="ResetLabel" parent="." instance=ExtResource( 2 )]
@@ -235,6 +235,31 @@ playerId = 3
 [node name="AppearAudio" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0
 
+[node name="MapSelection" type="Node2D" parent="."]
+
+[node name="BookLeftSprite" type="Sprite" parent="MapSelection"]
+position = Vector2( 172, 152 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+hframes = 2
+frame = 1
+
+[node name="BookRightSprite" type="Sprite" parent="MapSelection"]
+position = Vector2( 348, 152 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+flip_h = true
+hframes = 2
+frame = 1
+
+[node name="DividerLeft" type="Sprite" parent="MapSelection"]
+position = Vector2( 180, 72 )
+texture = ExtResource( 11 )
+
+[node name="DividerRight" type="Sprite" parent="MapSelection"]
+position = Vector2( 340, 72 )
+texture = ExtResource( 11 )
+
 [node name="MapPrompt" type="Node2D" parent="."]
 visible = false
 z_index = 150
@@ -265,7 +290,7 @@ outline = true
 position = Vector2( 156, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 6
 
 [node name="QuitLabel" parent="MapPrompt" instance=ExtResource( 2 )]
@@ -280,7 +305,7 @@ animate = false
 position = Vector2( 264, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 4
 
 [node name="BackLabel" parent="MapPrompt" instance=ExtResource( 2 )]
@@ -325,7 +350,7 @@ outline = true
 position = Vector2( 144, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 5
 
 [node name="ResetLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
@@ -340,7 +365,7 @@ animate = false
 position = Vector2( 252, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 7
+hframes = 11
 frame = 4
 
 [node name="BackLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
@@ -364,13 +389,11 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
-frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
-frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadOwl"]
@@ -389,13 +412,13 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadHedgehog"]

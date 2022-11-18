@@ -2,13 +2,13 @@ extends Node2D
 
 func _ready():
 	$VersionLabel.set_text('v' + Global.VERSION)
-	$MapPrompt.hide()
+	$MapSelection.hide()
 	$ResetPrompt.hide()
 	$AppearAudio.stream = Res.AudioPageflip[randi() % len(Res.AudioPageflip)]
 	$AppearAudio.play()
 
 func _input(event):
-	if $MapPrompt.visible:
+	if $MapSelection.visible:
 		if event.is_action_pressed("ui_cancel"):
 			$MapPrompt.hide()
 	elif $ResetPrompt.visible:
@@ -18,7 +18,7 @@ func _input(event):
 			$ResetPrompt.hide()
 	else:
 		if event.is_action_pressed("map"):
-			$MapPrompt.show()
+			$MapSelection.show()
 		if event.is_action_pressed("reset"):
 			$ResetPrompt.show()
 			$ResetPrompt/Anim.play("appear")
