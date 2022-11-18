@@ -480,7 +480,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="ChapterLabel" parent="Book/Opened/BookLeftSprite" instance=ExtResource( 8 )]
-position = Vector2( -12, -25.5 )
+position = Vector2( -12, -25 )
 scale = Vector2( 0.125, 0.125 )
 fontSize = 2
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
