@@ -111,5 +111,5 @@ position = Vector2( 424, 344 )
 position = Vector2( 120, 344 )
 
 [node name="Sign" parent="." instance=ExtResource( 7 )]
-position = Vector2( 120, 136 )
+position = Vector2( 344, 136 )
 signHintSprite = ExtResource( 8 )
