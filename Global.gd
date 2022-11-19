@@ -6,6 +6,7 @@ const VERSION = '0.2 alpha'
 var showWholeStory = true
 var mapParent = null
 var currentMap = 0
+var actualMap = 0
 
 var playersJoined = [true, false, false, false]
 
@@ -74,15 +75,20 @@ func getMap():
 	return get_tree().get_nodes_in_group('map')[0]
 
 func gotoNextMap():
-	var finishedChapter = Res.Maps[currentMap].chapter
-	currentMap += 1
-	saveGame()
-	if Res.Maps[currentMap].chapter > finishedChapter:
-		get_tree().change_scene("res://menu/Story.tscn")
+	actualMap += 1
+	if actualMap >= currentMap:
+		var finishedChapter = Res.Maps[currentMap].chapter
+		currentMap = actualMap
+		saveGame()
+		if Res.Maps[actualMap].chapter > finishedChapter:
+			get_tree().change_scene("res://menu/Story.tscn")
+		else:
+			gotoMap(actualMap)
 	else:
 		gotoMap(currentMap)
 
 func gotoMap(i):
+	actualMap = i
 	get_tree().change_scene(Res.Maps[i].path)
 
 func resetGame():
@@ -90,6 +96,7 @@ func resetGame():
 	deleteSave()
 	showWholeStory = true
 	currentMap = 0
+	actualMap = 0
 	deathCnt = [0, 0, 0, 0]
 	get_tree().change_scene("res://menu/Story.tscn")
 

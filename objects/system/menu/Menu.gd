@@ -21,11 +21,18 @@ func _input(event):
 		if event.is_action_pressed("ui_right"):
 			flipPage(true)
 		if event.is_action_pressed("ui_up"):
-			selectedScene = (selectedScene + 4) % 5
-			updateScene()
+			if selectedScene > 0:
+				selectedScene = (selectedScene + 4) % 5
+				$ActionAudio.play()
+				updateScene()
 		if event.is_action_pressed("ui_down"):
-			selectedScene = (selectedScene + 1) % 5
-			updateScene()
+			if int(Global.currentMap) - (page * 5) > selectedScene && selectedScene < 4:
+				selectedScene = (selectedScene + 1) % 5
+				$ActionAudio.play()
+				updateScene()
+		if event.is_action_pressed("map"):
+			Global.closeMenu()
+			Global.gotoMap((page * 5) + selectedScene)
 	elif $ResetPrompt.visible:
 		if event.is_action_pressed("reset"):
 			Global.resetGame()
@@ -103,7 +110,12 @@ func updateImages():
 
 func updateScene():
 	for i in range(5):
-		var col = Color("202020")
+		var node = get_node("MapSelection/RightSide/Scene" + str(i + 1) + "Label")
 		if i == selectedScene:
-			col = Color("aaaaaa")
-		get_node("MapSelection/RightSide/Scene" + str(selectedScene + 1) + "Label").set_color(col)
+			node.set_color(Color("ffffff"))
+			node.set_outline(true)
+		else:
+			node.set_color(Color("202020"))
+			node.set_outline(false)
+		if (page * 5) + i == Global.actualMap:
+			node.set_color(Color("ffffff"))

@@ -30,7 +30,7 @@ func time_disappear():
 	queue_free()
 
 func set_outline(_outline):
-	if !outline:
+	if !_outline:
 		$Label.set_theme(preload("res://fonts/NonOutlinedTheme.tres"))
 	else:
 		$Label.set_theme(null)
