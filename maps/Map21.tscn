@@ -71,9 +71,6 @@ position = Vector2( 344, 232 )
 [node name="Spike79" parent="." instance=ExtResource( 6 )]
 position = Vector2( 360, 232 )
 
-[node name="Spike80" parent="." instance=ExtResource( 6 )]
-position = Vector2( 392, 232 )
-
 [node name="Spike81" parent="." instance=ExtResource( 6 )]
 position = Vector2( 408, 232 )
 
