@@ -5,6 +5,11 @@ var i : int = 0
 
 func _ready():
 	noise.seed = randi()
+	
+	$Rigid1/Sprite.scale = global_scale
+	$Rigid2/Sprite.scale = global_scale
+	$Rigid3/Sprite.scale = global_scale
+	$Tip/Sprite.scale = global_scale
 
 func _process(delta):
 	i += 1

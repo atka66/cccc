@@ -11,9 +11,9 @@ func _ready():
 	$Sprite.frames = Res.PlayerSkins[playerId]
 
 func wakeup():
-	modulate.a = 1.0
+	modulate = Color(1.0, 1.0, 1.0)
 	$Sprite.animation = "idle"
 
 func sleep():
-	modulate.a = 0.3
+	modulate = Color(0.4, 0.4, 0.4)
 	$Sprite.animation = "sleep"

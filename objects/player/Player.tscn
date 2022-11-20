@@ -76,6 +76,7 @@ initial_velocity = 10.0
 scale_amount_curve = SubResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+light_mask = 5
 frames = ExtResource( 1 )
 animation = "idle"
 playing = true

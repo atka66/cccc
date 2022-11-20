@@ -198,10 +198,9 @@ tracks/3/keys = {
 } ]
 }
 
-[node name="Menu" type="Node2D" groups=["menu"]]
+[node name="Menu" type="CanvasLayer" groups=["menu"]]
 scale = Vector2( 2, 2 )
-z_index = 100
-z_as_relative = false
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="AppearAudio" type="AudioStreamPlayer" parent="."]

@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 var page = 0
 var selectedScene = 0

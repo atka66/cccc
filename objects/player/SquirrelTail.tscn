@@ -48,7 +48,7 @@ angular_damp = 10000.0
 shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Rigid1"]
-scale = Vector2( 2, 2 )
+light_mask = 5
 texture = ExtResource( 1 )
 hframes = 3
 
@@ -70,7 +70,7 @@ angular_damp = 10000.0
 shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Rigid2"]
-scale = Vector2( 2, 2 )
+light_mask = 5
 texture = ExtResource( 1 )
 hframes = 3
 frame = 1
@@ -93,7 +93,7 @@ angular_damp = 10000.0
 shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Rigid3"]
-scale = Vector2( 2, 2 )
+light_mask = 5
 texture = ExtResource( 1 )
 hframes = 3
 frame = 1
@@ -116,7 +116,7 @@ angular_damp = 10000.0
 shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Tip"]
-scale = Vector2( 2, 2 )
+light_mask = 5
 texture = ExtResource( 1 )
 hframes = 3
 frame = 2
