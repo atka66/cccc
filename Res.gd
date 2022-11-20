@@ -42,7 +42,7 @@ const Maps = [
 	
 	{"chapter": 4, "name":"the two towers", "path":"res://maps/Map41.tscn"},
 	{"chapter": 4, "name":"at the gate", "path":"res://maps/Map42.tscn"},
-	{"chapter": 4, "name":"the bailey", "path":"res://maps/Map43.tscn"},
+	{"chapter": 4, "name":"courtyard", "path":"res://maps/Map43.tscn"},
 	{"chapter": 4, "name":"entering the castle", "path":"res://maps/Map44.tscn"},
 	{"chapter": 4, "name":"the hallway", "path":"res://maps/Map45.tscn"},
 	
