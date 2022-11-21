@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/mapelement/TogglingTile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/hazard/SawBlade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/mapelement/Crystal.tscn" type="PackedScene" id=9]
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
@@ -45,7 +46,7 @@ duration = 1.5
 toggled = false
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 32 )
+position = Vector2( 24, 240 )
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 168 )
@@ -97,6 +98,10 @@ position = Vector2( 136, 312 )
 
 [node name="Spike91" parent="." instance=ExtResource( 6 )]
 position = Vector2( 248, 312 )
+
+[node name="Spike110" parent="." instance=ExtResource( 6 )]
+position = Vector2( 440, 56 )
+rotation = 4.71239
 
 [node name="Spike81" parent="." instance=ExtResource( 6 )]
 position = Vector2( 152, 312 )
@@ -169,3 +174,22 @@ position = Vector2( 488, 312 )
 
 [node name="Saw8" parent="." instance=ExtResource( 8 )]
 position = Vector2( 368, 48 )
+
+[node name="Crystal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 112, 216 )
+rotation = 1.5708
+
+[node name="Crystal2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 208, 168 )
+
+[node name="Crystal4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 352, 80 )
+rotation = 4.71239
+
+[node name="Crystal5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 184, 16 )
+rotation = 3.14159
+
+[node name="Crystal6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 400, 192 )
+rotation = 4.71239

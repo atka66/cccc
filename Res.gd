@@ -51,6 +51,12 @@ const Maps = [
 	{"chapter": 5, "name":"the great pit", "path":"res://maps/Map53.tscn"},
 	{"chapter": 5, "name":"timing is key", "path":"res://maps/Map54.tscn"},
 	{"chapter": 5, "name":"grinder", "path":"res://maps/Map55.tscn"},
+	
+	{"chapter": 6, "name":"follow the light", "path":"res://maps/Map61.tscn"},
+	{"chapter": 6, "name":"rock formation", "path":"res://maps/Map62.tscn"},
+	{"chapter": 6, "name":"the great pit", "path":"res://maps/Map63.tscn"},
+	{"chapter": 6, "name":"timing is key", "path":"res://maps/Map64.tscn"},
+	{"chapter": 6, "name":"grinder", "path":"res://maps/Map65.tscn"},
 ]
 
 const PreSlides = [
@@ -82,6 +88,10 @@ const Chapters = [
 	},
 	{ 
 		"title": "a grim dungeon",
+		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+	},
+	{ 
+		"title": "down in the deep",
 		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 ]
