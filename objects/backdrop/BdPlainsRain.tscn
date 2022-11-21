@@ -19,6 +19,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.564706, 0.564706, 0.564706, 1 ), Color( 1, 1, 1, 1 ), Color( 0.564706, 0.564706, 0.564706, 1 ) ]
+}
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
@@ -41,7 +53,6 @@ one_shot = true
 anims/thunder = SubResource( 3 )
 
 [node name="BgPlains" type="TextureRect" parent="."]
-modulate = Color( 0.627451, 0.627451, 0.67451, 1 )
 margin_right = 800.0
 margin_bottom = 200.0
 texture = ExtResource( 1 )
@@ -71,5 +82,8 @@ angle = 80.0
 stream = ExtResource( 3 )
 volume_db = -10.0
 autoplay = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.564706, 0.564706, 0.564706, 1 )
 
 [connection signal="timeout" from="ThunderTimer" to="." method="_on_ThunderTimer_timeout"]

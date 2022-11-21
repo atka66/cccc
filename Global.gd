@@ -85,7 +85,7 @@ func gotoNextMap():
 		else:
 			gotoMap(actualMap)
 	else:
-		gotoMap(currentMap)
+		gotoMap(actualMap)
 
 func gotoMap(i):
 	actualMap = i

@@ -1,6 +1,6 @@
 extends Node2D
 
-const thunderMaxDelay : int = 30
+const thunderMaxDelay : int = 20
 
 func _ready():
 	$BgPlains.margin_left = -(randi() % 400)

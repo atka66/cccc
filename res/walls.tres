@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=380 format=2]
+[gd_resource type="TileSet" load_steps=382 format=2]
 
 [ext_resource path="res://sprites/tileset/ts_tree.png" type="Texture" id=1]
 [ext_resource path="res://sprites/wall1.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/tileset/nm_dirt.png" type="Texture" id=7]
 [ext_resource path="res://sprites/tileset/ts_dungeon.png" type="Texture" id=8]
 [ext_resource path="res://sprites/tileset/ts_cave.png" type="Texture" id=9]
+[ext_resource path="res://sprites/tileset/ts_caveentrance.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -290,6 +291,9 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=371]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=372]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=49]
@@ -3580,3 +3584,24 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 10/z_index = 0
+11/name = "ts_caveentrance.png 11"
+11/texture = ExtResource( 10 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 372 )
+11/shape_one_way = false
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 372 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0

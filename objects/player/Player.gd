@@ -21,15 +21,21 @@ var isWinning = false
 var isRunning = false
 
 func _ready():
-	if (playerId != 2):
+	var isSuperdark = len(get_tree().get_nodes_in_group("superdark")) > 0
+	
+	if (playerId != 2 || isSuperdark):
 		$SquirrelTail.hide()
-	if (playerId != 3):
+	if (playerId != 3 || isSuperdark):
 		$BunnyEars.hide()
 	
 	setupInputMaps()
 	
 	$SleepTimer.start(SLEEP_TIME)
-	$Sprite.frames = Res.PlayerSkins[playerId]
+
+	if isSuperdark:
+		$Sprite.frames = Res.PlayerSkinSuperdark
+	else:
+		$Sprite.frames = Res.PlayerSkins[playerId]
 
 func setupInputMaps():
 	match str(Global.playersControlScheme[playerId]):

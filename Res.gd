@@ -102,6 +102,9 @@ onready var PlayerSkins = [
 	preload("res://res/player_squirrel.tres"),
 	preload("res://res/player_bunny.tres")
 ]
+onready var PlayerSkinSuperdark = preload("res://res/player_superdark.tres")
+
+onready var ExitLight = preload("res://sprites/exit_2.png")
 
 #Sound
 onready var AudioPageflip = [
@@ -137,4 +140,5 @@ onready var AudioMusicChapterForest = preload("res://music/forest.ogg")
 onready var AudioMusicChapterRainy = preload("res://music/rainy.ogg")
 onready var AudioMusicChapterDungeon = preload("res://music/dungeon.ogg")
 onready var AudioMusicChapterCave = preload("res://music/cave.ogg")
+onready var AudioMusicChapterCaveEntrance = preload("res://music/caveentrance.ogg")
 onready var AudioMusicChapterSnow = preload("res://music/snow.ogg")
