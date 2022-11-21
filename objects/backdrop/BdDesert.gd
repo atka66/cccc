@@ -8,11 +8,5 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$BgDesert.margin_left = -(randi() % 400)
-	# TODO desert music
-	get_node('/root/Music').mute()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	$BgSnow.margin_left = -(randi() % 400)
+	get_node('/root/Music').play(Res.AudioMusicChapterSnow)

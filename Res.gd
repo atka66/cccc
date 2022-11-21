@@ -54,9 +54,15 @@ const Maps = [
 	
 	{"chapter": 6, "name":"follow the light", "path":"res://maps/Map61.tscn"},
 	{"chapter": 6, "name":"rock formation", "path":"res://maps/Map62.tscn"},
-	{"chapter": 6, "name":"the great pit", "path":"res://maps/Map63.tscn"},
-	{"chapter": 6, "name":"timing is key", "path":"res://maps/Map64.tscn"},
-	{"chapter": 6, "name":"grinder", "path":"res://maps/Map65.tscn"},
+	{"chapter": 6, "name":"todo", "path":"res://maps/Map63.tscn"},
+	{"chapter": 6, "name":"todo", "path":"res://maps/Map64.tscn"},
+	{"chapter": 6, "name":"todo", "path":"res://maps/Map65.tscn"},
+	
+	{"chapter": 7, "name":"todo", "path":"res://maps/Map71.tscn"},
+	{"chapter": 7, "name":"todo", "path":"res://maps/Map72.tscn"},
+	{"chapter": 7, "name":"todo", "path":"res://maps/Map73.tscn"},
+	{"chapter": 7, "name":"todo", "path":"res://maps/Map74.tscn"},
+	{"chapter": 7, "name":"todo", "path":"res://maps/Map75.tscn"},
 ]
 
 const PreSlides = [
@@ -94,6 +100,10 @@ const Chapters = [
 		"title": "down in the deep",
 		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
+	{ 
+		"title": "todo",
+		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+	}
 ]
 
 onready var PlayerSkins = [
