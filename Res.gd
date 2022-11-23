@@ -62,10 +62,10 @@ const Maps = [
 	{"chapter": 6, "name":"light at the end", "path":"res://maps/Map65.tscn"},
 	
 	{"chapter": 7, "name":"cold reception", "path":"res://maps/Map71.tscn"},
-	{"chapter": 7, "name":"todo", "path":"res://maps/Map72.tscn"},
-	{"chapter": 7, "name":"todo", "path":"res://maps/Map73.tscn"},
-	{"chapter": 7, "name":"todo", "path":"res://maps/Map74.tscn"},
-	{"chapter": 7, "name":"todo", "path":"res://maps/Map75.tscn"},
+	{"chapter": 7, "name":"ice slide", "path":"res://maps/Map72.tscn"},
+	{"chapter": 7, "name":"deadly momentum", "path":"res://maps/Map73.tscn"},
+	{"chapter": 7, "name":"crevasse", "path":"res://maps/Map74.tscn"},
+	{"chapter": 7, "name":"the final stretch", "path":"res://maps/Map75.tscn"},
 ]
 
 const PreSlides = [
@@ -76,7 +76,7 @@ const PreSlides = [
 # todo make proper chapter images!
 const Chapters = [
 	{ 
-		"title": "searching in the woods",
+		"title": "the woods",
 		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
@@ -104,7 +104,7 @@ const Chapters = [
 		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	},
 	{ 
-		"title": "todo",
+		"title": "kingdom of ice",
 		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
 	}
 ]
