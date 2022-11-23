@@ -109,7 +109,7 @@ tracks/3/keys = {
 "values": [ 3, 0 ]
 }
 
-[node name="TogglingTile" type="TileMap"]
+[node name="TogglingTile" type="TileMap" groups=["leavetrail"]]
 modulate = Color( 0.376471, 0.376471, 0.376471, 1 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )

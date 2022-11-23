@@ -15,6 +15,9 @@ onready var PlayerDummy = preload("res://objects/system/menu/PlayerDummy.tscn")
 
 onready var SawLine = preload("res://objects/hazard/SawLine.tscn")
 
+onready var IceGlowEmitter = preload("res://objects/mapelement/IceGlowEmitter.tscn")
+onready var IceGlow = preload("res://objects/mapelement/IceGlow.tscn")
+
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
@@ -53,12 +56,12 @@ const Maps = [
 	{"chapter": 5, "name":"grinder", "path":"res://maps/Map55.tscn"},
 	
 	{"chapter": 6, "name":"follow the light", "path":"res://maps/Map61.tscn"},
-	{"chapter": 6, "name":"rock formation", "path":"res://maps/Map62.tscn"},
-	{"chapter": 6, "name":"todo", "path":"res://maps/Map63.tscn"},
-	{"chapter": 6, "name":"todo", "path":"res://maps/Map64.tscn"},
-	{"chapter": 6, "name":"todo", "path":"res://maps/Map65.tscn"},
+	{"chapter": 6, "name":"dangerous depths", "path":"res://maps/Map62.tscn"},
+	{"chapter": 6, "name":"crevices", "path":"res://maps/Map63.tscn"},
+	{"chapter": 6, "name":"underground canyon", "path":"res://maps/Map64.tscn"},
+	{"chapter": 6, "name":"light at the end", "path":"res://maps/Map65.tscn"},
 	
-	{"chapter": 7, "name":"todo", "path":"res://maps/Map71.tscn"},
+	{"chapter": 7, "name":"cold reception", "path":"res://maps/Map71.tscn"},
 	{"chapter": 7, "name":"todo", "path":"res://maps/Map72.tscn"},
 	{"chapter": 7, "name":"todo", "path":"res://maps/Map73.tscn"},
 	{"chapter": 7, "name":"todo", "path":"res://maps/Map74.tscn"},

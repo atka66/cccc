@@ -1,0 +1,18 @@
+[gd_resource type="AnimatedTexture" load_steps=4 format=2]
+
+[ext_resource path="res://sprites/iceglow_3.png" type="Texture" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/iceglow_2.png-1aaa148eaec9da029cde25a35f673aef.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/iceglow_1.png-bcda89f6624a785a866c2532cd0e3bdd.stex"
+
+[resource]
+frames = 3
+fps = 3.0
+frame_0/texture = SubResource( 1 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+frame_2/texture = SubResource( 2 )
+frame_2/delay_sec = 0.0

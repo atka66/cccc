@@ -29,7 +29,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.564706, 0.564706, 0.564706, 1 ), Color( 1, 1, 1, 1 ), Color( 0.564706, 0.564706, 0.564706, 1 ) ]
+"values": [ Color( 0.627451, 0.627451, 0.627451, 1 ), Color( 1, 1, 1, 1 ), Color( 0.627451, 0.627451, 0.627451, 1 ) ]
 }
 
 [sub_resource type="Gradient" id=4]
@@ -84,6 +84,6 @@ volume_db = -10.0
 autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.564706, 0.564706, 0.564706, 1 )
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
 
 [connection signal="timeout" from="ThunderTimer" to="." method="_on_ThunderTimer_timeout"]
