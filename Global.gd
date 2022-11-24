@@ -86,21 +86,21 @@ func gotoNextMap():
 			gameFinished = true
 			gameJustFinished = true
 	
-	if gameJustFinished:
+	if gameJustFinished: # the game just finished
 		currentMap = len(Res.Maps)
 		saveGame()
 		get_tree().change_scene("res://menu/Story.tscn")
-	elif actualMap >= len(Res.Maps):
+	elif actualMap >= len(Res.Maps): # finished the last level (the game was already finished)
 		gotoMap(0)
-	elif actualMap >= currentMap:
+	elif actualMap >= currentMap: # regular map progression
 		var finishedChapter = Res.Maps[currentMap].chapter
 		currentMap = actualMap
 		saveGame()
-		if Res.Maps[actualMap].chapter > finishedChapter:
+		if Res.Maps[actualMap].chapter > finishedChapter: # play cutscene since we finished a chapter
 			get_tree().change_scene("res://menu/Story.tscn")
-		else:
+		else: # cutsceneless map progression
 			gotoMap(actualMap)
-	else:
+	else: # map progression while the game is finished (doesn't get saved)
 		gotoMap(actualMap)
 
 func gotoMap(i):
@@ -110,6 +110,7 @@ func gotoMap(i):
 func resetGame():
 	closeMenu()
 	deleteSave()
+	gameFinished = false
 	showWholeStory = true
 	currentMap = 0
 	actualMap = 0
