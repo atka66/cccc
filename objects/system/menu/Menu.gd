@@ -40,7 +40,7 @@ func _input(event):
 			$ResetPrompt.hide()
 	else:
 		if event.is_action_pressed("map"):
-			page = Res.Maps[Global.currentMap].chapter
+			page = Res.Maps[Global.actualMap].chapter
 			updateImages()
 			$ActionAudio.play()
 			$MainContainer.hide()
@@ -56,9 +56,11 @@ func close():
 
 # map selection related logic
 
+var flipLimit = Res.Maps[Global.currentMap].chapter if !Global.gameFinished else len(Res.Chapters) - 1
+
 func flipPage(forward: bool):
 	# can I flip?
-	if !(forward && page >= Res.Maps[Global.currentMap].chapter) && !(!forward && page < 1):
+	if !(forward && page >= flipLimit) && !(!forward && page < 1):
 		if (!$MapSelection/MapAnim.is_playing()):
 			page = page + (1 if forward else -1)
 			$MapSelection/MapAnim.play("flipnext" if forward else "flipback")
@@ -94,7 +96,7 @@ func updateImages():
 
 	$MapSelection/LeftSide/ChapterLabel.set_text(Res.Chapters[page].title)
 	$MapSelection/LeftSide/Frame/Story.texture = Res.Chapters[page].leftImage
-	if (page < Res.Maps[Global.currentMap].chapter):
+	if (page < flipLimit):
 		# here
 		$MapSelection/NextHint.show()
 	else:

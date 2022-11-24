@@ -7,6 +7,7 @@ var showWholeStory = true
 var mapParent = null
 var currentMap = 0
 var actualMap = 0
+var gameFinished : bool = false
 
 var playersJoined = [true, false, false, false]
 
@@ -21,6 +22,7 @@ var playersFrozen = false
 func _ready():
 	randomize()
 	loadGame()
+	gameFinished = currentMap >= len(Res.Maps)
 
 func spawnPlayer(playerId, silent : bool):
 	if !Global.playersJoined[playerId]:
@@ -76,7 +78,21 @@ func getMap():
 
 func gotoNextMap():
 	actualMap += 1
-	if actualMap >= currentMap:
+	
+	var gameJustFinished = false
+	
+	if !gameFinished:
+		if actualMap >= len(Res.Maps):
+			gameFinished = true
+			gameJustFinished = true
+	
+	if gameJustFinished:
+		currentMap = len(Res.Maps)
+		saveGame()
+		get_tree().change_scene("res://menu/Story.tscn")
+	elif actualMap >= len(Res.Maps):
+		gotoMap(0)
+	elif actualMap >= currentMap:
 		var finishedChapter = Res.Maps[currentMap].chapter
 		currentMap = actualMap
 		saveGame()
