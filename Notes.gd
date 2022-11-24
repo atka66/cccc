@@ -10,6 +10,7 @@
 # 0    : {PlayerChild}
 # 1    : {Player}
 # 50   : [SignHintSprite]
+# 70   : {FinishDim}
 # 100  : {Menu}, [Book]
 # 101  : {CustomLabel}
 # 150  : [QuitPrompt], [ResetPrompt]

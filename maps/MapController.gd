@@ -11,7 +11,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if (!Global.isMenu()):
+		if (!Global.playersFrozen && !Global.isMenu()):
 			Global.add_child(Res.Menu.instance())
 
 func spawnPlayers():
