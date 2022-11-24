@@ -3,6 +3,8 @@ extends Node
 const SAVE_PATH = "user://cccc.sav"
 const VERSION = '0.3 alpha'
 
+const GRAVITY = 50
+
 var showWholeStory = true
 var mapParent = null
 var currentMap = 0

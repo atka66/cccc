@@ -8,13 +8,14 @@ const SPEED_JUMP_SLIPPERY = 300
 
 const SPEED_JUMPBRAKE = 500
 const SPEED_DASH = 800
-const GRAVITY = 50
 const JUMP_FRAMES = 5
 
 const FRICTION = 0.1
 const FRICTION_SLIPPERY = 0.01
 
 const SLEEP_TIME = 10
+
+var positions = []
 
 export var playerId : int = 0
 
@@ -47,6 +48,12 @@ func _ready():
 		$Sprite.frames = Res.PlayerSkinSuperdark
 	else:
 		$Sprite.frames = Res.PlayerSkins[playerId]
+	
+	if Global.gameFinished && playerId == 0:
+		var child = Res.PlayerChild.instance()
+		child.position = position + Vector2(-4, 0)
+		child.mommy = self
+		Global.mapParent.add_child(child)
 
 func setupInputMaps():
 	match str(Global.playersControlScheme[playerId]):
@@ -91,6 +98,11 @@ func _process(delta):
 		$RunParticles.emitting = false
 
 func _physics_process(delta):
+	if playerId == 0:
+		positions.push_back(position)
+		if len(positions) > 5:
+			positions.pop_front()
+	
 	if (!Global.playersFrozen):
 		if (is_on_floor()):
 			canDash = true
@@ -98,7 +110,7 @@ func _physics_process(delta):
 		if (!Global.isMenu()):
 			_handlePlayerInput()
 	
-	velocity.y += GRAVITY
+	velocity.y += Global.GRAVITY
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	

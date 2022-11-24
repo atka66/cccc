@@ -5,6 +5,7 @@ onready var PlayerCorpse = preload("res://objects/player/PlayerCorpse.tscn")
 onready var Spawning = preload("res://objects/player/Spawning.tscn")
 onready var BloodPar = preload("res://objects/blood/BloodPar.tscn")
 onready var BloodTrail = preload("res://objects/blood/BloodTrail.tscn")
+onready var PlayerChild = preload("res://objects/player/PlayerChild.tscn")
 
 onready var CustomLabel = preload("res://objects/system/label/CustomLabel.tscn")
 

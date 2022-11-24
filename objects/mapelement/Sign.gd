@@ -18,5 +18,5 @@ func _on_Sign_body_entered(body):
 func _on_Sign_body_exited(body):
 	if body.is_in_group('player'):
 		enteredCnt -= 1
-	if enteredCnt < 1:
-		$Anim.play("hide")
+		if enteredCnt < 1:
+			$Anim.play("hide")

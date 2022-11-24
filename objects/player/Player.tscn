@@ -16,6 +16,8 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 2 ), 0.0, 0.0, 0, 0 ]
 extents = Vector2( 5, 5 )
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
+z_index = 1
+z_as_relative = false
 collision_layer = 2
 script = ExtResource( 2 )
 
