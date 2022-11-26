@@ -83,23 +83,23 @@ const EndSlides = [
 const Chapters = [
 	{ 
 		"title": "the woods",
-		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/cha_1b.png")
 	},
 	{ 
 		"title": "hit by a huge storm",
-		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/cha_2b.png")
 	},
 	{ 
 		"title": "reaching the plains",
-		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_3a.png"),"rightImage": preload("res://sprites/story/cha_3b.png")
 	},
 	{ 
 		"title": "wandering the desert",
-		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/cha_4b.png")
 	},
 	{ 
 		"title": "the abandoned castle",
-		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_5a.png"),"rightImage": preload("res://sprites/story/cha_5b.png")
 	},
 	{ 
 		"title": "a grim dungeon",
@@ -107,7 +107,7 @@ const Chapters = [
 	},
 	{ 
 		"title": "down in the deep",
-		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_7a.png"),"rightImage": preload("res://sprites/story/cha_7b.png")
 	},
 	{ 
 		"title": "kingdom of ice",
