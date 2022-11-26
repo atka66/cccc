@@ -103,7 +103,7 @@ const Chapters = [
 	},
 	{ 
 		"title": "a grim dungeon",
-		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_6a.png"),"rightImage": preload("res://sprites/story/cha_6b.png")
 	},
 	{ 
 		"title": "down in the deep",
@@ -111,7 +111,7 @@ const Chapters = [
 	},
 	{ 
 		"title": "kingdom of ice",
-		"leftImage": preload("res://sprites/story/placeholder.png"),"rightImage": preload("res://sprites/story/placeholder.png")
+		"leftImage": preload("res://sprites/story/cha_8a.png"),"rightImage": preload("res://sprites/story/cha_8b.png")
 	}
 ]
 
