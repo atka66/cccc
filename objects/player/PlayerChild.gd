@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const SLEEP_TIME = 10.3
+
 var velocity = Vector2.ZERO
 var right = true
 var isRunning = false
@@ -11,16 +13,25 @@ var mommy = null
 func _ready():
 	if len(get_tree().get_nodes_in_group("superdark")) > 0:
 		$Sprite.frames = Res.PlayerSkinSuperdarkChild
+	
+	$SleepTimer.start(SLEEP_TIME)
 
 func _physics_process(delta):
 	if is_instance_valid(mommy):
 		if len(mommy.positions) > 4:
 			var newPosition = mommy.positions[0] + Vector2(-5, 0)
 			velocity = newPosition - position
+			if position != newPosition:
+				$SleepTimer.start(SLEEP_TIME)
 			position = newPosition
 		determineSprite()
 	else:
 		queue_free()
+		
+	if ($SleepTimer.time_left > 0 && $SleepParticles.emitting):
+		$SleepParticles.emitting = false
+	if ($SleepTimer.time_left == 0 && !$SleepParticles.emitting):
+		$SleepParticles.emitting = true
 
 
 func determineSprite():
@@ -38,5 +49,11 @@ func determineSprite():
 	elif isRunning:
 		$Sprite.flip_h = !right
 		$Sprite.animation = "run"
-	else:
+	elif ($SleepTimer.time_left > 0):
 		$Sprite.animation = "idle"
+	else:
+		$Sprite.animation = "sleep"
+
+
+func _on_SleepTimer_timeout():
+	pass # Replace with function body.
