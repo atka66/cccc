@@ -44,16 +44,22 @@ alignment = 1
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
+[node name="ChildName" parent="." instance=ExtResource( 5 )]
+position = Vector2( -12, 21 )
+text = "& picky"
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/toggle = SubResource( 1 )
 
 [node name="ToggleSprite" type="Sprite" parent="."]
-position = Vector2( -16, 40 )
+position = Vector2( -16, 46 )
 texture = ExtResource( 3 )
 hframes = 11
 
 [node name="ControlSprite" type="Sprite" parent="."]
-position = Vector2( 16, 40 )
+position = Vector2( 16, 46 )
 texture = ExtResource( 2 )
 hframes = 6
 

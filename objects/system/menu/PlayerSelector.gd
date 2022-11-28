@@ -2,6 +2,7 @@ extends Node2D
 
 export var playerId : int = 0
 var dummy : Node
+var childDummy : Node
 
 func _ready():
 	dummy = Res.PlayerDummy.instance()
@@ -20,6 +21,14 @@ func _ready():
 		3:
 			name = 'harmony'
 	$Name.set_text(name)
+	
+	if playerId == 0 && Global.gameFinished:
+		childDummy = Res.PlayerDummy.instance()
+		childDummy.playerId = 4
+		childDummy.position = Vector2(8, 1)
+		add_child(childDummy)
+	else:
+		$ChildName.hide()
 
 func _input(event):
 	if event.is_action_pressed("toggle_player_" + str(playerId + 1)):
@@ -29,9 +38,19 @@ func _input(event):
 
 func _process(delta):
 	if (Global.playersJoined[playerId]):
-		dummy.wakeup()
+		wakeUpDummies()
 		$ControlSprite.show()
 		$ControlSprite.frame = Global.playersControlScheme[playerId]
 	else:
-		dummy.sleep()
+		sleepDummies()
 		$ControlSprite.hide()
+
+func wakeUpDummies():
+	dummy.wakeup()
+	if childDummy:
+		childDummy.wakeup()
+	
+func sleepDummies():
+	dummy.sleep()
+	if childDummy:
+		childDummy.sleep()

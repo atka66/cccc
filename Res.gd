@@ -119,7 +119,8 @@ onready var PlayerSkins = [
 	preload("res://res/player_owl.tres"),
 	preload("res://res/player_hedgehog.tres"),
 	preload("res://res/player_squirrel.tres"),
-	preload("res://res/player_bunny.tres")
+	preload("res://res/player_bunny.tres"),
+	preload("res://res/player_child.tres")
 ]
 onready var PlayerSkinSuperdark = preload("res://res/player_superdark.tres")
 onready var PlayerSkinSuperdarkChild = preload("res://res/player_superdark_child.tres")

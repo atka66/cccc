@@ -13,16 +13,15 @@ func _ready():
 		$Sprite.frames = Res.PlayerSkinSuperdarkChild
 
 func _physics_process(delta):
-	if len(mommy.positions) > 4:
-		var newPosition = mommy.positions[0] + Vector2(-5, 0)
-		velocity = newPosition - position
-		position = newPosition
-	
-	determineSprite()
-
-func _process(delta):
-	if !is_instance_valid(mommy):
+	if is_instance_valid(mommy):
+		if len(mommy.positions) > 4:
+			var newPosition = mommy.positions[0] + Vector2(-5, 0)
+			velocity = newPosition - position
+			position = newPosition
+		determineSprite()
+	else:
 		queue_free()
+
 
 func determineSprite():
 	$Sprite.flip_h = false
