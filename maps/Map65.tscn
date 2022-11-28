@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://res/walls.tres" type="TileSet" id=3]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=4]
 [ext_resource path="res://objects/backdrop/BdCaveEntrance.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/lensflare.png" type="Texture" id=6]
 [ext_resource path="res://objects/mapelement/TogglingTile.tscn" type="PackedScene" id=7]
 
 [node name="Map" type="Node2D" groups=["map"]]
@@ -42,6 +43,11 @@ toggled = false
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 80, 232 )
+
+[node name="Lensflare" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( 408, 56 )
+texture = ExtResource( 6 )
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
 position = Vector2( 408, 56 )

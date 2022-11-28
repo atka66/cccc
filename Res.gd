@@ -122,6 +122,7 @@ onready var PlayerSkins = [
 	preload("res://res/player_bunny.tres")
 ]
 onready var PlayerSkinSuperdark = preload("res://res/player_superdark.tres")
+onready var PlayerSkinSuperdarkChild = preload("res://res/player_superdark_child.tres")
 
 onready var ExitLight = preload("res://sprites/exit_2.png")
 

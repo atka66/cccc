@@ -9,7 +9,8 @@ var mommy = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if len(get_tree().get_nodes_in_group("superdark")) > 0:
+		$Sprite.frames = Res.PlayerSkinSuperdarkChild
 
 func _physics_process(delta):
 	if len(mommy.positions) > 4:
