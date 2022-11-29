@@ -81,6 +81,7 @@ scale_amount_curve = SubResource( 2 )
 light_mask = 5
 frames = ExtResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
