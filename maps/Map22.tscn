@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://res/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=6]
 [ext_resource path="res://objects/hazard/SawBlade.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/mapelement/Foliage.tscn" type="PackedScene" id=8]
 
 [node name="Map" type="Node2D" groups=["map"]]
 scale = Vector2( 2, 2 )
@@ -103,15 +102,6 @@ position = Vector2( 512, 80 )
 
 [node name="SawBlade3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 48, 288 )
-
-[node name="Grass2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 248, 288 )
-
-[node name="Grass3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 104, 256 )
-
-[node name="Grass4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 56, 96 )
 
 [node name="Spike81" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 248 )

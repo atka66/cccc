@@ -43,6 +43,14 @@ tile_data = PoolIntArray( 720906, 5, 196609, 720907, 5, 196611 )
 duration = 1.0
 toggled = false
 
+[node name="Decor" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65541, 14, 2, 65554, 14, 2, 327691, 14, 0, 524289, 14, 1, 524290, 14, 2, 720909, 14, 1, 720912, 14, 2, 1114142, 14, 0 )
+
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 40, 40 )
 

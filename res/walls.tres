@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=434 format=2]
+[gd_resource type="TileSet" load_steps=435 format=2]
 
 [ext_resource path="res://sprites/tileset/ts_tree.png" type="Texture" id=1]
 [ext_resource path="res://sprites/wall1.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sprites/tileset/ts_caveentrance.png" type="Texture" id=10]
 [ext_resource path="res://sprites/tileset/ts_snow.png" type="Texture" id=11]
 [ext_resource path="res://sprites/tileset/ts_ice.png" type="Texture" id=12]
+[ext_resource path="res://sprites/tileset/ts_decor.png" type="Texture" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -4105,3 +4106,24 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 13/z_index = 0
+14/name = "ts_decor.png 14"
+14/texture = ExtResource( 13 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 192, 64 )
+14/tile_mode = 2
+14/autotile/icon_coordinate = Vector2( 0, 0 )
+14/autotile/tile_size = Vector2( 16, 16 )
+14/autotile/spacing = 0
+14/autotile/occluder_map = [  ]
+14/autotile/navpoly_map = [  ]
+14/autotile/priority_map = [  ]
+14/autotile/z_index_map = [  ]
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
