@@ -21,8 +21,6 @@ func _physics_process(delta):
 		if len(mommy.positions) > 4:
 			var newPosition = mommy.positions[0] + Vector2(-5, 0)
 			velocity = newPosition - position
-			if position != newPosition:
-				$SleepTimer.start(SLEEP_TIME)
 			position = newPosition
 		determineSprite()
 	else:
@@ -40,6 +38,7 @@ func determineSprite():
 	isRunning = abs(velocity.x) > 1
 	isJumping = abs(velocity.y) > 1
 			
+	var awake = true
 	if isJumping:
 		$Sprite.flip_h = !right
 		if velocity.y < 0:
@@ -51,9 +50,10 @@ func determineSprite():
 		$Sprite.animation = "run"
 	elif ($SleepTimer.time_left > 0):
 		$Sprite.animation = "idle"
+		awake = false
 	else:
 		$Sprite.animation = "sleep"
+		awake = false
 
-
-func _on_SleepTimer_timeout():
-	pass # Replace with function body.
+	if awake:
+		$SleepTimer.start(SLEEP_TIME)

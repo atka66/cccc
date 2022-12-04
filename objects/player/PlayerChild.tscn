@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 [node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
 
 [node name="SleepTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="SleepParticles" type="CPUParticles2D" parent="."]
 emitting = false
@@ -41,5 +42,3 @@ spread = 15.0
 gravity = Vector2( 0, -10 )
 initial_velocity = 10.0
 scale_amount_curve = SubResource( 2 )
-
-[connection signal="timeout" from="SleepTimer" to="." method="_on_SleepTimer_timeout"]
