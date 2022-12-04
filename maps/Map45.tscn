@@ -49,7 +49,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 65541, 14, 2, 65554, 14, 2, 327691, 14, 0, 524289, 14, 1, 524290, 14, 2, 720909, 14, 1, 720912, 14, 2, 1114142, 14, 0 )
+tile_data = PoolIntArray( 65541, 14, 2, 65554, 14, 3, 65566, 14, 4, 327691, 14, 0, 524289, 14, 5, 524292, 14, 3, 720909, 14, 1, 720912, 14, 2, 1114142, 14, 4 )
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 40, 40 )
