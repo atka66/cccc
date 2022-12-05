@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://res/walls.tres" type="TileSet" id=3]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=4]
 [ext_resource path="res://objects/backdrop/BdCave.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/mapelement/TogglingTile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/mapelement/Crystal.tscn" type="PackedScene" id=8]
 
 [node name="Map" type="Node2D" groups=["map"]]
@@ -29,6 +27,8 @@ tile_data = PoolIntArray( -131070, 10, 8, -131069, 10, 10, -131068, 10, 10, -131
 
 [node name="Fg" type="TileMap" parent="." groups=["leavetrail"]]
 light_mask = 3
+z_index = -4
+z_as_relative = false
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 3
@@ -36,120 +36,17 @@ collision_mask = 3
 format = 1
 tile_data = PoolIntArray( -262146, 10, 1, -262145, 10, 196610, -327680, 10, 196610, -327679, 10, 196610, -327678, 10, 196610, -327677, 10, 196610, -327676, 10, 196610, -327675, 10, 196610, -327674, 10, 196610, -327673, 10, 196610, -327672, 10, 196610, -327671, 10, 196610, -327670, 10, 196610, -327669, 10, 196610, -327668, 10, 196610, -327667, 10, 196610, -327666, 10, 196610, -327665, 10, 196610, -327664, 10, 196610, -327663, 10, 196610, -327662, 10, 196610, -327661, 10, 196610, -327660, 10, 196610, -327659, 10, 196610, -327658, 10, 196610, -327657, 10, 196610, -327656, 10, 196610, -327655, 10, 196610, -327654, 10, 196610, -327653, 10, 196610, -327652, 10, 196610, -327651, 10, 196610, -327650, 10, 196610, -327649, 10, 196610, -327648, 10, 196610, -327647, 10, 3, -196610, 10, 65536, -262111, 10, 65536, -131074, 10, 65536, -196575, 10, 65536, -65538, 10, 65536, -131039, 10, 65536, -2, 10, 65536, -65503, 10, 65536, 65534, 10, 65536, 33, 10, 65536, 131070, 10, 65536, 65564, 10, 0, 65569, 10, 65536, 196606, 10, 65536, 131096, 10, 8, 131097, 10, 10, 131098, 10, 10, 131099, 10, 10, 131100, 10, 65543, 131105, 10, 65536, 262142, 10, 65536, 196632, 10, 196616, 196633, 10, 131077, 196634, 10, 131081, 196635, 10, 131078, 196636, 10, 196619, 196641, 10, 65536, 327678, 10, 65536, 262169, 10, 196616, 262170, 10, 196617, 262171, 10, 196619, 262177, 10, 65536, 393214, 10, 65536, 327713, 10, 65536, 458750, 10, 65536, 393249, 10, 65536, 524286, 10, 65536, 458763, 10, 8, 458764, 10, 10, 458765, 10, 6, 458766, 10, 196611, 458785, 10, 65536, 589822, 10, 65536, 524299, 10, 65544, 524300, 10, 131081, 524301, 10, 131083, 524321, 10, 65536, 655358, 10, 65536, 589835, 10, 196616, 589836, 10, 131077, 589837, 10, 65542, 589838, 10, 11, 589857, 10, 65536, 720894, 10, 65536, 655372, 10, 196616, 655373, 10, 196617, 655374, 10, 196619, 655393, 10, 65536, 786430, 10, 65536, 720929, 10, 65536, 851966, 10, 65536, 786465, 10, 65536, 917502, 10, 65536, 851987, 10, 8, 851988, 10, 10, 851989, 10, 11, 852001, 10, 65536, 983038, 10, 65536, 917523, 10, 196616, 917524, 10, 131077, 917525, 10, 131083, 917537, 10, 65536, 1048574, 10, 65536, 983044, 10, 8, 983045, 10, 11, 983060, 10, 196616, 983061, 10, 196619, 983073, 10, 65536, 1114110, 10, 65536, 1048577, 10, 196609, 1048578, 10, 5, 1048579, 10, 10, 1048580, 10, 65541, 1048581, 10, 131083, 1048609, 10, 65536, 1179646, 10, 65536, 1114114, 10, 196616, 1114115, 10, 196617, 1114116, 10, 196617, 1114117, 10, 196619, 1114145, 10, 65536, 1245182, 10, 65536, 1179681, 10, 65536, 1310718, 10, 65536, 1245217, 10, 65536, 1376254, 10, 131073, 1376255, 10, 196610, 1310720, 10, 196610, 1310721, 10, 196610, 1310722, 10, 196610, 1310723, 10, 196610, 1310724, 10, 196610, 1310725, 10, 196610, 1310726, 10, 196610, 1310727, 10, 196610, 1310728, 10, 196610, 1310729, 10, 196610, 1310730, 10, 196610, 1310731, 10, 196610, 1310732, 10, 196610, 1310733, 10, 196610, 1310734, 10, 196610, 1310735, 10, 196610, 1310736, 10, 196610, 1310737, 10, 196610, 1310738, 10, 196610, 1310739, 10, 196610, 1310740, 10, 196610, 1310741, 10, 196610, 1310742, 10, 196610, 1310743, 10, 196610, 1310744, 10, 196610, 1310745, 10, 196610, 1310746, 10, 196610, 1310747, 10, 196610, 1310748, 10, 196610, 1310749, 10, 196610, 1310750, 10, 196610, 1310751, 10, 196610, 1310752, 10, 196610, 1310753, 10, 131075 )
 
-[node name="TogglingTile" parent="." instance=ExtResource( 7 )]
-duration = 1.5
-
-[node name="TogglingTile2" parent="." instance=ExtResource( 7 )]
-duration = 1.5
-toggled = false
+[node name="Spikes" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1310719, 15, 0, 1245184, 15, 0, 1245185, 15, 0, 1245186, 15, 0, 1245187, 15, 0, 1245188, 15, 0, 1245189, 15, 0, 1245190, 15, 0, 1245191, 15, 0, 1245192, 15, 0, 1245193, 15, 0, 1245194, 15, 0, 1245195, 15, 0, 1245196, 15, 0, 1245197, 15, 0, 1245198, 15, 0, 1245199, 15, 0, 1245200, 15, 0, 1245201, 15, 0, 1245202, 15, 0, 1245203, 15, 0, 1245204, 15, 0, 1245205, 15, 0, 1245206, 15, 0, 1245207, 15, 0, 1245208, 15, 0, 1245209, 15, 0, 1245210, 15, 0, 1245211, 15, 0, 1245212, 15, 0, 1245213, 15, 0, 1245214, 15, 0, 1245215, 15, 0, 1245216, 15, 0 )
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 40, 232 )
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
 position = Vector2( 424, 24 )
-
-[node name="Spike72" parent="." instance=ExtResource( 6 )]
-position = Vector2( -8, 312 )
-
-[node name="Spike90" parent="." instance=ExtResource( 6 )]
-position = Vector2( 104, 312 )
-
-[node name="Spike73" parent="." instance=ExtResource( 6 )]
-position = Vector2( 8, 312 )
-
-[node name="Spike74" parent="." instance=ExtResource( 6 )]
-position = Vector2( 24, 312 )
-
-[node name="Spike75" parent="." instance=ExtResource( 6 )]
-position = Vector2( 40, 312 )
-
-[node name="Spike80" parent="." instance=ExtResource( 6 )]
-position = Vector2( 120, 312 )
-
-[node name="Spike76" parent="." instance=ExtResource( 6 )]
-position = Vector2( 56, 312 )
-
-[node name="Spike77" parent="." instance=ExtResource( 6 )]
-position = Vector2( 72, 312 )
-
-[node name="Spike78" parent="." instance=ExtResource( 6 )]
-position = Vector2( 88, 312 )
-
-[node name="Spike79" parent="." instance=ExtResource( 6 )]
-position = Vector2( 136, 312 )
-
-[node name="Spike91" parent="." instance=ExtResource( 6 )]
-position = Vector2( 248, 312 )
-
-[node name="Spike81" parent="." instance=ExtResource( 6 )]
-position = Vector2( 152, 312 )
-
-[node name="Spike82" parent="." instance=ExtResource( 6 )]
-position = Vector2( 168, 312 )
-
-[node name="Spike83" parent="." instance=ExtResource( 6 )]
-position = Vector2( 184, 312 )
-
-[node name="Spike84" parent="." instance=ExtResource( 6 )]
-position = Vector2( 264, 312 )
-
-[node name="Spike85" parent="." instance=ExtResource( 6 )]
-position = Vector2( 200, 312 )
-
-[node name="Spike86" parent="." instance=ExtResource( 6 )]
-position = Vector2( 216, 312 )
-
-[node name="Spike87" parent="." instance=ExtResource( 6 )]
-position = Vector2( 232, 312 )
-
-[node name="Spike88" parent="." instance=ExtResource( 6 )]
-position = Vector2( 280, 312 )
-
-[node name="Spike92" parent="." instance=ExtResource( 6 )]
-position = Vector2( 392, 312 )
-
-[node name="Spike89" parent="." instance=ExtResource( 6 )]
-position = Vector2( 296, 312 )
-
-[node name="Spike93" parent="." instance=ExtResource( 6 )]
-position = Vector2( 312, 312 )
-
-[node name="Spike94" parent="." instance=ExtResource( 6 )]
-position = Vector2( 328, 312 )
-
-[node name="Spike95" parent="." instance=ExtResource( 6 )]
-position = Vector2( 408, 312 )
-
-[node name="Spike96" parent="." instance=ExtResource( 6 )]
-position = Vector2( 344, 312 )
-
-[node name="Spike97" parent="." instance=ExtResource( 6 )]
-position = Vector2( 360, 312 )
-
-[node name="Spike98" parent="." instance=ExtResource( 6 )]
-position = Vector2( 376, 312 )
-
-[node name="Spike99" parent="." instance=ExtResource( 6 )]
-position = Vector2( 424, 312 )
-
-[node name="Spike100" parent="." instance=ExtResource( 6 )]
-position = Vector2( 504, 312 )
-
-[node name="Spike101" parent="." instance=ExtResource( 6 )]
-position = Vector2( 440, 312 )
-
-[node name="Spike102" parent="." instance=ExtResource( 6 )]
-position = Vector2( 456, 312 )
-
-[node name="Spike103" parent="." instance=ExtResource( 6 )]
-position = Vector2( 472, 312 )
-
-[node name="Spike104" parent="." instance=ExtResource( 6 )]
-position = Vector2( 520, 312 )
-
-[node name="Spike105" parent="." instance=ExtResource( 6 )]
-position = Vector2( 488, 312 )
 
 [node name="Crystal" parent="." instance=ExtResource( 8 )]
 position = Vector2( 184, 144 )

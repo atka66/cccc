@@ -50,7 +50,6 @@ duration = 1.5
 
 [node name="TogglingTile2" parent="." instance=ExtResource( 7 )]
 duration = 1.5
-toggled = false
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56, 232 )

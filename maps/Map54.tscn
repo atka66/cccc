@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://res/walls.tres" type="TileSet" id=3]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=4]
 [ext_resource path="res://objects/backdrop/BdDungeon.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/mapelement/TogglingTile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/hazard/SawBlade.tscn" type="PackedScene" id=8]
 
@@ -26,6 +25,8 @@ collision_mask = 0
 format = 1
 
 [node name="Fg" type="TileMap" parent="." groups=["leavetrail"]]
+z_index = -4
+z_as_relative = false
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 3
@@ -40,192 +41,19 @@ duration = 1.5
 [node name="TogglingTile2" parent="." instance=ExtResource( 7 )]
 tile_data = PoolIntArray( 393233, 9, 196608, 720906, 9, 196609, 720907, 9, 196611, 851985, 9, 196608 )
 duration = 1.5
-toggled = false
+toggled = true
+
+[node name="Spikes" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65546, 16, 0, 131082, 16, 0, 196618, 16, 0, 262170, 16, 0, 327692, 15, 0, 327693, 15, 0, 327694, 15, 0, 327695, 15, 0, 327696, 15, 0, 327706, 16, 0, 393242, 16, 0, 458756, 17, 0, 458757, 17, 0, 458758, 17, 0, 458759, 17, 0, 458760, 17, 0, 458761, 17, 0, 524315, 18, 0, 589851, 18, 0, 655382, 18, 0, 655387, 18, 0, 917521, 16, 0, 1376255, 15, 0, 1310720, 15, 0, 1310721, 15, 0, 1310722, 15, 0, 1310723, 15, 0, 1310724, 15, 0, 1310725, 15, 0, 1310726, 15, 0, 1310727, 15, 0, 1310728, 15, 0, 1310729, 15, 0, 1310730, 15, 0, 1310731, 15, 0, 1310732, 15, 0, 1310733, 15, 0, 1310734, 15, 0, 1310735, 15, 0, 1310736, 15, 0, 1310737, 15, 0, 1310738, 15, 0, 1310739, 15, 0, 1310740, 15, 0, 1310741, 15, 0, 1310742, 15, 0, 1310743, 15, 0, 1310744, 15, 0, 1310745, 15, 0, 1310746, 15, 0, 1310747, 15, 0, 1310748, 15, 0, 1310749, 15, 0, 1310750, 15, 0 )
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 472, 40 )
 
 [node name="Exit" parent="." instance=ExtResource( 2 )]
 position = Vector2( 40, 248 )
-
-[node name="Spike85" parent="." instance=ExtResource( 6 )]
-position = Vector2( 424, 88 )
-rotation = 1.5708
-
-[node name="Spike86" parent="." instance=ExtResource( 6 )]
-position = Vector2( 424, 72 )
-rotation = 1.5708
-
-[node name="Spike124" parent="." instance=ExtResource( 6 )]
-position = Vector2( 168, 56 )
-rotation = 1.5708
-
-[node name="Spike125" parent="." instance=ExtResource( 6 )]
-position = Vector2( 168, 40 )
-rotation = 1.5708
-
-[node name="Spike126" parent="." instance=ExtResource( 6 )]
-position = Vector2( 168, 24 )
-rotation = 1.5708
-
-[node name="Spike111" parent="." instance=ExtResource( 6 )]
-position = Vector2( 360, 168 )
-rotation = 4.71239
-
-[node name="Spike112" parent="." instance=ExtResource( 6 )]
-position = Vector2( 280, 232 )
-rotation = 1.5708
-
-[node name="Spike88" parent="." instance=ExtResource( 6 )]
-position = Vector2( 424, 104 )
-rotation = 1.5708
-
-[node name="Spike89" parent="." instance=ExtResource( 6 )]
-position = Vector2( 440, 152 )
-rotation = 4.71239
-
-[node name="Spike90" parent="." instance=ExtResource( 6 )]
-position = Vector2( 440, 136 )
-rotation = 4.71239
-
-[node name="Spike92" parent="." instance=ExtResource( 6 )]
-position = Vector2( 440, 168 )
-rotation = 4.71239
-
-[node name="Spike73" parent="." instance=ExtResource( 6 )]
-position = Vector2( -8, 328 )
-
-[node name="Spike74" parent="." instance=ExtResource( 6 )]
-position = Vector2( 8, 328 )
-
-[node name="Spike75" parent="." instance=ExtResource( 6 )]
-position = Vector2( 24, 328 )
-
-[node name="Spike76" parent="." instance=ExtResource( 6 )]
-position = Vector2( 40, 328 )
-
-[node name="Spike77" parent="." instance=ExtResource( 6 )]
-position = Vector2( 56, 328 )
-
-[node name="Spike78" parent="." instance=ExtResource( 6 )]
-position = Vector2( 72, 328 )
-
-[node name="Spike79" parent="." instance=ExtResource( 6 )]
-position = Vector2( 88, 328 )
-
-[node name="Spike113" parent="." instance=ExtResource( 6 )]
-position = Vector2( 200, 88 )
-
-[node name="Spike114" parent="." instance=ExtResource( 6 )]
-position = Vector2( 216, 88 )
-
-[node name="Spike115" parent="." instance=ExtResource( 6 )]
-position = Vector2( 232, 88 )
-
-[node name="Spike116" parent="." instance=ExtResource( 6 )]
-position = Vector2( 248, 88 )
-
-[node name="Spike117" parent="." instance=ExtResource( 6 )]
-position = Vector2( 264, 88 )
-
-[node name="Spike80" parent="." instance=ExtResource( 6 )]
-position = Vector2( 104, 328 )
-
-[node name="Spike81" parent="." instance=ExtResource( 6 )]
-position = Vector2( 120, 328 )
-
-[node name="Spike82" parent="." instance=ExtResource( 6 )]
-position = Vector2( 136, 328 )
-
-[node name="Spike83" parent="." instance=ExtResource( 6 )]
-position = Vector2( 152, 328 )
-
-[node name="Spike84" parent="." instance=ExtResource( 6 )]
-position = Vector2( 168, 328 )
-
-[node name="Spike87" parent="." instance=ExtResource( 6 )]
-position = Vector2( 184, 328 )
-
-[node name="Spike91" parent="." instance=ExtResource( 6 )]
-position = Vector2( 200, 328 )
-
-[node name="Spike93" parent="." instance=ExtResource( 6 )]
-position = Vector2( 216, 328 )
-
-[node name="Spike94" parent="." instance=ExtResource( 6 )]
-position = Vector2( 232, 328 )
-
-[node name="Spike95" parent="." instance=ExtResource( 6 )]
-position = Vector2( 248, 328 )
-
-[node name="Spike96" parent="." instance=ExtResource( 6 )]
-position = Vector2( 264, 328 )
-
-[node name="Spike97" parent="." instance=ExtResource( 6 )]
-position = Vector2( 280, 328 )
-
-[node name="Spike98" parent="." instance=ExtResource( 6 )]
-position = Vector2( 296, 328 )
-
-[node name="Spike99" parent="." instance=ExtResource( 6 )]
-position = Vector2( 312, 328 )
-
-[node name="Spike100" parent="." instance=ExtResource( 6 )]
-position = Vector2( 328, 328 )
-
-[node name="Spike101" parent="." instance=ExtResource( 6 )]
-position = Vector2( 344, 328 )
-
-[node name="Spike102" parent="." instance=ExtResource( 6 )]
-position = Vector2( 360, 328 )
-
-[node name="Spike118" parent="." instance=ExtResource( 6 )]
-position = Vector2( 120, 120 )
-rotation = 3.14159
-
-[node name="Spike119" parent="." instance=ExtResource( 6 )]
-position = Vector2( 136, 120 )
-rotation = 3.14159
-
-[node name="Spike120" parent="." instance=ExtResource( 6 )]
-position = Vector2( 152, 120 )
-rotation = 3.14159
-
-[node name="Spike121" parent="." instance=ExtResource( 6 )]
-position = Vector2( 104, 120 )
-rotation = 3.14159
-
-[node name="Spike122" parent="." instance=ExtResource( 6 )]
-position = Vector2( 88, 120 )
-rotation = 3.14159
-
-[node name="Spike123" parent="." instance=ExtResource( 6 )]
-position = Vector2( 72, 120 )
-rotation = 3.14159
-
-[node name="Spike109" parent="." instance=ExtResource( 6 )]
-position = Vector2( 472, 328 )
-
-[node name="Spike110" parent="." instance=ExtResource( 6 )]
-position = Vector2( 488, 328 )
-
-[node name="Spike103" parent="." instance=ExtResource( 6 )]
-position = Vector2( 376, 328 )
-
-[node name="Spike104" parent="." instance=ExtResource( 6 )]
-position = Vector2( 392, 328 )
-
-[node name="Spike105" parent="." instance=ExtResource( 6 )]
-position = Vector2( 408, 328 )
-
-[node name="Spike106" parent="." instance=ExtResource( 6 )]
-position = Vector2( 424, 328 )
-
-[node name="Spike107" parent="." instance=ExtResource( 6 )]
-position = Vector2( 440, 328 )
-
-[node name="Spike108" parent="." instance=ExtResource( 6 )]
-position = Vector2( 456, 328 )
 
 [node name="Saw8" parent="." instance=ExtResource( 8 )]
 position = Vector2( 392, 184 )

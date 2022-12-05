@@ -8,7 +8,7 @@
 # -11  : [Bg2]
 # -10  : [Bg]
 # -5   : {SawLine}
-# -4   : [Fg]
+# -4   : [Fg], [IceTiles]
 # -3   : {TogglingTile}
 # -2   : [Decor]
 # -1   : {Spike}
