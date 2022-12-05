@@ -32,7 +32,6 @@ func makeIceTilesGlow():
 func spawnSpikes():
 	for cellpos in $Spikes.get_used_cells():
 		var cell = $Spikes.get_cellv(cellpos)
-		print(cellpos, cell)
 		if cell >= 15 && cell <= 18:
 			var spikePos = to_global($Spikes.map_to_world(cellpos))
 			var spike = Res.Spike.instance()
