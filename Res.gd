@@ -19,6 +19,8 @@ onready var SawLine = preload("res://objects/hazard/SawLine.tscn")
 onready var IceGlowEmitter = preload("res://objects/mapelement/IceGlowEmitter.tscn")
 onready var IceGlow = preload("res://objects/mapelement/IceGlow.tscn")
 
+onready var Spike = preload("res://objects/hazard/Spike.tscn")
+
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
