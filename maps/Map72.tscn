@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://res/walls.tres" type="TileSet" id=3]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=4]
 [ext_resource path="res://objects/backdrop/BdSnow.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/mapelement/TogglingTile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/hazard/SawBlade.tscn" type="PackedScene" id=8]
 
@@ -28,6 +27,8 @@ format = 1
 
 [node name="Fg" type="TileMap" parent="." groups=["leavetrail"]]
 light_mask = 3
+z_index = -4
+z_as_relative = false
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 3
@@ -37,6 +38,8 @@ tile_data = PoolIntArray( -262146, 12, 8, -262145, 12, 10, -327680, 12, 10, -327
 
 [node name="IceTiles" type="TileMap" parent="." groups=["leavetrail", "slippery"]]
 light_mask = 3
+z_index = -4
+z_as_relative = false
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 3
@@ -51,7 +54,13 @@ duration = 1.5
 [node name="TogglingTile2" parent="." instance=ExtResource( 7 )]
 tile_data = PoolIntArray( 655380, 12, 196608 )
 duration = 1.5
-toggled = false
+toggled = true
+
+[node name="Spikes" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589834, 18, 0, 917534, 18, 0, 1048600, 15, 0, 1048601, 15, 0, 1048602, 15, 0 )
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 40 )
@@ -69,20 +78,3 @@ position = Vector2( 64, 160 )
 
 [node name="Saw3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 112, 192 )
-
-[node name="Spike100" parent="." instance=ExtResource( 6 )]
-position = Vector2( 168, 152 )
-rotation = 4.71239
-
-[node name="Spike102" parent="." instance=ExtResource( 6 )]
-position = Vector2( 392, 264 )
-
-[node name="Spike103" parent="." instance=ExtResource( 6 )]
-position = Vector2( 408, 264 )
-
-[node name="Spike104" parent="." instance=ExtResource( 6 )]
-position = Vector2( 424, 264 )
-
-[node name="Spike101" parent="." instance=ExtResource( 6 )]
-position = Vector2( 488, 232 )
-rotation = 4.71239
