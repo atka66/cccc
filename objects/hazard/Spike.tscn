@@ -39,6 +39,8 @@ animations = [ {
 } ]
 
 [node name="Spike" type="StaticBody2D" groups=["killer"]]
+z_index = -1
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

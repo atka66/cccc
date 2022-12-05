@@ -5,8 +5,13 @@
 # [Nodes]
 #
 # -20  : {Backdrops}
+# -11  : [Bg2]
 # -10  : [Bg]
 # -5   : {SawLine}
+# -4   : [Fg]
+# -3   : {TogglingTile}
+# -2   : [Decor]
+# -1   : {Spike}
 # 0    : {PlayerChild}
 # 1    : {Player}
 # 50   : [SignHintSprite]
