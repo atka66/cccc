@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://objects/system/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://sounds/toggle.ogg" type="AudioStream" id=14]
 [ext_resource path="res://sprites/story/frame.png" type="Texture" id=15]
 [ext_resource path="res://sprites/audio_hint.png" type="Texture" id=16]
+[ext_resource path="res://sprites/player_child.png" type="Texture" id=17]
+[ext_resource path="res://sounds/jump_1_2.ogg" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -145,7 +147,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "appear"
-length = 0.7
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("../ResetPrompt/SadOwl:position")
 tracks/0/interp = 2
@@ -192,6 +194,32 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../ResetPrompt/SadChild:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 0.2, 0.2, 1 ),
+"update": 0,
+"values": [ Vector2( 48, 400 ), Vector2( 72, 264 ), Vector2( 92, 160 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("../ResetPrompt/SadChild/AppearAudio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -640,6 +668,34 @@ fontSize = 2
 outline = true
 animate = false
 
+[node name="SadChild" type="Node2D" parent="ResetPrompt"]
+position = Vector2( 48, 400 )
+rotation = 0.174533
+scale = Vector2( 6, 6 )
+
+[node name="Body" type="Sprite" parent="ResetPrompt/SadChild"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 17 )
+hframes = 9
+
+[node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadChild"]
+position = Vector2( -4.5, 1 )
+scale = Vector2( 0.8, 0.8 )
+frames = ExtResource( 7 )
+frame = 1
+playing = true
+
+[node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadChild"]
+position = Vector2( 4.5, 1 )
+scale = Vector2( 0.8, 0.8 )
+frames = ExtResource( 7 )
+frame = 1
+playing = true
+
+[node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadChild"]
+stream = ExtResource( 10 )
+bus = "Sound"
+
 [node name="SadOwl" type="Node2D" parent="ResetPrompt"]
 position = Vector2( 48, 400 )
 rotation = 0.174533
@@ -653,15 +709,17 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadOwl"]
-stream = ExtResource( 9 )
+stream = ExtResource( 18 )
 bus = "Sound"
 
 [node name="SadHedgehog" type="Node2D" parent="ResetPrompt"]
@@ -677,15 +735,15 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadHedgehog"]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 bus = "Sound"

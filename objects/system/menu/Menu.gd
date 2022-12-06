@@ -4,6 +4,9 @@ var page = 0
 var selectedScene = 0
 
 func _ready():
+	if !Global.gameFinished:
+		$ResetPrompt/SadChild/AppearAudio.stream = null
+		$ResetPrompt/SadChild.hide()
 	$VersionLabel.set_text('v' + Global.VERSION)
 	$MapSelection.hide()
 	$ResetPrompt.hide()
