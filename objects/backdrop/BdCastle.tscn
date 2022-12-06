@@ -102,6 +102,7 @@ angle = 80.0
 stream = ExtResource( 3 )
 volume_db = -10.0
 autoplay = true
+bus = "Sound"
 
 [node name="CloudScrollAnim" type="AnimationPlayer" parent="."]
 autoplay = "scroll"

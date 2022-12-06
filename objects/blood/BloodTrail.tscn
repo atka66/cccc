@@ -32,6 +32,7 @@ one_shot = true
 
 [node name="AudioDrip" type="AudioStreamPlayer2D" parent="."]
 volume_db = 5.0
+bus = "Sound"
 
 [connection signal="body_entered" from="." to="." method="_on_BloodTrail_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_BloodTrail_body_exited"]

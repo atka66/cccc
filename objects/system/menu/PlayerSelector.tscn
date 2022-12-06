@@ -65,3 +65,4 @@ hframes = 6
 
 [node name="ToggleAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+bus = "Sound"

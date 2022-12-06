@@ -82,6 +82,7 @@ angle = 80.0
 stream = ExtResource( 3 )
 volume_db = -10.0
 autoplay = true
+bus = "Sound"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.752941, 0.752941, 0.752941, 1 )

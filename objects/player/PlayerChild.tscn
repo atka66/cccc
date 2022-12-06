@@ -26,8 +26,6 @@ playing = true
 position = Vector2( 0, 3 )
 shape = SubResource( 1 )
 
-[node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
-
 [node name="SleepTimer" type="Timer" parent="."]
 one_shot = true
 

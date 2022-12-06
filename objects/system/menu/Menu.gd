@@ -55,6 +55,7 @@ func _input(event):
 			Global.audio = int(Global.audio + 1) % 4
 			Global.saveGame()
 			updateAudio()
+			$ActionAudio.play()
 
 func close():
 	queue_free()

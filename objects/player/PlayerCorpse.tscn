@@ -29,5 +29,6 @@ one_shot = true
 autostart = true
 
 [node name="PopAudio" type="AudioStreamPlayer2D" parent="."]
+bus = "Sound"
 
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]

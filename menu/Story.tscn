@@ -546,8 +546,10 @@ color = Color( 0, 0, 0, 0.627451 )
 
 [node name="SlideAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+bus = "Sound"
 
 [node name="PageflipAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+bus = "Sound"
 
 [connection signal="timeout" from="FlipTimer" to="." method="_on_FlipTimer_timeout"]
