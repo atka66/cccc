@@ -80,7 +80,7 @@ const EndSlides = [
 	{ "leftImage": preload("res://sprites/story/post_1.png"),"rightImage": preload("res://sprites/story/post_2.png") },
 	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/post_3.png") }
 ]
-# todo make proper chapter images!
+
 const Chapters = [
 	{ 
 		"title": "the woods",
