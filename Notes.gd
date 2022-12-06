@@ -7,7 +7,7 @@
 # -20  : {Backdrops}
 # -11  : [Bg2]
 # -10  : [Bg]
-# -9   : {Torch}
+# -9   : {Torch}, {Exit}
 # -5   : {SawLine}
 # -4   : [Fg], [IceTiles]
 # -3   : {TogglingTile}
