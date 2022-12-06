@@ -46,6 +46,16 @@ tile_data = PoolIntArray( 851988, 10, 196609, 851989, 10, 196610, 851990, 10, 19
 duration = 1.0
 toggled = true
 
+[node name="Decor" type="TileMap" parent="."]
+z_index = -2
+z_as_relative = false
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65545, 14, 65547, 65564, 14, 65547, 131075, 14, 65546, 131091, 14, 65546, 262165, 14, 65547, 262174, 14, 65547, 393234, 14, 65547, 458753, 14, 65547, 524315, 14, 65547, 589828, 14, 65547, 589836, 14, 65546, 655369, 14, 65547, 786456, 14, 65546, 917533, 14, 65546, 1114113, 14, 65547 )
+
 [node name="Spikes" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )

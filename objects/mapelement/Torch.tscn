@@ -9,6 +9,8 @@ offsets = PoolRealArray( 0, 0.5, 0.75, 1 )
 colors = PoolColorArray( 1, 0.752941, 0, 1, 1, 0.25098, 0, 1, 0.25098, 0.12549, 0.12549, 0.501961, 1, 0, 0, 0 )
 
 [node name="Torch" type="Node2D"]
+z_index = -9
+z_as_relative = false
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
