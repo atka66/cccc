@@ -9,6 +9,7 @@ func _ready():
 	$ResetPrompt.hide()
 	$AppearAudio.stream = Res.AudioPageflip[randi() % len(Res.AudioPageflip)]
 	$AppearAudio.play()
+	updateAudio()
 
 func _input(event):
 	if $MapSelection.visible:
@@ -50,6 +51,10 @@ func _input(event):
 			$ResetPrompt/Anim.play("appear")
 		if event.is_action_pressed("ui_cancel"):
 			close()
+		if event.is_action_pressed("mute"):
+			Global.audio = int(Global.audio + 1) % 4
+			Global.saveGame()
+			updateAudio()
 
 func close():
 	queue_free()
@@ -121,3 +126,18 @@ func updateScene():
 			node.set_outline(false)
 		if (page * 5) + i == Global.actualMap:
 			node.set_color(Color("ffffff"))
+
+func updateAudio():
+	match int(Global.audio):
+		0:
+			$MainContainer/MusicMuteSprite.hide()
+			$MainContainer/SoundMuteSprite.hide()
+		1:
+			$MainContainer/MusicMuteSprite.hide()
+			$MainContainer/SoundMuteSprite.show()
+		2:
+			$MainContainer/MusicMuteSprite.show()
+			$MainContainer/SoundMuteSprite.hide()
+		3:
+			$MainContainer/MusicMuteSprite.show()
+			$MainContainer/SoundMuteSprite.show()

@@ -12,6 +12,7 @@ var actualMap = 0
 var gameFinished : bool = false
 
 var playersJoined = [true, false, false, false]
+var audio = 0
 
 var deathCnt = [0, 0, 0, 0]
 
@@ -63,6 +64,7 @@ func togglePlayer(playerId):
 		for player in get_tree().get_nodes_in_group("player"):
 			if player.playerId == playerId:
 				player.die(false)
+	saveGame()
 
 func rollNextControlScheme(playerId, from):
 	var tmpScheme = from
@@ -127,7 +129,8 @@ func saveGame():
 		'currentMap' : currentMap,
 		'joined' : playersJoined,
 		'control' : playersControlScheme,
-		'deathCnt' : deathCnt
+		'deathCnt' : deathCnt,
+		'audio' : audio
 	}
 	var file = File.new()
 	file.open(SAVE_PATH, File.WRITE)
@@ -150,6 +153,8 @@ func loadGame():
 			playersControlScheme = scheme
 		if (gameState.has('deathCnt')):
 			deathCnt = gameState['deathCnt']
+		if (gameState.has('audio')):
+			audio = gameState['audio']
 
 func deleteSave():
 	var file = Directory.new()
