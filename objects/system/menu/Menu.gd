@@ -128,6 +128,7 @@ func updateScene():
 			node.set_color(Color("ffffff"))
 
 func updateAudio():
+	Global.updateAudio()
 	match int(Global.audio):
 		0:
 			$MainContainer/MusicMuteSprite.hide()

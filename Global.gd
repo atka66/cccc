@@ -25,7 +25,25 @@ var playersFrozen = false
 func _ready():
 	randomize()
 	loadGame()
+	updateAudio()
 	gameFinished = currentMap >= len(Res.Maps)
+
+func updateAudio():
+	match int(audio):
+		0:
+			setMute(false, false)
+		1:
+			setMute(false, true)
+		2:
+			setMute(true, false)
+		3:
+			setMute(true, true)
+
+func setMute(musicMute: bool, soundMute: bool):
+	var musicBus = AudioServer.get_bus_index("Music")
+	var soundBus = AudioServer.get_bus_index("Sound")
+	AudioServer.set_bus_mute(musicBus, musicMute)
+	AudioServer.set_bus_mute(soundBus, soundMute)
 
 func spawnPlayer(playerId, silent : bool):
 	if !Global.playersJoined[playerId]:
