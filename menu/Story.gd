@@ -24,18 +24,13 @@ func progressTimer():
 		if (page < Res.Maps[Global.currentMap].chapter):
 			$FlipTimer.start()
 		else:
-			# todo think about whether text is needed here
-			#if page > 0:
-			#	$StartLabel.set_text("...and so our adventure continues...")
-			#else:
-			#	$StartLabel.set_text("...and so our adventure begins...")
 			$StartAnim.play("startgame")
 	else:
 		if (page < len(Res.Chapters) + len(Res.EndSlides)):
 			$FlipTimer.start()
 		else:
+			# todo proper close audio
 			$StoryAnim.play("close")
-			$StartAnim.play("startgame")
 
 func _input(event):
 	if event is InputEventKey:
