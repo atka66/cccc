@@ -6,6 +6,8 @@
 extents = Vector2( 1, 1 )
 
 [node name="BloodTrail" type="Area2D"]
+z_index = 10
+z_as_relative = false
 collision_layer = 4
 script = ExtResource( 1 )
 

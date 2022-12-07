@@ -48,6 +48,8 @@ tracks/2/keys = {
 radius = 16.0
 
 [node name="Saw" type="Node2D"]
+z_index = 15
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="SawBlade" type="StaticBody2D" parent="." groups=["killer", "sawblade"]]
