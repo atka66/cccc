@@ -63,23 +63,20 @@ func setupInputMaps():
 				"right" : "right_1",
 				"jump" : "jump_1",
 				"dash" : "dash_1",
-				"death" : "death_1"
 			}
 		'1':
 			inputMaps = {
 				"left" : "left_2",
 				"right" : "right_2",
 				"jump" : "jump_2",
-				"dash" : "dash_2",
-				"death" : "death_2"
+				"dash" : "dash_2"
 			}
 		_:
 			inputMaps = {
 				"left" : "left_gamepad",
 				"right" : "right_gamepad",
 				"jump" : "jump_gamepad",
-				"dash" : "dash_gamepad",
-				"death" : "death_gamepad"
+				"dash" : "dash_gamepad"
 			}
 
 func _process(delta):
@@ -181,9 +178,6 @@ func determineSprite():
 				$Sprite.rotation = 0
 
 func _handlePlayerInput():
-	if (Input.is_action_just_pressed(inputMaps["death"])):
-		die(true)
-
 	if (Input.is_action_just_released(inputMaps["jump"]) && velocity.y < 0):
 		velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / currSpeedJump)
 
