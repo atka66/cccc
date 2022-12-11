@@ -2,5 +2,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$BgDungeon.margin_left = -(randi() % 400)
+	var offset = Global.getOffsetForActualMap()
+	$BgDungeon.margin_left = offset
 	get_node('/root/Music').play(Res.AudioMusicChapterDungeon)

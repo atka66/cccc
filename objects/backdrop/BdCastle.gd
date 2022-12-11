@@ -3,7 +3,8 @@ extends Node2D
 const thunderMaxDelay : int = 30
 
 func _ready():
-	$BgCastle.margin_left = -(randi() % 400)
+	var offset = Global.getOffsetForActualMap()
+	$BgCastle.margin_left = offset
 	# todo castle music
 	get_node('/root/Music').mute()
 	$ThunderTimer.start(randf() * thunderMaxDelay)

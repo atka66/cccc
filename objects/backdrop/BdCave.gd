@@ -2,7 +2,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var offset = -(randi() % 400)
+	var offset = Global.getOffsetForActualMap()
 	$BgCave.margin_left = offset
 	$BgCrystals1.margin_left = offset
 	$BgCrystals2.margin_left = offset

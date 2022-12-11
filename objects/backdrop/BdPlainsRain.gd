@@ -3,7 +3,8 @@ extends Node2D
 const thunderMaxDelay : int = 20
 
 func _ready():
-	$BgPlains.margin_left = -(randi() % 400)
+	var offset = Global.getOffsetForActualMap()
+	$BgPlains.margin_left = offset
 	get_node('/root/Music').play(Res.AudioMusicChapterRainy)
 	$ThunderTimer.start(randf() * thunderMaxDelay)
 

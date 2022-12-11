@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
-	$BgPlains.margin_left = -(randi() % 400)
+	var offset = Global.getOffsetForActualMap()
+	$BgPlains.margin_left = offset
 	# TODO plains music
 	get_node('/root/Music').mute()

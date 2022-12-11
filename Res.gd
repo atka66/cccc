@@ -67,7 +67,7 @@ const Maps = [
 	{"chapter": 7, "name":"cold reception", "path":"res://maps/Map71.tscn"},
 	{"chapter": 7, "name":"ice slide", "path":"res://maps/Map72.tscn"},
 	{"chapter": 7, "name":"deadly momentum", "path":"res://maps/Map73.tscn"},
-	{"chapter": 7, "name":"crevasse", "path":"res://maps/Map74.tscn"},
+	{"chapter": 7, "name":"ice rift", "path":"res://maps/Map74.tscn"},
 	{"chapter": 7, "name":"the final stretch", "path":"res://maps/Map75.tscn"},
 ]
 
