@@ -40,6 +40,9 @@ func _ready():
 	if (playerId != 3 || isSuperdark):
 		$BunnyEars.hide()
 	
+	if playerId == 1:
+		$AudioRun.pitch_scale = 1.3
+	
 	setupInputMaps()
 	
 	$SleepTimer.start(SLEEP_TIME)
