@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/system/menu/PlayerSelector.gd" type="Script" id=1]
 [ext_resource path="res://sprites/controls.png" type="Texture" id=2]
 [ext_resource path="res://sprites/control_hint.png" type="Texture" id=3]
 [ext_resource path="res://sounds/toggle.ogg" type="AudioStream" id=4]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/deathcnt.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "toggle"
@@ -66,3 +67,16 @@ hframes = 6
 [node name="ToggleAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 bus = "Sound"
+
+[node name="DeathCount" type="Node2D" parent="."]
+position = Vector2( -24, 0 )
+
+[node name="DeathCountIcon" type="Sprite" parent="DeathCount"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 6 )
+
+[node name="DeathCountLabel" parent="DeathCount" instance=ExtResource( 5 )]
+position = Vector2( -7, 0 )
+text = "123"
+outline = true
+animate = false

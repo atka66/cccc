@@ -30,6 +30,8 @@ func _ready():
 	else:
 		$ChildName.hide()
 
+	$DeathCount/DeathCountLabel.set_text(str(Global.deathCnt[playerId]))
+
 func _input(event):
 	if event.is_action_pressed("toggle_player_" + str(playerId + 1)):
 		$Anim.play("toggle")
@@ -49,8 +51,10 @@ func wakeUpDummies():
 	dummy.wakeup()
 	if childDummy:
 		childDummy.wakeup()
+	$DeathCount.show()
 	
 func sleepDummies():
 	dummy.sleep()
 	if childDummy:
 		childDummy.sleep()
+	$DeathCount.hide()
