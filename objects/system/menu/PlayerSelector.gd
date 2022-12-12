@@ -46,6 +46,11 @@ func _process(delta):
 	else:
 		sleepDummies()
 		$ControlSprite.hide()
+	
+	if Global.playersControlScheme[playerId] > 1:
+		$DisconnectSprite.visible = !Global.joyConnected[Global.playersControlScheme[playerId] - 2]
+	else:
+		$DisconnectSprite.hide()
 
 func wakeUpDummies():
 	dummy.wakeup()

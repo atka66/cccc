@@ -12,6 +12,10 @@ config_version=4
 
 config/name="Cute Critter CARNAGE"
 run/main_scene="res://menu/Splash.tscn"
+boot_splash/image="res://splash.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]

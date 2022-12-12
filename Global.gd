@@ -20,13 +20,28 @@ var deathCnt = [0, 0, 0, 0]
 # 1 : arrow keys
 # 2-5 : controllers
 var playersControlScheme = [0, -1, -1, -1]
+var joyConnected = [false, false, false, false]
 var playersFrozen = false
 
 func _ready():
+	initJoys()
+	Input.connect("joy_connection_changed", self, "_joy_connection_changed")
+	
 	randomize()
 	loadGame()
 	updateAudio()
 	gameFinished = currentMap >= len(Res.Maps)
+
+func _joy_connection_changed(id, connected):
+	if id < joyConnected.size() && connected:
+			joyConnected[id] = true
+
+func initJoys():
+	var joys = Input.get_connected_joypads()
+	for i in range(joyConnected.size()):
+		if joys.has(i):
+			joyConnected[i] = true
+
 
 func updateAudio():
 	match int(audio):

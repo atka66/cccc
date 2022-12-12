@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/system/menu/PlayerSelector.gd" type="Script" id=1]
 [ext_resource path="res://sprites/controls.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sounds/toggle.ogg" type="AudioStream" id=4]
 [ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sprites/deathcnt.png" type="Texture" id=6]
+[ext_resource path="res://sprites/disconnect_hint.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "toggle"
@@ -36,6 +37,23 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 4 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "flash"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="PlayerSelector" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -63,6 +81,15 @@ hframes = 12
 position = Vector2( 16, 46 )
 texture = ExtResource( 2 )
 hframes = 6
+frame = 2
+
+[node name="DisconnectSprite" type="Sprite" parent="."]
+position = Vector2( 24, 52 )
+texture = ExtResource( 7 )
+
+[node name="Anim" type="AnimationPlayer" parent="DisconnectSprite"]
+autoplay = "flash"
+anims/flash = SubResource( 2 )
 
 [node name="ToggleAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
