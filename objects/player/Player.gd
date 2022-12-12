@@ -76,10 +76,10 @@ func setupInputMaps():
 			}
 		_:
 			inputMaps = {
-				"left" : "left_gamepad",
-				"right" : "right_gamepad",
-				"jump" : "jump_gamepad",
-				"dash" : "dash_gamepad"
+				"left" : "left_gamepad_" + str(Global.playersControlScheme[playerId] - 1),
+				"right" : "right_gamepad_" + str(Global.playersControlScheme[playerId] - 1),
+				"jump" : "jump_gamepad_" + str(Global.playersControlScheme[playerId] - 1),
+				"dash" : "dash_gamepad_" + str(Global.playersControlScheme[playerId] - 1),
 			}
 
 func _process(delta):
