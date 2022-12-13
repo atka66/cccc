@@ -1,5 +1,7 @@
 extends Node2D
 
+var firstTick = true
+
 func _ready():
 	Global.mapParent = self
 	spawnPlayers()
@@ -12,10 +14,12 @@ func _ready():
 	if has_node("Spikes"):
 		spawnSpikes()
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+func _process(delta):
+	if Input.is_action_just_pressed("menu") && !firstTick:
 		if (!Global.playersFrozen && !Global.isMenu()):
 			Global.add_child(Res.Menu.instance())
+	if firstTick:
+		firstTick = false
 
 func spawnPlayers():
 	for i in range(4):

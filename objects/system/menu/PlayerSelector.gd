@@ -31,6 +31,7 @@ func _ready():
 		$ChildName.hide()
 
 	$DeathCount/DeathCountLabel.set_text(str(Global.deathCnt[playerId]))
+	doDummies()
 
 func _input(event):
 	if event.is_action_pressed("toggle_player_" + str(playerId + 1)):
@@ -39,6 +40,9 @@ func _input(event):
 		Global.togglePlayer(playerId)
 
 func _process(delta):
+	doDummies()
+
+func doDummies():
 	if (Global.playersJoined[playerId]):
 		wakeUpDummies()
 		$ControlSprite.show()

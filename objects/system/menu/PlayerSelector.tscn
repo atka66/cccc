@@ -84,7 +84,7 @@ hframes = 6
 frame = 2
 
 [node name="DisconnectSprite" type="Sprite" parent="."]
-position = Vector2( 24, 52 )
+position = Vector2( 6, 35 )
 texture = ExtResource( 7 )
 
 [node name="Anim" type="AnimationPlayer" parent="DisconnectSprite"]

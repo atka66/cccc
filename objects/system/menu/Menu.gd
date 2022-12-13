@@ -14,47 +14,50 @@ func _ready():
 	$AppearAudio.play()
 	updateAudio()
 
-func _input(event):
+func _process(delta):
 	if $MapSelection.visible:
-		if event.is_action_pressed("ui_cancel"):
+		if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu"):
 			$ActionAudio.play()
 			$MapSelection.hide()
 			$MainContainer.show()
-		if event.is_action_pressed("ui_left"):
+		if Input.is_action_just_pressed("ui_left"):
 			flipPage(false)
-		if event.is_action_pressed("ui_right"):
+		if Input.is_action_just_pressed("ui_right"):
 			flipPage(true)
-		if event.is_action_pressed("ui_up"):
+		if Input.is_action_just_pressed("ui_up"):
 			if selectedScene > 0:
 				selectedScene = (selectedScene + 4) % 5
 				$ActionAudio.play()
 				updateScene()
-		if event.is_action_pressed("ui_down"):
+		if Input.is_action_just_pressed("ui_down"):
 			if int(Global.currentMap) - (page * 5) > selectedScene && selectedScene < 4:
 				selectedScene = (selectedScene + 1) % 5
 				$ActionAudio.play()
 				updateScene()
-		if event.is_action_pressed("map"):
+		if Input.is_action_just_pressed("map"):
 			Global.closeMenu()
 			Global.gotoMap((page * 5) + selectedScene)
 	elif $ResetPrompt.visible:
-		if event.is_action_pressed("reset"):
+		if Input.is_action_just_pressed("reset"):
 			Global.resetGame()
-		if event.is_action_pressed("ui_cancel"):
+		if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu"):
 			$ResetPrompt.hide()
+			$ResetPrompt/Anim.stop()
+			$ResetPrompt/Anim.seek(0, true)
+			
 	else:
-		if event.is_action_pressed("map"):
+		if Input.is_action_just_pressed("map"):
 			page = Res.Maps[Global.actualMap].chapter
 			updateImages()
 			$ActionAudio.play()
 			$MainContainer.hide()
 			$MapSelection.show()
-		if event.is_action_pressed("reset"):
+		if Input.is_action_just_pressed("reset"):
 			$ResetPrompt.show()
 			$ResetPrompt/Anim.play("appear")
-		if event.is_action_pressed("ui_cancel"):
+		if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu"):
 			close()
-		if event.is_action_pressed("mute"):
+		if Input.is_action_just_pressed("mute"):
 			Global.audio = int(Global.audio + 1) % 4
 			Global.saveGame()
 			updateAudio()
