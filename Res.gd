@@ -160,6 +160,7 @@ onready var AudioMusicStory = preload("res://music/story.ogg")
 
 onready var AudioMusicChapterForest = preload("res://music/forest.ogg")
 onready var AudioMusicChapterRainy = preload("res://music/rainy.ogg")
+onready var AudioMusicChapterDesert = preload("res://music/desert.ogg")
 onready var AudioMusicChapterDungeon = preload("res://music/dungeon.ogg")
 onready var AudioMusicChapterCave = preload("res://music/cave.ogg")
 onready var AudioMusicChapterCaveEntrance = preload("res://music/caveentrance.ogg")

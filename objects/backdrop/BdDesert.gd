@@ -10,4 +10,4 @@ extends Node2D
 func _ready():
 	var offset = Global.getOffsetForActualMap()
 	$BgDesert.margin_left = offset
-	get_node('/root/Music').mute()
+	get_node('/root/Music').play(Res.AudioMusicChapterDesert)
