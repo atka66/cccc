@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://res/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/mapelement/Exit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/backdrop/BdPlainsRain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/player/PlayerSpawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/mapelement/Fireflies.tscn" type="PackedScene" id=5]
 [ext_resource path="res://maps/MapController.gd" type="Script" id=6]
 [ext_resource path="res://objects/mapelement/Sign.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/signhelps/sign_spikes.png" type="Texture" id=8]
@@ -16,6 +17,7 @@ script = ExtResource( 6 )
 
 [node name="Bg" type="TileMap" parent="."]
 modulate = Color( 0.466667, 0.533333, 0.6, 1 )
+light_mask = 9
 z_index = -10
 z_as_relative = false
 tile_set = ExtResource( 1 )
@@ -60,3 +62,15 @@ position = Vector2( 488, 200 )
 [node name="Sign" parent="." instance=ExtResource( 7 )]
 position = Vector2( 88, 216 )
 signHintSprite = ExtResource( 8 )
+
+[node name="Fireflies" parent="." instance=ExtResource( 5 )]
+position = Vector2( 272, 248 )
+count = 4
+
+[node name="Fireflies2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 496, 176 )
+count = 2
+
+[node name="Fireflies3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 256, 32 )
+count = 2

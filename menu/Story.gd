@@ -29,7 +29,6 @@ func progressTimer():
 		if (page < len(Res.Chapters) + len(Res.EndSlides)):
 			$FlipTimer.start()
 		else:
-			# todo proper close audio
 			$StoryAnim.play("close")
 
 func _input(event):

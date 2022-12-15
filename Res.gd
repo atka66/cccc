@@ -21,6 +21,8 @@ onready var IceGlow = preload("res://objects/mapelement/IceGlow.tscn")
 
 onready var Spike = preload("res://objects/hazard/Spike.tscn")
 
+onready var Firefly = preload("res://objects/mapelement/Firefly.tscn")
+
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},

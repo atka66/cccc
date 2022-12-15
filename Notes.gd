@@ -8,6 +8,7 @@
 # -11  : [Bg2]
 # -10  : [Bg]
 # -9   : {Torch}, {Exit}
+# -8   : {Firefly}
 # -5   : {SawLine}
 # -4   : [Fg], [IceTiles]
 # -3   : {TogglingTile}
