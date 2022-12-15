@@ -45,7 +45,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 131088, 14, 65537, 196626, 14, 65536, 786463, 14, 65536, 851975, 14, 65536, 1048594, 14, 65537 )
+tile_data = PoolIntArray( 131085, 14, 65540, 131088, 14, 65537, 196626, 14, 65536, 720907, 14, 65539, 720913, 14, 65539, 786460, 14, 65538, 786463, 14, 65536, 851974, 14, 65541, 851975, 14, 65536, 1048594, 14, 65537 )
 
 [node name="Spikes" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
