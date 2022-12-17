@@ -26,7 +26,8 @@ Music="*res://objects/system/Music.tscn"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
