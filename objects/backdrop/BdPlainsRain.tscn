@@ -80,7 +80,7 @@ angle = 80.0
 
 [node name="RainAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
 bus = "Sound"
 
