@@ -23,6 +23,8 @@ onready var Spike = preload("res://objects/hazard/Spike.tscn")
 
 onready var Firefly = preload("res://objects/mapelement/Firefly.tscn")
 
+onready var BirdSound = preload("res://objects/system/BirdSound.tscn")
+
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
@@ -154,6 +156,13 @@ onready var AudioJump = [
 	preload("res://sounds/jump_1_2.ogg"),
 	preload("res://sounds/jump_1_3.ogg")
 ]
+onready var AudioBirds = [
+	preload("res://sounds/birds_1.ogg"),
+	preload("res://sounds/birds_2.ogg"),
+	preload("res://sounds/birds_3.ogg"),
+	preload("res://sounds/birds_4.ogg"),
+	preload("res://sounds/birds_5.ogg")
+]
 
 #Music 
 onready var AudioMusicSplash = preload("res://music/splash.ogg")
@@ -162,6 +171,7 @@ onready var AudioMusicStory = preload("res://music/story.ogg")
 
 onready var AudioMusicChapterForest = preload("res://music/forest.ogg")
 onready var AudioMusicChapterRainy = preload("res://music/rainy.ogg")
+onready var AudioMusicChapterPlains = preload("res://music/plains.ogg")
 onready var AudioMusicChapterDesert = preload("res://music/desert.ogg")
 onready var AudioMusicChapterDungeon = preload("res://music/dungeon.ogg")
 onready var AudioMusicChapterCave = preload("res://music/cave.ogg")
