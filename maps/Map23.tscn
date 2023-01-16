@@ -64,4 +64,4 @@ position = Vector2( 432, 208 )
 position = Vector2( 480, 128 )
 
 [node name="SawBlade3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 96, 272 )
+position = Vector2( 96, 280 )
