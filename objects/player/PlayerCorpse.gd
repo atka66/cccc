@@ -3,8 +3,8 @@ extends Node2D
 export var playerId : int = 0
 
 func _ready():
-	spawnBloodParticles(10)
-	spawnBloodTrails(10)
+	spawnBloodParticles(8)
+	spawnBloodTrails(8)
 	$BloodPar.restart()
 	$PopAudio.stream = Res.AudioDeathPop[randi() % len(Res.AudioDeathPop)]
 	$PopAudio.play()
