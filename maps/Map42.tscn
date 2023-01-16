@@ -60,7 +60,7 @@ tile_data = PoolIntArray( 393243, 14, 4, 917506, 14, 65536 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 917527, 15, 0, 917528, 15, 0, 917529, 15, 0, 917530, 15, 0, 917531, 15, 0, 1245204, 15, 0, 1245205, 15, 0 )
+tile_data = PoolIntArray( 917528, 15, 0, 917529, 15, 0, 917530, 15, 0, 917531, 15, 0, 1245204, 15, 0, 1245205, 15, 0 )
 
 [node name="PlayerSpawn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 24, 216 )
