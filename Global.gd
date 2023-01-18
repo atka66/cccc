@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH = "user://cccc.sav"
-const VERSION = '1.1'
+const VERSION = '1.2'
 
 const GRAVITY = 50
 
