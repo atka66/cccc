@@ -25,6 +25,8 @@ onready var Firefly = preload("res://objects/mapelement/Firefly.tscn")
 
 onready var BirdSound = preload("res://objects/system/BirdSound.tscn")
 
+onready var TouchControl = preload("res://objects/system/TouchControl.tscn")
+
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},

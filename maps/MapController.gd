@@ -3,6 +3,9 @@ extends Node2D
 var firstTick = true
 
 func _ready():
+	if OS.has_touchscreen_ui_hint():
+		add_child(Res.TouchControl.instance())
+	
 	Global.mapParent = self
 	spawnPlayers()
 	Global.playersFrozen = false
