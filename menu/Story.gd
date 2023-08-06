@@ -32,8 +32,8 @@ func progressTimer():
 			$StoryAnim.play("close")
 
 func _input(event):
-	if event is InputEventKey or event is InputEventJoypadButton:
-		if event.is_action_pressed("ui_cancel"):
+	if event is InputEventKey or event is InputEventJoypadButton or event is InputEventAction:
+		if event.is_action_pressed("skip"):
 			startGame()
 		elif started:
 			$HintAnim.play("appear")

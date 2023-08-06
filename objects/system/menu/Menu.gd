@@ -16,7 +16,7 @@ func _ready():
 
 func _process(delta):
 	if $MapSelection.visible:
-		if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu"):
+		if Input.is_action_just_pressed("skip") or Input.is_action_just_pressed("menu"):
 			$ActionAudio.play()
 			$MapSelection.hide()
 			$MainContainer.show()
@@ -40,7 +40,7 @@ func _process(delta):
 	elif $ResetPrompt.visible:
 		if Input.is_action_just_pressed("reset"):
 			Global.resetGame()
-		if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu"):
+		if Input.is_action_just_pressed("skip") or Input.is_action_just_pressed("menu"):
 			$ResetPrompt.hide()
 			$ResetPrompt/Anim.stop()
 			$ResetPrompt/Anim.seek(0, true)
@@ -55,7 +55,7 @@ func _process(delta):
 		if Input.is_action_just_pressed("reset"):
 			$ResetPrompt.show()
 			$ResetPrompt/Anim.play("appear")
-		if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu"):
+		if Input.is_action_just_pressed("skip") or Input.is_action_just_pressed("menu"):
 			close()
 		if Input.is_action_just_pressed("mute"):
 			Global.audio = int(Global.audio + 1) % 4

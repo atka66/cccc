@@ -26,4 +26,3 @@
 # 101  : {CustomLabel}
 # 150  : [QuitPrompt], [ResetPrompt]
 # 151  : [QuitPrompt/CustomLabels], [ResetPrompt/CustomLabels]
-# 200  : [TouchControl]

@@ -31,6 +31,9 @@ func _ready():
 	loadGame()
 	updateAudio()
 	gameFinished = currentMap >= len(Res.Maps)
+	
+	if OS.has_touchscreen_ui_hint():
+		add_child(Res.TouchControl.instance())
 
 func _joy_connection_changed(id, connected):
 	if id < joyConnected.size() && connected:
@@ -147,6 +150,7 @@ func gotoMap(i):
 func resetGame():
 	closeMenu()
 	deleteSave()
+	Global.mapParent = null
 	gameFinished = false
 	showWholeStory = true
 	currentMap = 0

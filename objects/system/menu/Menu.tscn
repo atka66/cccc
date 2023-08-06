@@ -312,7 +312,7 @@ animate = false
 position = Vector2( 108, 96 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 4
 
 [node name="BackLabel" parent="MainContainer" instance=ExtResource( 2 )]
@@ -331,7 +331,7 @@ animate = false
 position = Vector2( 108, 156 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 6
 
 [node name="MapLabel" parent="MainContainer" instance=ExtResource( 2 )]
@@ -350,7 +350,7 @@ animate = false
 position = Vector2( 108, 216 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 5
 
 [node name="ResetLabel" parent="MainContainer" instance=ExtResource( 2 )]
@@ -391,7 +391,7 @@ playerId = 3
 position = Vector2( 444, 12 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 11
 
 [node name="MusicSprite" type="Sprite" parent="MainContainer"]
@@ -515,20 +515,20 @@ animate = false
 [node name="PrevHint" type="Sprite" parent="MapSelection"]
 position = Vector2( 54, 156 )
 texture = ExtResource( 5 )
-hframes = 12
+hframes = 13
 frame = 7
 
 [node name="NextHint" type="Sprite" parent="MapSelection"]
 position = Vector2( 468, 156 )
 texture = ExtResource( 5 )
-hframes = 12
+hframes = 13
 frame = 8
 
 [node name="BackHintSprite" type="Sprite" parent="MapSelection"]
 position = Vector2( 444, 12 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 4
 
 [node name="BackLabel" parent="MapSelection" instance=ExtResource( 2 )]
@@ -542,7 +542,7 @@ animate = false
 position = Vector2( 444, 36 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 6
 
 [node name="SelectLabel" parent="MapSelection" instance=ExtResource( 2 )]
@@ -582,7 +582,7 @@ outline = true
 position = Vector2( 156, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 6
 
 [node name="QuitLabel" parent="MapPrompt" instance=ExtResource( 2 )]
@@ -597,7 +597,7 @@ animate = false
 position = Vector2( 264, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 4
 
 [node name="BackLabel" parent="MapPrompt" instance=ExtResource( 2 )]
@@ -642,7 +642,7 @@ outline = true
 position = Vector2( 144, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 5
 
 [node name="ResetLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
@@ -657,7 +657,7 @@ animate = false
 position = Vector2( 252, 146 )
 texture = ExtResource( 5 )
 centered = false
-hframes = 12
+hframes = 13
 frame = 4
 
 [node name="BackLabel" parent="ResetPrompt" instance=ExtResource( 2 )]
