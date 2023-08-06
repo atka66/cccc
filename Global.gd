@@ -23,6 +23,8 @@ var playersControlScheme = [0, -1, -1, -1]
 var joyConnected = [false, false, false, false]
 var playersFrozen = false
 
+var phoneMode = OS.has_touchscreen_ui_hint() && (OS.get_name() == "Android" || OS.get_name() == "Web")
+
 func _ready():
 	initJoys()
 	Input.connect("joy_connection_changed", self, "_joy_connection_changed")
@@ -32,7 +34,7 @@ func _ready():
 	updateAudio()
 	gameFinished = currentMap >= len(Res.Maps)
 	
-	if OS.has_touchscreen_ui_hint():
+	if phoneMode:
 		add_child(Res.TouchControl.instance())
 
 func _joy_connection_changed(id, connected):

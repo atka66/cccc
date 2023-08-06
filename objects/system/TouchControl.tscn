@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/control_hint.png" type="Texture" id=1]
 [ext_resource path="res://objects/system/TouchControl.gd" type="Script" id=2]
@@ -35,6 +35,18 @@ extents = Vector2( 128, 32 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 128, 32 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 64, 32 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 160, 24 )
 
 [node name="TouchControl" type="CanvasLayer"]
 layer = 2
@@ -182,4 +194,62 @@ position = Vector2( 624, 304 )
 shape = SubResource( 15 )
 shape_centered = false
 action = "menu"
+visibility_mode = 1
+
+[node name="MapPromptContainer" type="Node2D" parent="Container"]
+
+[node name="BackButton" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 896, 32 )
+shape = SubResource( 17 )
+shape_centered = false
+action = "menu"
+visibility_mode = 1
+
+[node name="PrevButton" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 96, 320 )
+shape = SubResource( 18 )
+shape_centered = false
+action = "ui_left"
+visibility_mode = 1
+
+[node name="NextButton" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 944, 320 )
+shape = SubResource( 19 )
+shape_centered = false
+action = "ui_right"
+visibility_mode = 1
+
+[node name="Map1Button" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 688, 224 )
+shape = SubResource( 20 )
+shape_centered = false
+action = "touch_map_1"
+visibility_mode = 1
+
+[node name="Map2Button" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 688, 272 )
+shape = SubResource( 20 )
+shape_centered = false
+action = "touch_map_2"
+visibility_mode = 1
+
+[node name="Map3Button" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 688, 320 )
+shape = SubResource( 20 )
+shape_centered = false
+action = "touch_map_3"
+visibility_mode = 1
+
+[node name="Map4Button" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 688, 368 )
+shape = SubResource( 20 )
+shape_centered = false
+action = "touch_map_4"
+visibility_mode = 1
+
+[node name="Map5Button" type="TouchScreenButton" parent="Container/MapPromptContainer"]
+position = Vector2( 688, 416 )
+shape = SubResource( 20 )
+shape_centered = false
+action = "touch_map_5"
 visibility_mode = 1

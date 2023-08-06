@@ -277,6 +277,26 @@ visibility_toggle={
 "deadzone": 0.5,
 "events": [  ]
 }
+touch_map_1={
+"deadzone": 0.5,
+"events": [  ]
+}
+touch_map_2={
+"deadzone": 0.5,
+"events": [  ]
+}
+touch_map_3={
+"deadzone": 0.5,
+"events": [  ]
+}
+touch_map_4={
+"deadzone": 0.5,
+"events": [  ]
+}
+touch_map_5={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 

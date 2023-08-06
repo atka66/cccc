@@ -5,10 +5,13 @@ var dummy : Node
 var childDummy : Node
 
 func _ready():
+	if Global.phoneMode:
+		$SchemeHolder.hide()
+	
 	dummy = Res.PlayerDummy.instance()
 	dummy.playerId = playerId
 	add_child(dummy)
-	$ToggleSprite.frame = playerId
+	$SchemeHolder/ToggleSprite.frame = playerId
 	
 	var name = 'unnamed'
 	match playerId:
@@ -45,16 +48,16 @@ func _process(delta):
 func doDummies():
 	if (Global.playersJoined[playerId]):
 		wakeUpDummies()
-		$ControlSprite.show()
-		$ControlSprite.frame = Global.playersControlScheme[playerId]
+		$SchemeHolder/ControlSprite.show()
+		$SchemeHolder/ControlSprite.frame = Global.playersControlScheme[playerId]
 	else:
 		sleepDummies()
-		$ControlSprite.hide()
+		$SchemeHolder/ControlSprite.hide()
 	
 	if Global.playersControlScheme[playerId] > 1:
-		$DisconnectSprite.visible = !Global.joyConnected[Global.playersControlScheme[playerId] - 2]
+		$SchemeHolder/DisconnectSprite.visible = !Global.joyConnected[Global.playersControlScheme[playerId] - 2]
 	else:
-		$DisconnectSprite.hide()
+		$SchemeHolder/DisconnectSprite.hide()
 
 func wakeUpDummies():
 	dummy.wakeup()

@@ -4,6 +4,7 @@ var page = 0
 var selectedScene = 0
 
 var resetPrompt = false
+var mapSelectionPrompt = false
 
 func _ready():
 	if !Global.gameFinished:
@@ -17,9 +18,10 @@ func _ready():
 	updateAudio()
 
 func _process(delta):
-	if $MapSelection.visible:
+	if mapSelectionPrompt:
 		if Input.is_action_just_pressed("skip") or Input.is_action_just_pressed("menu"):
 			$ActionAudio.play()
+			mapSelectionPrompt = false
 			$MapSelection.hide()
 			$MainContainer.show()
 		if Input.is_action_just_pressed("ui_left"):
@@ -39,6 +41,25 @@ func _process(delta):
 		if Input.is_action_just_pressed("map"):
 			Global.closeMenu()
 			Global.gotoMap((page * 5) + selectedScene)
+		if Input.is_action_just_pressed("touch_map_1"):
+				Global.closeMenu()
+				Global.gotoMap(page * 5)
+		if Input.is_action_just_pressed("touch_map_2"):
+			if int(Global.currentMap) - (page * 5) > 0:
+				Global.closeMenu()
+				Global.gotoMap((page * 5) + 1)
+		if Input.is_action_just_pressed("touch_map_3"):
+			if int(Global.currentMap) - (page * 5) > 1:
+				Global.closeMenu()
+				Global.gotoMap((page * 5) + 2)
+		if Input.is_action_just_pressed("touch_map_4"):
+			if int(Global.currentMap) - (page * 5) > 2:
+				Global.closeMenu()
+				Global.gotoMap((page * 5) + 3)
+		if Input.is_action_just_pressed("touch_map_5"):
+			if int(Global.currentMap) - (page * 5) > 3:
+				Global.closeMenu()
+				Global.gotoMap((page * 5) + 4)
 	elif resetPrompt:
 		if Input.is_action_just_pressed("reset"):
 			Global.resetGame()
@@ -54,6 +75,7 @@ func _process(delta):
 			updateImages()
 			$ActionAudio.play()
 			$MainContainer.hide()
+			mapSelectionPrompt = true
 			$MapSelection.show()
 		if Input.is_action_just_pressed("reset"):
 			resetPrompt = true
