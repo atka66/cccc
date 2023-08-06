@@ -6,6 +6,7 @@ func _ready():
 	$Container/TitleContainer.hide()
 	$Container/MapContainer.hide()
 	$Container/MenuContainer.hide()
+	$Container/ResetPromptContainer.hide()
 
 func _input(event):
 	if event.is_action_pressed("visibility_toggle"):
@@ -14,8 +15,9 @@ func _input(event):
 func _process(delta):
 	if !Global.mapParent:
 		$Container/TitleContainer.show()
-		$Container/MenuContainer.hide()
 		$Container/MapContainer.hide()
+		$Container/MenuContainer.hide()
+		$Container/ResetPromptContainer.hide()
 	else:
 		$Container/TitleContainer.hide()
 		if !Global.isMenu():
@@ -23,7 +25,12 @@ func _process(delta):
 			$Container/MenuContainer.hide()
 		else:
 			$Container/MapContainer.hide()
-			$Container/MenuContainer.show()
+			if Global.getMenu().resetPrompt:
+				$Container/MenuContainer.hide()
+				$Container/ResetPromptContainer.show()
+			else:
+				$Container/MenuContainer.show()
+				$Container/ResetPromptContainer.hide()
 
 func toggleMapControls():
 	toggle = !toggle

@@ -3,6 +3,8 @@ extends CanvasLayer
 var page = 0
 var selectedScene = 0
 
+var resetPrompt = false
+
 func _ready():
 	if !Global.gameFinished:
 		$ResetPrompt/SadChild/AppearAudio.stream = null
@@ -37,10 +39,11 @@ func _process(delta):
 		if Input.is_action_just_pressed("map"):
 			Global.closeMenu()
 			Global.gotoMap((page * 5) + selectedScene)
-	elif $ResetPrompt.visible:
+	elif resetPrompt:
 		if Input.is_action_just_pressed("reset"):
 			Global.resetGame()
 		if Input.is_action_just_pressed("skip") or Input.is_action_just_pressed("menu"):
+			resetPrompt = false
 			$ResetPrompt.hide()
 			$ResetPrompt/Anim.stop()
 			$ResetPrompt/Anim.seek(0, true)
@@ -53,6 +56,7 @@ func _process(delta):
 			$MainContainer.hide()
 			$MapSelection.show()
 		if Input.is_action_just_pressed("reset"):
+			resetPrompt = true
 			$ResetPrompt.show()
 			$ResetPrompt/Anim.play("appear")
 		if Input.is_action_just_pressed("skip") or Input.is_action_just_pressed("menu"):

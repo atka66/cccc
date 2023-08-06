@@ -204,6 +204,9 @@ func closeMenu():
 	if (isMenu()):
 		get_tree().get_nodes_in_group("menu")[0].close()
 
+func getMenu():
+	return get_tree().get_nodes_in_group("menu")[0]
+
 func getOffsetForActualMap():
 	var noise = OpenSimplexNoise.new()
 	noise.period = 0.1
