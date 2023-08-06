@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH = "user://cccc.sav"
-const VERSION = '1.2.3'
+const VERSION = '1.2.5'
 
 const GRAVITY = 50
 
@@ -23,7 +23,7 @@ var playersControlScheme = [0, -1, -1, -1]
 var joyConnected = [false, false, false, false]
 var playersFrozen = false
 
-var phoneMode = OS.has_touchscreen_ui_hint() && (OS.get_name() == "Android" || OS.get_name() == "Web")
+var phoneMode = OS.has_touchscreen_ui_hint()
 
 func _ready():
 	initJoys()
