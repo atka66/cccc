@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://objects/backdrop/BdCaveEntrance.gd" type="Script" id=1]
-
-[node name="BackdropCaveEntrance" type="Node2D" groups=["superdark"]]
-scale = Vector2( 1.5, 1.5 )
-z_index = -20
-z_as_relative = false
-script = ExtResource( 1 )
