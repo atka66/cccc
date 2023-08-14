@@ -1,0 +1,8 @@
+shader_type canvas_item;
+
+uniform float strength = 1.5;
+uniform float intensity = 1.5;
+
+void vertex() {
+	VERTEX.x += (cos(TIME * intensity) * strength) * max(0.0, (1.0-UV.y));
+}
