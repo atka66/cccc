@@ -3,13 +3,13 @@ extends Node2D
 export var playerId : int = 0
 
 func _ready():
-	spawnBloodParticles(8)
-	spawnBloodTrails(8)
+	#spawnBloodParticles(8)
+	spawnBloodTrails(15)
 	$BloodPar.restart()
 	$PopAudio.stream = Res.AudioDeathPop[randi() % len(Res.AudioDeathPop)]
 	$PopAudio.play()
 
-
+# todo maybe delete later
 func spawnBloodParticles(n : int):
 	for i in range(1, n):
 		var bloodPar = Res.BloodPar.instance()

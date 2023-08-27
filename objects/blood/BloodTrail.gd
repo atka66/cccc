@@ -10,21 +10,21 @@ var mute = false
 func _ready():
 	var randScale = (randf()) + 0.5
 	$Poly.rotation = randi() % 90
-	$Poly.color.r += (randf() / 5) - 0.1
+	$Poly.color.r += (randf() / 7) - 0.1
 	$Poly.scale = Vector2(randScale, randScale)
 	$Trail.color = $Poly.color
 	$Trail.scale_amount = randScale * 6
 	$Trail.lifetime = (randf() * 5) + 5
 	velocity = (Vector2(randf(), randf()) - Vector2(0.5, 0.7)) * 10
 	
-	$StopTimer.start(randf() * 5)
+	$StopTimer.start(randf() * 3)
 
 func _physics_process(delta):
 	if !stopped:
 		if (drip):
 			var velClamp = velocity.clamped(0.19)
 			velocity = velClamp
-			velocity.y = 0.2
+			velocity.y = 0.3
 		else:
 			velocity.y += GRAVITY
 		position += velocity

@@ -210,7 +210,7 @@ func getMenu():
 	return get_tree().get_nodes_in_group("menu")[0]
 
 func getOffsetForActualMap():
-	var noise = OpenSimplexNoise.new()
-	noise.period = 0.1
-	return -(int((abs(noise.get_noise_1d(actualMap)) * 1000) * 400) % 400) - 20
+	var determRandom = RandomNumberGenerator.new()
+	determRandom.set_seed(actualMap)
+	return -(determRandom.randi() % 500) - 20
 	

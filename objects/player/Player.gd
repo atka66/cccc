@@ -181,6 +181,11 @@ func determineSprite():
 				$Sprite.rotation = 0
 
 func _handlePlayerInput():
+	# for debug purposes
+	if Input.is_action_just_pressed("kill"):
+		#die(false)
+		pass
+	
 	if (Input.is_action_just_released(inputMaps["jump"]) && velocity.y < 0):
 		velocity.y += lerp(0, SPEED_JUMPBRAKE, (-velocity.y) / currSpeedJump)
 
