@@ -8,7 +8,7 @@ const P_GOTO_ORIGIN = 10
 
 func _on_FlickerTimer_timeout():
 	$Light2D.energy = randf() + 0.7
-	$FlickerTimer.start(0.1)
+	$FlickerTimer.start(0.15)
 
 
 func _on_MoveTimer_timeout():
@@ -16,4 +16,4 @@ func _on_MoveTimer_timeout():
 		global_position = global_position.move_toward(origin, 1)
 	else:
 		position += Vector2((randi() % 3) - 1, (randi() % 3) - 1)
-	$MoveTimer.start(0.07)
+	$MoveTimer.start(0.1)

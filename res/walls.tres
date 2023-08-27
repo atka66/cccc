@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=435 format=2]
 
 [ext_resource path="res://sprites/tileset/ts_tree.png" type="Texture" id=1]
-[ext_resource path="res://sprites/wall1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/tileset/ts_dirt.png" type="Texture" id=2]
 [ext_resource path="res://sprites/tileset/ts_bush.png" type="Texture" id=3]
 [ext_resource path="res://sprites/tileset/ts_desert.png" type="Texture" id=4]
 [ext_resource path="res://sprites/tileset/ts_castle1.png" type="Texture" id=5]

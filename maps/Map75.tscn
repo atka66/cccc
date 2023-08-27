@@ -15,7 +15,7 @@ script = ExtResource( 4 )
 [node name="BackdropSnow" parent="." instance=ExtResource( 5 )]
 
 [node name="Bg" type="TileMap" parent="."]
-modulate = Color( 0.466667, 0.533333, 0.6, 1 )
+modulate = Color( 0.333333, 0.4, 0.466667, 1 )
 light_mask = 3
 z_index = -10
 z_as_relative = false
