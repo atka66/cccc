@@ -21,9 +21,9 @@ flag_align_y = true
 direction = Vector2( 0, -1 )
 spread = 130.0
 gravity = Vector2( 0, 1000 )
-initial_velocity = 250.0
-initial_velocity_random = 0.8
-scale_amount = 5.0
+initial_velocity = 300.0
+initial_velocity_random = 0.6
+scale_amount = 7.0
 scale_amount_random = 0.8
 
 [node name="RespawnTimer" type="Timer" parent="."]
