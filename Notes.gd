@@ -20,6 +20,7 @@
 # 11   : {BloodPar}
 # 15   : {Saw}
 # 20   : [BloodPar (player corpse)]
+# 21   : [ExitArrows]
 # 50   : [SignHintSprite]
 # 70   : {FinishDim}
 # 100  : {Menu}, [Book]
