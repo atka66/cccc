@@ -68,7 +68,7 @@ position = Vector2( 24, 232 )
 position = Vector2( 472, 248 )
 
 [node name="SawBlade4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 136, 232 )
+position = Vector2( 136, 240 )
 
 [node name="SawBlade5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 96, 192 )
@@ -80,7 +80,7 @@ position = Vector2( 176, 184 )
 position = Vector2( 280, 208 )
 
 [node name="SawBlade8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 280, 120 )
+position = Vector2( 280, 112 )
 scale = Vector2( 3, 3 )
 
 [node name="SawBlade9" parent="." instance=ExtResource( 6 )]

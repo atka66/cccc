@@ -61,7 +61,7 @@ texture = ExtResource( 4 )
 stretch_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.564706, 0.564706, 0.564706, 1 )
+color = Color( 0.690196, 0.690196, 0.690196, 1 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 autoplay = "strobe"

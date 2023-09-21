@@ -74,8 +74,5 @@ position = Vector2( 80, 96 )
 path = [ Vector2( 128, 0 ) ]
 speed = 2
 
-[node name="Saw2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 64, 160 )
-
 [node name="Saw3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 112, 192 )
