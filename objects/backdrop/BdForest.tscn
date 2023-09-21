@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
-shader_param/strength = 3.0
+shader_param/strength = 2.0
 shader_param/intensity = 1.0
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -17,6 +17,7 @@ shader_param/strength = 3.0
 shader_param/intensity = 1.5
 
 [node name="BackdropForest" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
 z_index = -20
 z_as_relative = false
 script = ExtResource( 5 )
