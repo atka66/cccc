@@ -214,3 +214,13 @@ func getOffsetForActualMap():
 	determRandom.set_seed(actualMap)
 	return -(determRandom.randi() % 500) - 20
 	
+func formatTime(totalTime: float, withHours: bool) -> String:
+	var millis: int = fmod(totalTime, 1.0) * 10
+	var seconds: int = fmod(totalTime, 60.0)
+	if withHours:
+		var minutes: int = int(totalTime / 60.0) % 60
+		var hours: int = int(totalTime / 3600.0)
+		return "%d:%02d:%02d.%01d" % [hours, minutes, seconds, millis]
+	else:
+		var minutes: int = int(totalTime / 60.0)
+		return "%d:%02d.%01d" % [minutes, seconds, millis]
