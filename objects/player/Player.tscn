@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds2tbmy2ssuhd"]
+
+[ext_resource type="Script" path="res://objects/player/Player.gd" id="1_a1i5o"]
+[ext_resource type="SpriteFrames" uid="uid://bkf5gg4yxxi76" path="res://resources/spriteframes/player_owl.tres" id="2_todko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgqff"]
+size = Vector2(10, 10)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_a1i5o")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_todko")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_rgqff")
+
+[node name="SleepTimer" type="Timer" parent="."]
+one_shot = true

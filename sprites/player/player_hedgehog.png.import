@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck6flatxkovvs"
-path="res://.godot/imported/bg_forest_leaves_2.png-c94e937091ed0d5ba823fb83a7a7d278.ctex"
+uid="uid://dtfqimnor8ek5"
+path="res://.godot/imported/player_hedgehog.png-2255c02a8115ebe67ae4a43b475935de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bg/bg_forest_leaves_2.png"
-dest_files=["res://.godot/imported/bg_forest_leaves_2.png-c94e937091ed0d5ba823fb83a7a7d278.ctex"]
+source_file="res://sprites/player/player_hedgehog.png"
+dest_files=["res://.godot/imported/player_hedgehog.png-2255c02a8115ebe67ae4a43b475935de.ctex"]
 
 [params]
 

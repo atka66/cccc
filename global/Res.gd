@@ -1,5 +1,15 @@
 extends Node
 
+@onready var Player = preload("res://objects/player/Player.tscn")
+
+@onready var PlayerSkins = [
+	preload("res://resources/spriteframes/player_owl.tres"),
+	preload("res://resources/spriteframes/player_hedgehog.tres"),
+	preload("res://resources/spriteframes/player_squirrel.tres"),
+	preload("res://resources/spriteframes/player_bunny.tres"),
+	preload("res://resources/spriteframes/player_child.tres")
+]
+
 const Maps: Array[Dictionary] = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
