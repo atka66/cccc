@@ -8,4 +8,5 @@ func _on_Anim_animation_finished(anim_name):
 	if (anim_name == "fade_in"):
 		$Anim.play("fade_out")
 	if (anim_name == "fade_out"):
+		Global.saveTimeToMap()
 		Global.gotoNextMap()

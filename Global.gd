@@ -13,8 +13,11 @@ var gameFinished : bool = false
 
 var playersJoined = [true, false, false, false]
 var audio = 0
+var times = []
 
 var deathCnt = [0, 0, 0, 0]
+
+var currentMapTime = 0
 
 # 0 : WASD
 # 1 : arrow keys
@@ -31,11 +34,18 @@ func _ready():
 	
 	randomize()
 	loadGame()
+	if !times or times.size() != 40:
+		resetTimes()
 	updateAudio()
 	gameFinished = currentMap >= len(Res.Maps)
 	
 	if phoneMode:
 		add_child(Res.TouchControl.instance())
+
+func resetTimes():
+	times = []
+	for i in range(40):
+		times.append(0)
 
 func _joy_connection_changed(id, connected):
 	if id < joyConnected.size() && connected:
@@ -118,6 +128,10 @@ func win():
 func getMap():
 	return get_tree().get_nodes_in_group('map')[0]
 
+func saveTimeToMap():
+	times[actualMap] = min(currentMapTime, times[actualMap])
+	saveGame()
+
 func gotoNextMap():
 	actualMap += 1
 	
@@ -169,7 +183,8 @@ func saveGame():
 		'joined' : playersJoined,
 		'control' : playersControlScheme,
 		'deathCnt' : deathCnt,
-		'audio' : audio
+		'audio' : audio,
+		'times' : times
 	}
 	var file = File.new()
 	file.open(SAVE_PATH, File.WRITE)
@@ -194,6 +209,11 @@ func loadGame():
 			deathCnt = gameState['deathCnt']
 		if (gameState.has('audio')):
 			audio = gameState['audio']
+		if (gameState.has('times')):
+			var tmp = []
+			for i in gameState['times']:
+				tmp.append(float(i))
+			times = tmp
 
 func deleteSave():
 	var file = Directory.new()

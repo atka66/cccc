@@ -1,11 +1,9 @@
 extends Node2D
 
-var mapTime = 0.0
-
 func _ready():
-	pass # Replace with function body.
+	Global.currentMapTime = 0.0
 
 func _process(delta):
 	if !Global.playersFrozen:
-		mapTime += delta * 1000
-		$TimeLabel.set_text(Global.formatTime(mapTime, false))
+		Global.currentMapTime += delta# * 1000
+		$TimeLabel.set_text(Global.formatTime(Global.currentMapTime, false))
