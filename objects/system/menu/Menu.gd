@@ -139,13 +139,25 @@ func updateImages():
 		$MapSelection/RightSide/Scene5Label.set_text(Res.Maps[(page * 5) + 4].name)
 		$MapSelection/RightSide/Time5Label.show()
 		$MapSelection/RightSide/Time5Label.set_text(Global.formatTime(Global.times[(page * 5) + 4], false))
+		var chapterTime = Global.times[page * 5] + Global.times[(page * 5) + 1] + Global.times[(page * 5) + 2] + Global.times[(page * 5) + 3] + Global.times[(page * 5) + 4]
+		$MapSelection/RightSide/ChapterTimeLabel.show()
+		$MapSelection/RightSide/ChapterTimeLabel.set_text(Global.formatTime(chapterTime, false))
+		$MapSelection/RightSide/ChapterLabel.show()
 	else:
 		$MapSelection/RightSide/Scene5Label.hide()
 		$MapSelection/RightSide/Time5Label.hide()
+		$MapSelection/RightSide/ChapterTimeLabel.hide()
+		$MapSelection/RightSide/ChapterLabel.hide()
 	
-	$MapSelection/LeftSide/Frame.rotation_degrees = (randi() % 5) - 2
+	if Global.gameFinished:
+		$MapSelection/RightSide/TotalLabel.show()
+		$MapSelection/RightSide/TotalTimeLabel.show()
+		$MapSelection/RightSide/TotalTimeLabel.set_text(Global.formatTime(Global.getTotalTime(), false))
+	else:
+		$MapSelection/RightSide/TotalLabel.hide()
+		$MapSelection/RightSide/TotalTimeLabel.hide()
 
-	$MapSelection/LeftSide/ChapterLabel.set_text(Res.Chapters[page].title)
+	$MapSelection/LeftSide/Frame/ChapterLabel.set_text(Res.Chapters[page].title)
 	$MapSelection/LeftSide/Frame/Story.texture = Res.Chapters[page].leftImage
 	if (page < flipLimit):
 		# here

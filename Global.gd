@@ -172,6 +172,7 @@ func resetGame():
 	currentMap = 0
 	actualMap = 0
 	deathCnt = [0, 0, 0, 0]
+	resetTimes()
 	get_tree().change_scene("res://menu/Story.tscn")
 
 func gotoCurrentMap():
@@ -244,3 +245,9 @@ func formatTime(totalTime: float, withHours: bool) -> String:
 	else:
 		var minutes: int = int(totalTime / 60.0)
 		return "%d:%02d.%01d" % [minutes, seconds, millis]
+
+func getTotalTime():
+	var result = 0.0
+	for i in times:
+		result += i
+	return result

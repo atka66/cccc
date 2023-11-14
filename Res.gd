@@ -89,11 +89,11 @@ const EndSlides = [
 
 const Chapters = [
 	{ 
-		"title": "the woods",
+		"title": "home",
 		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/cha_1b.png")
 	},
 	{ 
-		"title": "hit by a huge storm",
+		"title": "stormy field",
 		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/cha_2b.png")
 	},
 	{ 
@@ -101,19 +101,19 @@ const Chapters = [
 		"leftImage": preload("res://sprites/story/cha_3a.png"),"rightImage": preload("res://sprites/story/cha_3b.png")
 	},
 	{ 
-		"title": "wandering the desert",
+		"title": "into the desert",
 		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/cha_4b.png")
 	},
 	{ 
-		"title": "the abandoned castle",
+		"title": "sinister castle",
 		"leftImage": preload("res://sprites/story/cha_5a.png"),"rightImage": preload("res://sprites/story/cha_5b.png")
 	},
 	{ 
-		"title": "a grim dungeon",
+		"title": "grim dungeon",
 		"leftImage": preload("res://sprites/story/cha_6a.png"),"rightImage": preload("res://sprites/story/cha_6b.png")
 	},
 	{ 
-		"title": "down in the deep",
+		"title": "dark cave",
 		"leftImage": preload("res://sprites/story/cha_7a.png"),"rightImage": preload("res://sprites/story/cha_7b.png")
 	},
 	{ 

@@ -446,11 +446,6 @@ texture = ExtResource( 6 )
 hframes = 2
 frame = 1
 
-[node name="ChapterLabel" parent="MapSelection/LeftSide" instance=ExtResource( 2 )]
-position = Vector2( -48, -100 )
-color = Color( 0.12549, 0.12549, 0.12549, 1 )
-animate = false
-
 [node name="DividerLeft" type="Sprite" parent="MapSelection/LeftSide"]
 position = Vector2( 8, -80 )
 texture = ExtResource( 11 )
@@ -461,6 +456,11 @@ texture = ExtResource( 15 )
 
 [node name="Story" type="Sprite" parent="MapSelection/LeftSide/Frame"]
 position = Vector2( 0, -8 )
+
+[node name="ChapterLabel" parent="MapSelection/LeftSide/Frame" instance=ExtResource( 2 )]
+position = Vector2( -46, 48 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
 
 [node name="RightSide" type="Node2D" parent="MapSelection"]
 position = Vector2( 348, 152 )
@@ -484,67 +484,91 @@ position = Vector2( -8, -80 )
 texture = ExtResource( 11 )
 
 [node name="Scene1Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( -72, -44 )
+position = Vector2( -72, -52 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Scene2Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( -72, -20 )
+position = Vector2( -72, -32 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Scene3Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( -72, 4 )
+position = Vector2( -72, -12 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Scene4Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( -72, 28 )
+position = Vector2( -72, 8 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Scene5Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( -72, 52 )
+position = Vector2( -72, 28 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="StopwatchSprite" type="Sprite" parent="MapSelection/RightSide"]
-position = Vector2( 44, -56 )
+position = Vector2( 44, -64 )
 texture = ExtResource( 19 )
 
 [node name="Time1Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( 40, -44 )
+position = Vector2( 40, -52 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Time2Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( 40, -20 )
+position = Vector2( 40, -32 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Time3Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( 40, 4 )
+position = Vector2( 40, -12 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Time4Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( 40, 28 )
+position = Vector2( 40, 8 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
 [node name="Time5Label" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
-position = Vector2( 40, 52 )
+position = Vector2( 40, 28 )
 text = "horse horse horse"
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
+animate = false
+
+[node name="ChapterLabel" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -58, 58 )
+text = "chapter total time"
+color = Color( 0.313726, 0.313726, 0.313726, 1 )
+animate = false
+
+[node name="ChapterTimeLabel" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( 40, 58 )
+text = "horse horse horse"
+color = Color( 0.313726, 0.313726, 0.313726, 1 )
+animate = false
+
+[node name="TotalLabel" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( -58, 78 )
+text = "story total time"
+color = Color( 0.313726, 0.313726, 0.313726, 1 )
+animate = false
+
+[node name="TotalTimeLabel" parent="MapSelection/RightSide" instance=ExtResource( 2 )]
+position = Vector2( 40, 78 )
+text = "horse horse horse"
+color = Color( 0.313726, 0.313726, 0.313726, 1 )
 animate = false
 
 [node name="PrevHint" type="Sprite" parent="MapSelection"]
@@ -717,14 +741,12 @@ hframes = 9
 position = Vector2( -4.5, 1 )
 scale = Vector2( 0.8, 0.8 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadChild"]
 position = Vector2( 4.5, 1 )
 scale = Vector2( 0.8, 0.8 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadChild"]
@@ -744,13 +766,11 @@ hframes = 9
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( -6, -2 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadOwl"]
 position = Vector2( 6, -2 )
 frames = ExtResource( 7 )
-frame = 2
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadOwl"]
@@ -770,11 +790,13 @@ hframes = 5
 [node name="LeftEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( -6, -1 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="RightEye" type="AnimatedSprite" parent="ResetPrompt/SadHedgehog"]
 position = Vector2( 6, -1 )
 frames = ExtResource( 7 )
+frame = 1
 playing = true
 
 [node name="AppearAudio" type="AudioStreamPlayer2D" parent="ResetPrompt/SadHedgehog"]
