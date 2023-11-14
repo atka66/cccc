@@ -7,7 +7,6 @@ func _ready():
 	spawnPlayers()
 	Global.playersFrozen = false
 	add_child(Res.StartDim.instance())
-	add_child(Res.Stopwatch.instance())
 	
 	if has_node("IceTiles"):
 		makeIceTilesGlow()

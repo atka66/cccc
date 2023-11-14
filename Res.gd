@@ -27,16 +27,14 @@ onready var BirdSound = preload("res://objects/system/BirdSound.tscn")
 
 onready var TouchControl = preload("res://objects/system/TouchControl.tscn")
 
-onready var Stopwatch = preload("res://objects/system/Stopwatch.tscn")
-
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
 	{"chapter": 0, "name":"going up", "path":"res://maps/Map03.tscn"},
 	{"chapter": 0, "name":"reaching the top", "path":"res://maps/Map04.tscn"},
-	{"chapter": 0, "name":"inside the great tree", "path":"res://maps/Map05.tscn"},
+	{"chapter": 0, "name":"the great tree", "path":"res://maps/Map05.tscn"},
 	
-	{"chapter": 1, "name":"at the root of the great tree", "path":"res://maps/Map11.tscn"},
+	{"chapter": 1, "name":"the great root", "path":"res://maps/Map11.tscn"},
 	{"chapter": 1, "name":"cliffhanger", "path":"res://maps/Map12.tscn"},
 	{"chapter": 1, "name":"a spiky situation", "path":"res://maps/Map13.tscn"},
 	{"chapter": 1, "name":"rollercoaster", "path":"res://maps/Map14.tscn"},
@@ -60,16 +58,16 @@ const Maps = [
 	{"chapter": 4, "name":"entering the castle", "path":"res://maps/Map44.tscn"},
 	{"chapter": 4, "name":"the hallway", "path":"res://maps/Map45.tscn"},
 	
-	{"chapter": 5, "name":"the bottom of the well", "path":"res://maps/Map51.tscn"},
+	{"chapter": 5, "name":"bottom of the well", "path":"res://maps/Map51.tscn"},
 	{"chapter": 5, "name":"in small steps", "path":"res://maps/Map52.tscn"},
 	{"chapter": 5, "name":"the great pit", "path":"res://maps/Map53.tscn"},
-	{"chapter": 5, "name":"timing is key", "path":"res://maps/Map54.tscn"},
+	{"chapter": 5, "name":"dangerous cellars", "path":"res://maps/Map54.tscn"},
 	{"chapter": 5, "name":"grinder", "path":"res://maps/Map55.tscn"},
 	
 	{"chapter": 6, "name":"follow the light", "path":"res://maps/Map61.tscn"},
 	{"chapter": 6, "name":"dangerous depths", "path":"res://maps/Map62.tscn"},
 	{"chapter": 6, "name":"crevices", "path":"res://maps/Map63.tscn"},
-	{"chapter": 6, "name":"underground canyon", "path":"res://maps/Map64.tscn"},
+	{"chapter": 6, "name":"canyon in the deep", "path":"res://maps/Map64.tscn"},
 	{"chapter": 6, "name":"light at the end", "path":"res://maps/Map65.tscn"},
 	
 	{"chapter": 7, "name":"cold reception", "path":"res://maps/Map71.tscn"},

@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 Res="*res://Res.gd"
 Global="*res://Global.gd"
 Music="*res://objects/system/Music.tscn"
+Stopwatch="*res://objects/system/Stopwatch.gd"
 
 [display]
 

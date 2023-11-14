@@ -109,26 +109,39 @@ func updateImages():
 	selectedScene = 0
 	var chaptersToShow = int(Global.currentMap) - (page * 5)
 	$MapSelection/RightSide/Scene1Label.set_text(Res.Maps[page * 5].name)
+	$MapSelection/RightSide/Time1Label.set_text(Global.formatTime(Global.times[page * 5], false))
 	if chaptersToShow > 0:
 		$MapSelection/RightSide/Scene2Label.show()
 		$MapSelection/RightSide/Scene2Label.set_text(Res.Maps[(page * 5) + 1].name)
+		$MapSelection/RightSide/Time2Label.show()
+		$MapSelection/RightSide/Time2Label.set_text(Global.formatTime(Global.times[(page * 5) + 1], false))
 	else:
 		$MapSelection/RightSide/Scene2Label.hide()
+		$MapSelection/RightSide/Time2Label.hide()
 	if chaptersToShow > 1:
 		$MapSelection/RightSide/Scene3Label.show()
 		$MapSelection/RightSide/Scene3Label.set_text(Res.Maps[(page * 5) + 2].name)
+		$MapSelection/RightSide/Time3Label.show()
+		$MapSelection/RightSide/Time3Label.set_text(Global.formatTime(Global.times[(page * 5) + 2], false))
 	else:
 		$MapSelection/RightSide/Scene3Label.hide()
+		$MapSelection/RightSide/Time3Label.hide()
 	if chaptersToShow > 2:
 		$MapSelection/RightSide/Scene4Label.show()
 		$MapSelection/RightSide/Scene4Label.set_text(Res.Maps[(page * 5) + 3].name)
+		$MapSelection/RightSide/Time4Label.show()
+		$MapSelection/RightSide/Time4Label.set_text(Global.formatTime(Global.times[(page * 5) + 3], false))
 	else:
 		$MapSelection/RightSide/Scene4Label.hide()
+		$MapSelection/RightSide/Time4Label.hide()
 	if chaptersToShow > 3:
 		$MapSelection/RightSide/Scene5Label.show()
 		$MapSelection/RightSide/Scene5Label.set_text(Res.Maps[(page * 5) + 4].name)
+		$MapSelection/RightSide/Time5Label.show()
+		$MapSelection/RightSide/Time5Label.set_text(Global.formatTime(Global.times[(page * 5) + 4], false))
 	else:
 		$MapSelection/RightSide/Scene5Label.hide()
+		$MapSelection/RightSide/Time5Label.hide()
 	
 	$MapSelection/LeftSide/Frame.rotation_degrees = (randi() % 5) - 2
 

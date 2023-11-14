@@ -17,8 +17,6 @@ var times = []
 
 var deathCnt = [0, 0, 0, 0]
 
-var currentMapTime = 0
-
 # 0 : WASD
 # 1 : arrow keys
 # 2-5 : controllers
@@ -129,7 +127,8 @@ func getMap():
 	return get_tree().get_nodes_in_group('map')[0]
 
 func saveTimeToMap():
-	times[actualMap] = min(currentMapTime, times[actualMap])
+	if times[actualMap] == 0 or Stopwatch.currentMapTime < times[actualMap]:
+		times[actualMap] = Stopwatch.currentMapTime
 	saveGame()
 
 func gotoNextMap():
@@ -161,6 +160,7 @@ func gotoNextMap():
 
 func gotoMap(i):
 	actualMap = i
+	Stopwatch.resetStopwatch()
 	get_tree().change_scene(Res.Maps[i].path)
 
 func resetGame():
