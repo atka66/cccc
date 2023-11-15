@@ -251,3 +251,9 @@ func getTotalTime():
 	for i in times:
 		result += i
 	return result
+
+func getTotalDeaths():
+	var result = 0
+	for i in deathCnt:
+		result += i
+	return result

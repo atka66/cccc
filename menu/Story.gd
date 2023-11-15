@@ -14,6 +14,7 @@ func _ready():
 		page = -len(Res.PreSlides)
 	updateImages()
 	$Book/OpenedEnd/BookRightSprite/TotalTimeLabel.set_text(Global.formatTime(Global.getTotalTime(), true))
+	$Book/OpenedEnd/BookRightSprite/TotalDeathLabel.set_text(str(Global.getTotalDeaths()))
 
 func startStory():
 	started = true

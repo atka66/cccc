@@ -139,13 +139,15 @@ func updateImages():
 		$MapSelection/RightSide/Scene5Label.set_text(Res.Maps[(page * 5) + 4].name)
 		$MapSelection/RightSide/Time5Label.show()
 		$MapSelection/RightSide/Time5Label.set_text(Global.formatTime(Global.times[(page * 5) + 4], false))
+	else:
+		$MapSelection/RightSide/Scene5Label.hide()
+		$MapSelection/RightSide/Time5Label.hide()
+	if chaptersToShow > 4:
 		var chapterTime = Global.times[page * 5] + Global.times[(page * 5) + 1] + Global.times[(page * 5) + 2] + Global.times[(page * 5) + 3] + Global.times[(page * 5) + 4]
 		$MapSelection/RightSide/ChapterTimeLabel.show()
 		$MapSelection/RightSide/ChapterTimeLabel.set_text(Global.formatTime(chapterTime, false))
 		$MapSelection/RightSide/ChapterLabel.show()
 	else:
-		$MapSelection/RightSide/Scene5Label.hide()
-		$MapSelection/RightSide/Time5Label.hide()
 		$MapSelection/RightSide/ChapterTimeLabel.hide()
 		$MapSelection/RightSide/ChapterLabel.hide()
 	
