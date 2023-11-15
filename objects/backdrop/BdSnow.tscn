@@ -22,7 +22,7 @@ stretch_mode = 2
 
 [node name="Snow" type="CPUParticles2D" parent="."]
 position = Vector2( 200, -50 )
-amount = 200
+amount = 50
 lifetime = 8.0
 preprocess = 10.0
 emission_shape = 2

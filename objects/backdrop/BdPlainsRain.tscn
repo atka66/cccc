@@ -65,7 +65,7 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="Rain" type="CPUParticles2D" parent="."]
 position = Vector2( 200, -50 )
-amount = 200
+amount = 70
 lifetime = 0.7
 preprocess = 1.0
 texture = SubResource( 2 )
