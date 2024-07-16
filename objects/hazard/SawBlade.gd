@@ -27,7 +27,7 @@ func _process(delta):
 	
 func _physics_process(delta):
 	if path:
-		velocity = $SawBlade.position.direction_to(path[targetPosIndex]) * speed
+		velocity = $SawBlade.position.direction_to(path[targetPosIndex]) * (speed * 0.7)
 		if $SawBlade.position.distance_to(path[targetPosIndex]) < speed:
 			targetPosIndex = (targetPosIndex + 1) % len(path) 
 		$SawBlade.position += velocity

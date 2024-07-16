@@ -3,7 +3,7 @@ extends Node
 const SAVE_PATH = "user://cccc.sav"
 const VERSION = '1.2.8'
 
-const GRAVITY = 50
+const GRAVITY = 32
 
 var showWholeStory = true
 var mapParent = null
@@ -20,7 +20,7 @@ var deathCnt = [0, 0, 0, 0]
 # 0 : WASD
 # 1 : arrow keys
 # 2-5 : controllers
-var playersControlScheme = [0, -1, -1, -1]
+var playersControlScheme = [1, -1, -1, -1]
 var joyConnected = [false, false, false, false]
 var playersFrozen = false
 

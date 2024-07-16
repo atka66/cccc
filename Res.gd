@@ -29,8 +29,8 @@ onready var TouchControl = preload("res://objects/system/TouchControl.tscn")
 
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
-	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map02.tscn"},
-	{"chapter": 0, "name":"going up", "path":"res://maps/Map03.tscn"},
+	{"chapter": 0, "name":"going up", "path":"res://maps/Map02.tscn"},
+	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map03.tscn"},
 	{"chapter": 0, "name":"reaching the top", "path":"res://maps/Map04.tscn"},
 	{"chapter": 0, "name":"the great tree", "path":"res://maps/Map05.tscn"},
 	
@@ -78,47 +78,55 @@ const Maps = [
 ]
 
 const PreSlides = [
-	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png") },
-	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png") },
-	{ "leftImage": preload("res://sprites/story/pre_5.png"),"rightImage": preload("res://sprites/story/pre_6.png") }
+	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png"), "leftText": "an old tree hole", "rightText": "i call it home" },
+	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png"), "leftText": "my egg hatched", "rightText": "fell down below" },
+	{ "leftImage": preload("res://sprites/story/pre_5.png"),"rightImage": preload("res://sprites/story/pre_6.png"), "leftText": "wherever you went", "rightText": "i will follow" }
 ]
 const EndSlides = [
-	{ "leftImage": preload("res://sprites/story/post_1.png"),"rightImage": preload("res://sprites/story/post_2.png") },
-	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/post_3.png") }
+	{ "leftImage": preload("res://sprites/story/post_1.png"),"rightImage": preload("res://sprites/story/post_2.png"), "leftText": "found you cold", "rightText": "but no longer alone" },
+	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/post_3.png"), "leftText": "an old tree hole", "rightText": "we call it home" }
 ]
 
 const Chapters = [
 	{ 
-		"title": "home",
-		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/cha_1b.png")
+		"title": "forest",
+		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/cha_1b.png"),
+		"leftText": "into the woods", "rightText": "leaves swirl around"
 	},
 	{ 
 		"title": "stormy field",
-		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/cha_2b.png")
+		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/cha_2b.png"),
+		"leftText": "begins the rain", "rightText": "wetting the ground"
 	},
 	{ 
 		"title": "reaching the plains",
-		"leftImage": preload("res://sprites/story/cha_3a.png"),"rightImage": preload("res://sprites/story/cha_3b.png")
+		"leftImage": preload("res://sprites/story/cha_3a.png"),"rightImage": preload("res://sprites/story/cha_3b.png"),
+		"leftText": "reached the plains", "rightText": "a dangerous land"
 	},
 	{ 
 		"title": "into the desert",
-		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/cha_4b.png")
+		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/cha_4b.png"),
+		"leftText": "deserts and ruins", "rightText": "covered in sand"
 	},
 	{ 
-		"title": "sinister castle",
-		"leftImage": preload("res://sprites/story/cha_5a.png"),"rightImage": preload("res://sprites/story/cha_5b.png")
+		"title": "ancient castle",
+		"leftImage": preload("res://sprites/story/cha_5a.png"),"rightImage": preload("res://sprites/story/cha_5b.png"),
+		"leftText": "ancient castle", "rightText": "without a crown"
 	},
 	{ 
 		"title": "grim dungeon",
-		"leftImage": preload("res://sprites/story/cha_6a.png"),"rightImage": preload("res://sprites/story/cha_6b.png")
+		"leftImage": preload("res://sprites/story/cha_6a.png"),"rightImage": preload("res://sprites/story/cha_6b.png"),
+		"leftText": "a spooky dungeon", "rightText": "do not look down"
 	},
 	{ 
 		"title": "dark cave",
-		"leftImage": preload("res://sprites/story/cha_7a.png"),"rightImage": preload("res://sprites/story/cha_7b.png")
+		"leftImage": preload("res://sprites/story/cha_7a.png"),"rightImage": preload("res://sprites/story/cha_7b.png"),
+		"leftText": "underground caves", "rightText": "the lights are nice"
 	},
 	{ 
 		"title": "kingdom of ice",
-		"leftImage": preload("res://sprites/story/cha_8a.png"),"rightImage": preload("res://sprites/story/cha_8b.png")
+		"leftImage": preload("res://sprites/story/cha_8a.png"),"rightImage": preload("res://sprites/story/cha_8b.png"),
+		"leftText": "on snowy peeks", "rightText": "slipping on ice"
 	}
 ]
 

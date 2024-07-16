@@ -102,7 +102,6 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="SignZoomSprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0, -64 )
 scale = Vector2( 2, 2 )
 z_index = 50

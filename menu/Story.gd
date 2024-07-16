@@ -48,23 +48,32 @@ func flipPage(forward: bool):
 		$PageflipAudio.play()
 
 func updateImages():
-	$Book/Opened/BookLeftSprite/Frame/ChapterLabel.set_text("")
+	$Book/Opened/BookLeftSprite/Frame/StoryLeftLabel.set_text("")
+	$Book/Opened/BookRightSprite/Frame/StoryRightLabel.set_text("")
 	$Book/Opened/BookRightSprite/Finished.hide()
 	if page < 0:
-		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.PreSlides[page + len(Res.PreSlides)].leftImage
-		$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.PreSlides[page + len(Res.PreSlides)].rightImage
+		var slide = Res.PreSlides[page + len(Res.PreSlides)]
+		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = slide.leftImage
+		$Book/Opened/BookLeftSprite/Frame/StoryLeftLabel.set_text(slide.leftText)
+		$Book/Opened/BookRightSprite/Frame/StoryRight.texture = slide.rightImage
+		$Book/Opened/BookRightSprite/Frame/StoryRightLabel.set_text(slide.rightText)
 	elif page < len(Res.Chapters):
-		$Book/Opened/BookLeftSprite/Frame/ChapterLabel.set_text(Res.Chapters[page].title)
-		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.Chapters[page].leftImage
+		var chapter = Res.Chapters[page]
+		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = chapter.leftImage
+		$Book/Opened/BookLeftSprite/Frame/StoryLeftLabel.set_text(chapter.leftText)
 		if (Global.gameFinished || page < Res.Maps[Global.currentMap].chapter):
 			$Book/Opened/BookRightSprite/Finished.show()
 			$Book/Opened/BookRightSprite/Frame.show()
-			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.Chapters[page].rightImage
+			$Book/Opened/BookRightSprite/Frame/StoryRight.texture = chapter.rightImage
+			$Book/Opened/BookRightSprite/Frame/StoryRightLabel.set_text(chapter.rightText)
 		else:
 			$Book/Opened/BookRightSprite/Frame.hide()
 	else:
-		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = Res.EndSlides[page - len(Res.Chapters)].leftImage
-		$Book/Opened/BookRightSprite/Frame/StoryRight.texture = Res.EndSlides[page - len(Res.Chapters)].rightImage
+		var slide = Res.EndSlides[page - len(Res.Chapters)]
+		$Book/Opened/BookLeftSprite/Frame/StoryLeft.texture = slide.leftImage
+		$Book/Opened/BookLeftSprite/Frame/StoryLeftLabel.set_text(slide.leftText)
+		$Book/Opened/BookRightSprite/Frame/StoryRight.texture = slide.rightImage
+		$Book/Opened/BookRightSprite/Frame/StoryRightLabel.set_text(slide.rightText)
 
 func startGame():
 	Global.showWholeStory = false

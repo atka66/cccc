@@ -1,16 +1,16 @@
 extends KinematicBody2D
 
-const SPEED_RUN = 70
+const SPEED_RUN = 50
 const SPEED_RUN_SLIPPERY = 30
 
-const SPEED_JUMP = 1000
+const SPEED_JUMP = 800
 const SPEED_JUMP_SLIPPERY = 300
 
 const SPEED_JUMPBRAKE = 500
-const SPEED_DASH = 800
+const SPEED_DASH = 700
 const JUMP_FRAMES = 5
 
-const FRICTION = 0.1
+const FRICTION = 0.08
 const FRICTION_SLIPPERY = 0.01
 
 const SLEEP_TIME = 10
