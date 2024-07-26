@@ -30,7 +30,7 @@ onready var TouchControl = preload("res://objects/system/TouchControl.tscn")
 const Maps = [
 	{"chapter": 0, "name":"the journey begins", "path":"res://maps/Map01.tscn"},
 	{"chapter": 0, "name":"going up", "path":"res://maps/Map02.tscn"},
-	{"chapter": 0, "name":"watch your step", "path":"res://maps/Map03.tscn"},
+	{"chapter": 0, "name":"do not fall", "path":"res://maps/Map03.tscn"},
 	{"chapter": 0, "name":"reaching the top", "path":"res://maps/Map04.tscn"},
 	{"chapter": 0, "name":"the great tree", "path":"res://maps/Map05.tscn"},
 	
@@ -78,55 +78,55 @@ const Maps = [
 ]
 
 const PreSlides = [
-	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png"), "leftText": "an old tree hole", "rightText": "i call it home" },
-	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png"), "leftText": "my egg hatched", "rightText": "fell down below" },
-	{ "leftImage": preload("res://sprites/story/pre_5.png"),"rightImage": preload("res://sprites/story/pre_6.png"), "leftText": "wherever you went", "rightText": "i will follow" }
+	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/pre_2.png"), "leftText": "a cozy old oak", "rightText": "i call it home" },
+	{ "leftImage": preload("res://sprites/story/pre_3.png"),"rightImage": preload("res://sprites/story/pre_4.png"), "leftText": "my precious egg", "rightText": "fell down below" },
+	{ "leftImage": preload("res://sprites/story/pre_5.png"),"rightImage": preload("res://sprites/story/pre_6.png"), "leftText": "wherever you went", "rightText": "i will follow..." }
 ]
 const EndSlides = [
 	{ "leftImage": preload("res://sprites/story/post_1.png"),"rightImage": preload("res://sprites/story/post_2.png"), "leftText": "found you cold", "rightText": "but no longer alone" },
-	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/post_3.png"), "leftText": "an old tree hole", "rightText": "we call it home" }
+	{ "leftImage": preload("res://sprites/story/pre_1.png"),"rightImage": preload("res://sprites/story/post_3.png"), "leftText": "a cozy old oak", "rightText": "we call it home" }
 ]
 
 const Chapters = [
 	{ 
-		"title": "forest",
+		"title": "the forest",
 		"leftImage": preload("res://sprites/story/cha_1a.png"),"rightImage": preload("res://sprites/story/cha_1b.png"),
 		"leftText": "into the woods", "rightText": "leaves swirl around"
 	},
 	{ 
-		"title": "stormy field",
+		"title": "the rain",
 		"leftImage": preload("res://sprites/story/cha_2a.png"),"rightImage": preload("res://sprites/story/cha_2b.png"),
-		"leftText": "begins the rain", "rightText": "wetting the ground"
+		"leftText": "rain begins", "rightText": "wetting the ground"
 	},
 	{ 
-		"title": "reaching the plains",
+		"title": "the plains",
 		"leftImage": preload("res://sprites/story/cha_3a.png"),"rightImage": preload("res://sprites/story/cha_3b.png"),
-		"leftText": "reached the plains", "rightText": "a dangerous land"
+		"leftText": "reached the plains", "rightText": "a perilous land"
 	},
 	{ 
-		"title": "into the desert",
+		"title": "the desert",
 		"leftImage": preload("res://sprites/story/cha_4a.png"),"rightImage": preload("res://sprites/story/cha_4b.png"),
 		"leftText": "deserts and ruins", "rightText": "covered in sand"
 	},
 	{ 
-		"title": "ancient castle",
+		"title": "the castle",
 		"leftImage": preload("res://sprites/story/cha_5a.png"),"rightImage": preload("res://sprites/story/cha_5b.png"),
 		"leftText": "ancient castle", "rightText": "without a crown"
 	},
 	{ 
-		"title": "grim dungeon",
+		"title": "the dungeon",
 		"leftImage": preload("res://sprites/story/cha_6a.png"),"rightImage": preload("res://sprites/story/cha_6b.png"),
 		"leftText": "a spooky dungeon", "rightText": "do not look down"
 	},
 	{ 
-		"title": "dark cave",
+		"title": "the cave",
 		"leftImage": preload("res://sprites/story/cha_7a.png"),"rightImage": preload("res://sprites/story/cha_7b.png"),
-		"leftText": "underground caves", "rightText": "the lights are nice"
+		"leftText": "underground caves", "rightText": "with lights so nice"
 	},
 	{ 
-		"title": "kingdom of ice",
+		"title": "the mountain",
 		"leftImage": preload("res://sprites/story/cha_8a.png"),"rightImage": preload("res://sprites/story/cha_8b.png"),
-		"leftText": "on snowy peeks", "rightText": "slipping on ice"
+		"leftText": "on snowy peaks", "rightText": "slipping on ice"
 	}
 ]
 

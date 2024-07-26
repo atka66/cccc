@@ -5,7 +5,6 @@
 [ext_resource path="res://objects/system/menu/PlayerSelector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/player_hedgehog.png" type="Texture" id=4]
 [ext_resource path="res://sprites/control_hint.png" type="Texture" id=5]
-[ext_resource path="res://sprites/book.png" type="Texture" id=6]
 [ext_resource path="res://res/watery_eyes.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://sprites/player_owl.png" type="Texture" id=8]
 [ext_resource path="res://sounds/jump_1_3.ogg" type="AudioStream" id=9]
@@ -19,6 +18,7 @@
 [ext_resource path="res://sprites/player_child.png" type="Texture" id=17]
 [ext_resource path="res://sounds/jump_1_2.ogg" type="AudioStream" id=18]
 [ext_resource path="res://sprites/stopwatch.png" type="Texture" id=19]
+[ext_resource path="res://res/book_page.tres" type="SpriteFrames" id=20]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -262,20 +262,19 @@ animate = false
 
 [node name="MainContainer" type="Node2D" parent="."]
 
-[node name="BookLeftSprite" type="Sprite" parent="MainContainer"]
+[node name="BookLeftSprite" type="AnimatedSprite" parent="MainContainer"]
 position = Vector2( 172, 152 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 6 )
-hframes = 2
+frames = ExtResource( 20 )
 frame = 1
+playing = true
 
-[node name="BookRightSprite" type="Sprite" parent="MainContainer"]
+[node name="BookRightSprite" type="AnimatedSprite" parent="MainContainer"]
 position = Vector2( 348, 152 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 6 )
+frames = ExtResource( 20 )
+playing = true
 flip_h = true
-hframes = 2
-frame = 1
 
 [node name="DividerLeft" type="Sprite" parent="MainContainer"]
 position = Vector2( 180, 72 )
@@ -440,11 +439,11 @@ animate = false
 [node name="LeftSide" type="Node2D" parent="MapSelection"]
 position = Vector2( 172, 152 )
 
-[node name="BookLeftSprite" type="Sprite" parent="MapSelection/LeftSide"]
+[node name="BookLeftSprite" type="AnimatedSprite" parent="MapSelection/LeftSide"]
 scale = Vector2( 4, 4 )
-texture = ExtResource( 6 )
-hframes = 2
-frame = 1
+frames = ExtResource( 20 )
+frame = 2
+playing = true
 
 [node name="DividerLeft" type="Sprite" parent="MapSelection/LeftSide"]
 position = Vector2( 8, -80 )
@@ -472,12 +471,11 @@ alignment = 1
 color = Color( 0.12549, 0.12549, 0.12549, 1 )
 animate = false
 
-[node name="BookRightSprite" type="Sprite" parent="MapSelection/RightSide"]
+[node name="BookRightSprite" type="AnimatedSprite" parent="MapSelection/RightSide"]
 scale = Vector2( 4, 4 )
-texture = ExtResource( 6 )
+frames = ExtResource( 20 )
+playing = true
 flip_h = true
-hframes = 2
-frame = 1
 
 [node name="DividerRight" type="Sprite" parent="MapSelection/RightSide"]
 position = Vector2( -8, -80 )
