@@ -527,7 +527,6 @@ frame = 2
 position = Vector2( -176, 0 )
 scale = Vector2( 8, 8 )
 frames = ExtResource( 17 )
-frame = 1
 playing = true
 
 [node name="DividerLeft" type="Sprite" parent="Book/Opened/BookLeftSprite"]
@@ -554,7 +553,7 @@ animate = false
 position = Vector2( 176, 0 )
 scale = Vector2( 8, 8 )
 frames = ExtResource( 17 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
@@ -590,7 +589,6 @@ visible = false
 position = Vector2( -176, 0 )
 scale = Vector2( 8, 8 )
 frames = ExtResource( 17 )
-frame = 1
 playing = true
 
 [node name="DividerLeft" type="Sprite" parent="Book/OpenedEnd/BookLeftSprite"]
@@ -618,7 +616,7 @@ animate = false
 position = Vector2( 176, 0 )
 scale = Vector2( 8, 8 )
 frames = ExtResource( 17 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 

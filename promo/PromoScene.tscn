@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://objects/backdrop/BdPlains.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/hazard/SawBlade.tscn" type="PackedScene" id=2]
+[ext_resource path="res://res/walls.tres" type="TileSet" id=3]
+[ext_resource path="res://objects/hazard/Spike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://promo/pockybig.png" type="Texture" id=5]
+[ext_resource path="res://title.png" type="Texture" id=6]
+[ext_resource path="res://objects/system/label/CustomLabel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://promo/PromoScene.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pocky:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Fg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Saw:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Saw2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Labels:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Pocky:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 228.5, 138 ), Vector2( 228.5, 122 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Fg:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 16 ), Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Saw:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.6, 0.8 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 77.5, 50 ), Vector2( 77.5, 34 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Saw2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.8, 1 ),
+"transitions": PoolRealArray( 0.2, 1 ),
+"update": 0,
+"values": [ Vector2( 19, 178 ), Vector2( 19, 162 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Labels:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1.3, 1.8 ),
+"transitions": PoolRealArray( 0.4, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 16 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/appear = SubResource( 1 )
+
+[node name="BackdropPlains" parent="." instance=ExtResource( 1 )]
+
+[node name="Saw" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 77.5, 34 )
+rotation = 0.20944
+scale = Vector2( 4, 4 )
+
+[node name="Saw2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 19, 162 )
+rotation = -0.10472
+scale = Vector2( 2, 2 )
+
+[node name="Fg" type="TileMap" parent="." groups=["leavetrail"]]
+modulate = Color( 1, 1, 1, 0 )
+rotation = -0.401426
+scale = Vector2( 3, 3 )
+z_index = -4
+z_as_relative = false
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 3
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( 131082, 1, 0, 196617, 1, 8, 196618, 1, 65543, 262152, 1, 8, 262153, 1, 65541, 262154, 1, 131083, 327688, 1, 65544, 327689, 1, 131081, 327690, 1, 131083, 393221, 1, 8, 393222, 1, 10, 393223, 1, 10, 393224, 1, 65541, 393225, 1, 131081, 393226, 1, 131083, 458757, 1, 65544, 458758, 1, 131081, 458759, 1, 131081, 458760, 1, 131081, 458761, 1, 131081, 458762, 1, 131083, 524288, 1, 8, 524289, 1, 10, 524290, 1, 10, 524291, 1, 10, 524292, 1, 10, 524293, 1, 65541, 524294, 1, 131081, 524295, 1, 131081, 524296, 1, 131081, 524297, 1, 131081, 524298, 1, 131083, 589824, 1, 196616, 589825, 1, 196617, 589826, 1, 131077, 589827, 1, 131081, 589828, 1, 131081, 589829, 1, 131081, 589830, 1, 131081, 589831, 1, 131081, 589832, 1, 131081, 589833, 1, 131081, 589834, 1, 131083, 655362, 1, 196616, 655363, 1, 196617, 655364, 1, 196617, 655365, 1, 196617, 655366, 1, 196617, 655367, 1, 196617, 655368, 1, 196617, 655369, 1, 196617, 655370, 1, 196619 )
+
+[node name="Spike" parent="Fg" instance=ExtResource( 4 )]
+position = Vector2( 88.9815, 88.1051 )
+rotation = -2.98023e-08
+
+[node name="Spike2" parent="Fg" instance=ExtResource( 4 )]
+position = Vector2( 104.52, 88.1826 )
+rotation = -2.98023e-08
+
+[node name="Spike3" parent="Fg" instance=ExtResource( 4 )]
+position = Vector2( 120.365, 88.3902 )
+rotation = -2.98023e-08
+
+[node name="Spike4" parent="Fg" instance=ExtResource( 4 )]
+position = Vector2( 72.1197, 103.942 )
+rotation = -1.5708
+
+[node name="Spike5" parent="Fg" instance=ExtResource( 4 )]
+position = Vector2( 72.2188, 119.918 )
+rotation = -1.5708
+
+[node name="Pocky" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 228.5, 138 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="Labels" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Labels"]
+position = Vector2( 164, 223 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="CustomLabel3" parent="Labels" instance=ExtResource( 7 )]
+position = Vector2( 432, 248.5 )
+text = "available on"
+outline = true
+
+[node name="CustomLabel4" parent="Labels" instance=ExtResource( 7 )]
+position = Vector2( 433, 263 )
+text = "itch.io"
+fontSize = 2
+outline = true
